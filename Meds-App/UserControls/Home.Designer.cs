@@ -34,10 +34,10 @@
             this.panel_Home_Right = new System.Windows.Forms.Panel();
             this.button_Back = new System.Windows.Forms.Button();
             this.button_Add_Home = new System.Windows.Forms.Button();
-            this.panel_Home_Left = new System.Windows.Forms.Panel();
-            this.PanelAddMeds_In_Home = new Meds_App.AddMeds();
             this.button_Details = new System.Windows.Forms.Button();
+            this.panel_Home_Left = new System.Windows.Forms.Panel();
             this.PanelDetails_In_Home = new Meds_App.UserControls.Home.DetailsMeds();
+            this.PanelAddMeds_In_Home = new Meds_App.AddMeds();
             this.panel_Home_Right.SuspendLayout();
             this.panel_Home_Left.SuspendLayout();
             this.SuspendLayout();
@@ -121,24 +121,6 @@
             this.button_Add_Home.UseVisualStyleBackColor = false;
             this.button_Add_Home.Click += new System.EventHandler(this.button_Add_Home_Click);
             // 
-            // panel_Home_Left
-            // 
-            this.panel_Home_Left.Controls.Add(this.textBox1);
-            this.panel_Home_Left.Controls.Add(this.label_Search);
-            this.panel_Home_Left.Controls.Add(this.listView_Meds);
-            this.panel_Home_Left.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_Home_Left.Location = new System.Drawing.Point(0, 0);
-            this.panel_Home_Left.Name = "panel_Home_Left";
-            this.panel_Home_Left.Size = new System.Drawing.Size(344, 590);
-            this.panel_Home_Left.TabIndex = 4;
-            // 
-            // PanelAddMeds_In_Home
-            // 
-            this.PanelAddMeds_In_Home.Location = new System.Drawing.Point(0, 0);
-            this.PanelAddMeds_In_Home.Name = "PanelAddMeds_In_Home";
-            this.PanelAddMeds_In_Home.Size = new System.Drawing.Size(415, 590);
-            this.PanelAddMeds_In_Home.TabIndex = 24;
-            // 
             // button_Details
             // 
             this.button_Details.BackColor = System.Drawing.Color.AntiqueWhite;
@@ -156,6 +138,17 @@
             this.button_Details.UseVisualStyleBackColor = false;
             this.button_Details.Click += new System.EventHandler(this.button_Details_Click);
             // 
+            // panel_Home_Left
+            // 
+            this.panel_Home_Left.Controls.Add(this.textBox1);
+            this.panel_Home_Left.Controls.Add(this.label_Search);
+            this.panel_Home_Left.Controls.Add(this.listView_Meds);
+            this.panel_Home_Left.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_Home_Left.Location = new System.Drawing.Point(0, 0);
+            this.panel_Home_Left.Name = "panel_Home_Left";
+            this.panel_Home_Left.Size = new System.Drawing.Size(344, 590);
+            this.panel_Home_Left.TabIndex = 4;
+            // 
             // PanelDetails_In_Home
             // 
             this.PanelDetails_In_Home.BackColor = System.Drawing.Color.OldLace;
@@ -163,6 +156,13 @@
             this.PanelDetails_In_Home.Name = "PanelDetails_In_Home";
             this.PanelDetails_In_Home.Size = new System.Drawing.Size(415, 590);
             this.PanelDetails_In_Home.TabIndex = 26;
+            // 
+            // PanelAddMeds_In_Home
+            // 
+            this.PanelAddMeds_In_Home.Location = new System.Drawing.Point(0, 0);
+            this.PanelAddMeds_In_Home.Name = "PanelAddMeds_In_Home";
+            this.PanelAddMeds_In_Home.Size = new System.Drawing.Size(415, 590);
+            this.PanelAddMeds_In_Home.TabIndex = 24;
             // 
             // Home
             // 

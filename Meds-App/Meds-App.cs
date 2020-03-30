@@ -16,6 +16,9 @@ namespace Meds_App
         public MainForm()
         {
             InitializeComponent();
+            this.panelOutOfDate_In_Main.Visible = false;
+            this.panelHome_In_Main.Visible = true;
+            this.panelHome_In_Main.BringToFront();
         }
 
         private void Button_Exit_Click(object sender, EventArgs e)
@@ -25,6 +28,9 @@ namespace Meds_App
 
         private void Button_Home_Click(object sender, EventArgs e)
         {
+            this.panelOutOfDate_In_Main.Visible = false;
+            this.panelHome_In_Main.Visible = true;
+            this.panelHome_In_Main.BringToFront();
             button_Home.BackColor = Color.OldLace;
             button_Expired.BackColor = Color.Moccasin;
             button_Details.BackColor = Color.Moccasin;
@@ -32,6 +38,9 @@ namespace Meds_App
 
         private void Button_Expired_Click(object sender, EventArgs e)
         {
+            this.panelHome_In_Main.Visible = false;
+            this.panelOutOfDate_In_Main.Visible = true;
+            this.panelOutOfDate_In_Main.BringToFront();
             button_Home.BackColor = Color.Moccasin;
             button_Expired.BackColor = Color.OldLace;
             button_Details.BackColor = Color.Moccasin;
@@ -39,6 +48,8 @@ namespace Meds_App
 
         private void Button_Details_Click(object sender, EventArgs e)
         {
+            this.panelHome_In_Main.Visible = false;
+            this.panelOutOfDate_In_Main.Visible = false;
             button_Home.BackColor = Color.Moccasin;
             button_Expired.BackColor = Color.Moccasin;
             button_Details.BackColor = Color.OldLace;

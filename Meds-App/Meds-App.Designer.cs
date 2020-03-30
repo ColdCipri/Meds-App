@@ -40,7 +40,8 @@
             this.button_Settings = new System.Windows.Forms.Button();
             this.button_Exit = new System.Windows.Forms.Button();
             this.panel_Main = new System.Windows.Forms.Panel();
-            this.home1 = new Meds_App.Home();
+            this.panelHome_In_Main = new Meds_App.Home();
+            this.panelOutOfDate_In_Main = new Meds_App.UserControls.OutOfDate();
             this.panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
             this.panel_Top.SuspendLayout();
@@ -207,20 +208,28 @@
             // 
             // panel_Main
             // 
-            this.panel_Main.Controls.Add(this.home1);
+            this.panel_Main.Controls.Add(this.panelOutOfDate_In_Main);
+            this.panel_Main.Controls.Add(this.panelHome_In_Main);
             this.panel_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Main.Location = new System.Drawing.Point(198, 39);
             this.panel_Main.Name = "panel_Main";
             this.panel_Main.Size = new System.Drawing.Size(758, 590);
             this.panel_Main.TabIndex = 2;
             // 
-            // home1
+            // panelHome_In_Main
             // 
-            this.home1.BackColor = System.Drawing.Color.OldLace;
-            this.home1.Location = new System.Drawing.Point(0, 0);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(758, 590);
-            this.home1.TabIndex = 0;
+            this.panelHome_In_Main.BackColor = System.Drawing.Color.OldLace;
+            this.panelHome_In_Main.Location = new System.Drawing.Point(0, 0);
+            this.panelHome_In_Main.Name = "panelHome_In_Main";
+            this.panelHome_In_Main.Size = new System.Drawing.Size(758, 590);
+            this.panelHome_In_Main.TabIndex = 0;
+            // 
+            // panelOutOfDate_In_Main
+            // 
+            this.panelOutOfDate_In_Main.Location = new System.Drawing.Point(0, 0);
+            this.panelOutOfDate_In_Main.Name = "panelOutOfDate_In_Main";
+            this.panelOutOfDate_In_Main.Size = new System.Drawing.Size(758, 590);
+            this.panelOutOfDate_In_Main.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -256,7 +265,8 @@
         private System.Windows.Forms.Button button_Expired;
         private System.Windows.Forms.Button button_Home;
         private System.Windows.Forms.Panel panel_Main;
-        private Home home1;
+        private Home panelHome_In_Main;
+        private UserControls.OutOfDate panelOutOfDate_In_Main;
     }
 }
 
