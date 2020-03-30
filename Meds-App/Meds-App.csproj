@@ -49,6 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserControls\Details.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Details.Designer.cs">
+      <DependentUpon>Details.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Home\AddMeds.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="UserControls\OutOfDate.Designer.cs">
       <DependentUpon>OutOfDate.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\Details.resx">
+      <DependentUpon>Details.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Home\AddMeds.resx">
       <DependentUpon>AddMeds.cs</DependentUpon>
     </EmbeddedResource>

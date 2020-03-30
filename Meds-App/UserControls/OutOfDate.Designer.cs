@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel_OutOfDate = new System.Windows.Forms.Panel();
-            this.dateTimePicker_OutOfDate = new System.Windows.Forms.DateTimePicker();
             this.listView_OutOfDate = new System.Windows.Forms.ListView();
+            this.dateTimePicker_OutOfDate = new System.Windows.Forms.DateTimePicker();
             this.panel_Right = new System.Windows.Forms.Panel();
             this.button_OutOfDate_details = new System.Windows.Forms.Button();
             this.panel_OutOfDate.SuspendLayout();
@@ -48,15 +48,6 @@
             this.panel_OutOfDate.Size = new System.Drawing.Size(384, 590);
             this.panel_OutOfDate.TabIndex = 0;
             // 
-            // dateTimePicker_OutOfDate
-            // 
-            this.dateTimePicker_OutOfDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_OutOfDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_OutOfDate.Location = new System.Drawing.Point(17, 21);
-            this.dateTimePicker_OutOfDate.Name = "dateTimePicker_OutOfDate";
-            this.dateTimePicker_OutOfDate.Size = new System.Drawing.Size(238, 38);
-            this.dateTimePicker_OutOfDate.TabIndex = 0;
-            // 
             // listView_OutOfDate
             // 
             this.listView_OutOfDate.BackColor = System.Drawing.Color.PapayaWhip;
@@ -66,6 +57,15 @@
             this.listView_OutOfDate.Size = new System.Drawing.Size(356, 474);
             this.listView_OutOfDate.TabIndex = 1;
             this.listView_OutOfDate.UseCompatibleStateImageBehavior = false;
+            // 
+            // dateTimePicker_OutOfDate
+            // 
+            this.dateTimePicker_OutOfDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_OutOfDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_OutOfDate.Location = new System.Drawing.Point(17, 21);
+            this.dateTimePicker_OutOfDate.Name = "dateTimePicker_OutOfDate";
+            this.dateTimePicker_OutOfDate.Size = new System.Drawing.Size(238, 38);
+            this.dateTimePicker_OutOfDate.TabIndex = 0;
             // 
             // panel_Right
             // 

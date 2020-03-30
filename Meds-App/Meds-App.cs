@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Transitions;
 
 namespace Meds_App
 {
@@ -16,9 +17,12 @@ namespace Meds_App
         public MainForm()
         {
             InitializeComponent();
-            this.panelOutOfDate_In_Main.Visible = false;
-            this.panelHome_In_Main.Visible = true;
-            this.panelHome_In_Main.BringToFront();
+            Transition.run(this.panel_Top, "BackColor", Color.Salmon, new TransitionType_Deceleration(1000));
+            Transition transitionSlide = new Transition(new TransitionType_Linear(700));
+            transitionSlide.add(this.pictureBox_Logo, "Left", 7);
+            transitionSlide.add(this.label_Title, "Top", 0);
+            transitionSlide.run();
+            Transition.run(this.panelHome_In_Main, "Left", 0, new TransitionType_EaseInEaseOut(1000));
         }
 
         private void Button_Exit_Click(object sender, EventArgs e)
@@ -28,30 +32,92 @@ namespace Meds_App
 
         private void Button_Home_Click(object sender, EventArgs e)
         {
-            this.panelOutOfDate_In_Main.Visible = false;
-            this.panelHome_In_Main.Visible = true;
-            this.panelHome_In_Main.BringToFront();
+            if (button_OutOfDate.BackColor.Equals(Color.OldLace))
+            {
+                this.panelHome_In_Main.Location = new Point(0, -700);
+                Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
+                slidePanels.add(this.panelHome_In_Main, "Top", 0);
+                slidePanels.add(this.panelOutOfDate_In_Main, "Top", 700);
+                slidePanels.run();
+            }
+            else if (button_Details.BackColor.Equals(Color.OldLace))
+            {
+                this.panelHome_In_Main.Location = new Point(0, -1400);
+                this.panelOutOfDate_In_Main.Location = new Point(0, -700);
+                Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
+                slidePanels.add(this.panelHome_In_Main, "Top", 0);
+                slidePanels.add(this.panelOutOfDate_In_Main, "Top", 700);
+                slidePanels.add(this.panelDetails_In_Main, "Top", 1400);
+                slidePanels.run();
+            }
+            else
+            {
+                Transition emphasis = new Transition(new TransitionType_Flash(2, 300));
+                emphasis.add(this.panelHome_In_Main, "BackColor", Color.Pink);
+                emphasis.run();
+            }
             button_Home.BackColor = Color.OldLace;
-            button_Expired.BackColor = Color.Moccasin;
+            button_OutOfDate.BackColor = Color.Moccasin;
             button_Details.BackColor = Color.Moccasin;
         }
 
-        private void Button_Expired_Click(object sender, EventArgs e)
+        private void Button_OutOfDate_Click(object sender, EventArgs e)
         {
-            this.panelHome_In_Main.Visible = false;
-            this.panelOutOfDate_In_Main.Visible = true;
-            this.panelOutOfDate_In_Main.BringToFront();
+            if (button_Home.BackColor.Equals(Color.OldLace))
+            {
+                panelOutOfDate_In_Main.Location = new Point(0, 700);
+                Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
+                slidePanels.add(this.panelHome_In_Main, "Top", -700);
+                slidePanels.add(this.panelOutOfDate_In_Main, "Top", 0);
+                slidePanels.run();
+            }
+            else if (button_Details.BackColor.Equals(Color.OldLace))
+            {
+                panelOutOfDate_In_Main.Location = new Point(0, -700);
+                Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
+                slidePanels.add(this.panelDetails_In_Main, "Top", 700); 
+                slidePanels.add(this.panelOutOfDate_In_Main, "Top", 0);
+                slidePanels.run();
+            }
+            else
+            {
+                Transition emphasis = new Transition(new TransitionType_Flash(2, 300));
+                emphasis.add(this.panelOutOfDate_In_Main, "BackColor", Color.Pink);
+                emphasis.run();
+            }
             button_Home.BackColor = Color.Moccasin;
-            button_Expired.BackColor = Color.OldLace;
+            button_OutOfDate.BackColor = Color.OldLace;
             button_Details.BackColor = Color.Moccasin;
         }
 
         private void Button_Details_Click(object sender, EventArgs e)
         {
-            this.panelHome_In_Main.Visible = false;
-            this.panelOutOfDate_In_Main.Visible = false;
+            if (button_OutOfDate.BackColor.Equals(Color.OldLace))
+            {
+                this.panelDetails_In_Main.Location = new Point(0, 700);
+                Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
+                slidePanels.add(this.panelDetails_In_Main, "Top", 0);
+                slidePanels.add(this.panelOutOfDate_In_Main, "Top", -700);
+                slidePanels.run();
+            }
+            else if (button_Home.BackColor.Equals(Color.OldLace))
+            {
+                this.panelDetails_In_Main.Location = new Point(0, 1400);
+                this.panelOutOfDate_In_Main.Location = new Point(0, 700);
+                Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
+                slidePanels.add(this.panelHome_In_Main, "Top", -1400);
+                slidePanels.add(this.panelOutOfDate_In_Main, "Top", -700);
+                slidePanels.add(this.panelDetails_In_Main, "Top", 0);
+                slidePanels.run();
+            }
+            else
+            {
+                Transition emphasis = new Transition(new TransitionType_Flash(2, 300));
+                emphasis.add(this.panelHome_In_Main, "BackColor", Color.Pink);
+                emphasis.run();
+            }
             button_Home.BackColor = Color.Moccasin;
-            button_Expired.BackColor = Color.Moccasin;
+            button_OutOfDate.BackColor = Color.Moccasin;
             button_Details.BackColor = Color.OldLace;
         }
 
@@ -61,8 +127,8 @@ namespace Meds_App
             form.label_Title.Location = new Point(0, 0);
             form.label_Title.Text = Properties.Resources.Label_Title_eng;
             form.button_Home.Text = Properties.Resources.Label_Home_eng;
-            form.button_Expired.Text = Properties.Resources.Label_OutOfDate_eng;
-            form.button_Expired.Font = new Font("Franklin Gothic Medium Cond", 16);
+            form.button_OutOfDate.Text = Properties.Resources.Label_OutOfDate_eng;
+            form.button_OutOfDate.Font = new Font("Franklin Gothic Medium Cond", 16);
             form.button_Details.Text = Properties.Resources.Label_Details_eng;
         }
 
@@ -72,8 +138,8 @@ namespace Meds_App
             form.label_Title.Location = new Point(0, 2);
             form.label_Title.Text = Properties.Resources.Label_Title_ro;
             form.button_Home.Text = Properties.Resources.Label_Home_ro;
-            form.button_Expired.Text = Properties.Resources.Label_OutOfDate_ro;
-            form.button_Expired.Font = new Font("Franklin Gothic Medium Cond", 20);
+            form.button_OutOfDate.Text = Properties.Resources.Label_OutOfDate_ro;
+            form.button_OutOfDate.Font = new Font("Franklin Gothic Medium Cond", 20);
             form.button_Details.Text = Properties.Resources.Label_Details_ro;
         }
 
@@ -91,9 +157,5 @@ namespace Meds_App
             }
         }
 
-        private void home1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

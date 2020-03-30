@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel_Left = new System.Windows.Forms.Panel();
             this.button_Details = new System.Windows.Forms.Button();
-            this.button_Expired = new System.Windows.Forms.Button();
+            this.button_OutOfDate = new System.Windows.Forms.Button();
             this.button_Home = new System.Windows.Forms.Button();
             this.pictureBox_Logo = new System.Windows.Forms.PictureBox();
             this.panel_Top = new System.Windows.Forms.Panel();
@@ -40,8 +40,9 @@
             this.button_Settings = new System.Windows.Forms.Button();
             this.button_Exit = new System.Windows.Forms.Button();
             this.panel_Main = new System.Windows.Forms.Panel();
-            this.panelHome_In_Main = new Meds_App.Home();
+            this.panelDetails_In_Main = new Meds_App.UserControls.Details();
             this.panelOutOfDate_In_Main = new Meds_App.UserControls.OutOfDate();
+            this.panelHome_In_Main = new Meds_App.Home();
             this.panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
             this.panel_Top.SuspendLayout();
@@ -52,7 +53,7 @@
             // 
             this.panel_Left.BackColor = System.Drawing.Color.Moccasin;
             this.panel_Left.Controls.Add(this.button_Details);
-            this.panel_Left.Controls.Add(this.button_Expired);
+            this.panel_Left.Controls.Add(this.button_OutOfDate);
             this.panel_Left.Controls.Add(this.button_Home);
             this.panel_Left.Controls.Add(this.pictureBox_Logo);
             this.panel_Left.Dock = System.Windows.Forms.DockStyle.Left;
@@ -81,25 +82,25 @@
             this.button_Details.UseVisualStyleBackColor = false;
             this.button_Details.Click += new System.EventHandler(this.Button_Details_Click);
             // 
-            // button_Expired
+            // button_OutOfDate
             // 
-            this.button_Expired.BackColor = System.Drawing.Color.Moccasin;
-            this.button_Expired.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Expired.FlatAppearance.BorderSize = 0;
-            this.button_Expired.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Moccasin;
-            this.button_Expired.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
-            this.button_Expired.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Expired.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Expired.Image = global::Meds_App.Properties.Resources.LOGO_OutOfDate;
-            this.button_Expired.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Expired.Location = new System.Drawing.Point(22, 326);
-            this.button_Expired.Name = "button_Expired";
-            this.button_Expired.Size = new System.Drawing.Size(176, 105);
-            this.button_Expired.TabIndex = 3;
-            this.button_Expired.Text = "Out of date";
-            this.button_Expired.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Expired.UseVisualStyleBackColor = false;
-            this.button_Expired.Click += new System.EventHandler(this.Button_Expired_Click);
+            this.button_OutOfDate.BackColor = System.Drawing.Color.Moccasin;
+            this.button_OutOfDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_OutOfDate.FlatAppearance.BorderSize = 0;
+            this.button_OutOfDate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Moccasin;
+            this.button_OutOfDate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.button_OutOfDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_OutOfDate.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_OutOfDate.Image = global::Meds_App.Properties.Resources.LOGO_OutOfDate;
+            this.button_OutOfDate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_OutOfDate.Location = new System.Drawing.Point(22, 326);
+            this.button_OutOfDate.Name = "button_OutOfDate";
+            this.button_OutOfDate.Size = new System.Drawing.Size(176, 105);
+            this.button_OutOfDate.TabIndex = 3;
+            this.button_OutOfDate.Text = "Out of date";
+            this.button_OutOfDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_OutOfDate.UseVisualStyleBackColor = false;
+            this.button_OutOfDate.Click += new System.EventHandler(this.Button_OutOfDate_Click);
             // 
             // button_Home
             // 
@@ -125,7 +126,7 @@
             // 
             this.pictureBox_Logo.Image = global::Meds_App.Properties.Resources.LOGO_Med;
             this.pictureBox_Logo.ImageLocation = "";
-            this.pictureBox_Logo.Location = new System.Drawing.Point(7, 25);
+            this.pictureBox_Logo.Location = new System.Drawing.Point(-300, 25);
             this.pictureBox_Logo.Name = "pictureBox_Logo";
             this.pictureBox_Logo.Size = new System.Drawing.Size(185, 93);
             this.pictureBox_Logo.TabIndex = 0;
@@ -147,7 +148,7 @@
             // label_Title
             // 
             this.label_Title.Font = new System.Drawing.Font("Script MT Bold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Title.Location = new System.Drawing.Point(0, 0);
+            this.label_Title.Location = new System.Drawing.Point(0, -40);
             this.label_Title.Name = "label_Title";
             this.label_Title.Size = new System.Drawing.Size(578, 41);
             this.label_Title.TabIndex = 4;
@@ -208,6 +209,8 @@
             // 
             // panel_Main
             // 
+            this.panel_Main.BackColor = System.Drawing.Color.OldLace;
+            this.panel_Main.Controls.Add(this.panelDetails_In_Main);
             this.panel_Main.Controls.Add(this.panelOutOfDate_In_Main);
             this.panel_Main.Controls.Add(this.panelHome_In_Main);
             this.panel_Main.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -216,20 +219,28 @@
             this.panel_Main.Size = new System.Drawing.Size(758, 590);
             this.panel_Main.TabIndex = 2;
             // 
-            // panelHome_In_Main
+            // panelDetails_In_Main
             // 
-            this.panelHome_In_Main.BackColor = System.Drawing.Color.OldLace;
-            this.panelHome_In_Main.Location = new System.Drawing.Point(0, 0);
-            this.panelHome_In_Main.Name = "panelHome_In_Main";
-            this.panelHome_In_Main.Size = new System.Drawing.Size(758, 590);
-            this.panelHome_In_Main.TabIndex = 0;
+            this.panelDetails_In_Main.Location = new System.Drawing.Point(0, 700);
+            this.panelDetails_In_Main.Name = "panelDetails_In_Main";
+            this.panelDetails_In_Main.Size = new System.Drawing.Size(758, 590);
+            this.panelDetails_In_Main.TabIndex = 2;
             // 
             // panelOutOfDate_In_Main
             // 
-            this.panelOutOfDate_In_Main.Location = new System.Drawing.Point(0, 0);
+            this.panelOutOfDate_In_Main.BackColor = System.Drawing.Color.OldLace;
+            this.panelOutOfDate_In_Main.Location = new System.Drawing.Point(1000, 0);
             this.panelOutOfDate_In_Main.Name = "panelOutOfDate_In_Main";
             this.panelOutOfDate_In_Main.Size = new System.Drawing.Size(758, 590);
             this.panelOutOfDate_In_Main.TabIndex = 1;
+            // 
+            // panelHome_In_Main
+            // 
+            this.panelHome_In_Main.BackColor = System.Drawing.Color.OldLace;
+            this.panelHome_In_Main.Location = new System.Drawing.Point(1000, 0);
+            this.panelHome_In_Main.Name = "panelHome_In_Main";
+            this.panelHome_In_Main.Size = new System.Drawing.Size(758, 590);
+            this.panelHome_In_Main.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -262,11 +273,12 @@
         private System.Windows.Forms.Button button_Help;
         private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.Button button_Details;
-        private System.Windows.Forms.Button button_Expired;
+        private System.Windows.Forms.Button button_OutOfDate;
         private System.Windows.Forms.Button button_Home;
         private System.Windows.Forms.Panel panel_Main;
         private Home panelHome_In_Main;
         private UserControls.OutOfDate panelOutOfDate_In_Main;
+        private UserControls.Details panelDetails_In_Main;
     }
 }
 
