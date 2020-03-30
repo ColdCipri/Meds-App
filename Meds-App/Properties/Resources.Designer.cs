@@ -22,7 +22,7 @@ namespace Meds_App.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Meds_App.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Meds_App.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Meds_App.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,100 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Meds App.
+        /// </summary>
+        public static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Label_Details_eng {
+            get {
+                return ResourceManager.GetString("Label_Details_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detalii.
+        /// </summary>
+        public static string Label_Details_ro {
+            get {
+                return ResourceManager.GetString("Label_Details_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Label_Home_eng {
+            get {
+                return ResourceManager.GetString("Label_Home_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Acasă.
+        /// </summary>
+        public static string Label_Home_ro {
+            get {
+                return ResourceManager.GetString("Label_Home_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Out of date.
+        /// </summary>
+        public static string Label_OutOfDate_eng {
+            get {
+                return ResourceManager.GetString("Label_OutOfDate_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expirat.
+        /// </summary>
+        public static string Label_OutOfDate_ro {
+            get {
+                return ResourceManager.GetString("Label_OutOfDate_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application for managing home medicines.
+        /// </summary>
+        public static string Label_Title_eng {
+            get {
+                return ResourceManager.GetString("Label_Title_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aplicație pentru gestionarea medicamentelor personale.
+        /// </summary>
+        public static string Label_Title_ro {
+            get {
+                return ResourceManager.GetString("Label_Title_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_Exit {
+        public static System.Drawing.Bitmap LOGO_Arrow {
+            get {
+                object obj = ResourceManager.GetObject("LOGO-Arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_Exit {
             get {
                 object obj = ResourceManager.GetObject("LOGO_Exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +164,7 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_Help {
+        public static System.Drawing.Bitmap LOGO_Help {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Help", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +174,7 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_Home {
+        public static System.Drawing.Bitmap LOGO_Home {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +184,7 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_List {
+        public static System.Drawing.Bitmap LOGO_List {
             get {
                 object obj = ResourceManager.GetObject("LOGO-List", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +194,7 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_Med {
+        public static System.Drawing.Bitmap LOGO_Med {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Med", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +204,7 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_OutOfDate {
+        public static System.Drawing.Bitmap LOGO_OutOfDate {
             get {
                 object obj = ResourceManager.GetObject("LOGO-OutOfDate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +214,7 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LOGO_Settings {
+        public static System.Drawing.Bitmap LOGO_Settings {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

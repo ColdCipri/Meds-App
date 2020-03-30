@@ -49,6 +49,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserControls\Home\AddMeds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Home\AddMeds.Designer.cs">
+      <DependentUpon>AddMeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Meds-App.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,11 +69,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\Home\DetailsMeds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Home\DetailsMeds.Designer.cs">
+      <DependentUpon>DetailsMeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OutOfDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OutOfDate.Designer.cs">
+      <DependentUpon>OutOfDate.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\Home\AddMeds.resx">
+      <DependentUpon>AddMeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Meds-App.resx">
       <DependentUpon>Meds-App.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -70,6 +100,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\Home\DetailsMeds.resx">
+      <DependentUpon>DetailsMeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OutOfDate.resx">
+      <DependentUpon>OutOfDate.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -92,6 +128,8 @@
     <None Include="Resources\LOGO-Help.png" />
     <None Include="Resources\LOGO-Home.png" />
     <None Include="Resources\LOGO-List.png" />
+    <None Include="Resources\LOGO-Icon.ico" />
+    <None Include="Resources\LOGO-Arrow.png" />
     <Content Include="Resources\LOGO-Med.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
