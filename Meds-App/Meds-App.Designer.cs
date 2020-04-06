@@ -42,7 +42,7 @@
             this.panel_Main = new System.Windows.Forms.Panel();
             this.panelDetails_In_Main = new Meds_App.UserControls.Details();
             this.panelOutOfDate_In_Main = new Meds_App.UserControls.OutOfDate();
-            this.panelHome_In_Main = new Meds_App.Home();
+            this.panelHome_In_Main = new Meds_App.HomeGUI();
             this.panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).BeginInit();
             this.panel_Top.SuspendLayout();
@@ -221,9 +221,9 @@
             // 
             // panelDetails_In_Main
             // 
-            this.panelDetails_In_Main.Location = new System.Drawing.Point(0, 700);
+            this.panelDetails_In_Main.Location = new System.Drawing.Point(0, 615);
             this.panelDetails_In_Main.Name = "panelDetails_In_Main";
-            this.panelDetails_In_Main.Size = new System.Drawing.Size(758, 590);
+            this.panelDetails_In_Main.Size = new System.Drawing.Size(758, 518);
             this.panelDetails_In_Main.TabIndex = 2;
             // 
             // panelOutOfDate_In_Main
@@ -276,7 +276,7 @@
         private System.Windows.Forms.Button button_OutOfDate;
         private System.Windows.Forms.Button button_Home;
         private System.Windows.Forms.Panel panel_Main;
-        private Home panelHome_In_Main;
+        private HomeGUI panelHome_In_Main;
         private UserControls.OutOfDate panelOutOfDate_In_Main;
         private UserControls.Details panelDetails_In_Main;
     }

@@ -68,6 +68,7 @@
             this.button_Details_Update.TabIndex = 41;
             this.button_Details_Update.Text = "Update";
             this.button_Details_Update.UseVisualStyleBackColor = false;
+            this.button_Details_Update.Click += new System.EventHandler(this.button_Details_Update_Click);
             // 
             // pictureBox_Details
             // 
@@ -87,20 +88,21 @@
             this.button_Details_AddPicture.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button_Details_AddPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Details_AddPicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Details_AddPicture.Location = new System.Drawing.Point(186, 453);
+            this.button_Details_AddPicture.Location = new System.Drawing.Point(186, 470);
             this.button_Details_AddPicture.Name = "button_Details_AddPicture";
             this.button_Details_AddPicture.Size = new System.Drawing.Size(134, 46);
             this.button_Details_AddPicture.TabIndex = 39;
             this.button_Details_AddPicture.Text = "Add picture";
             this.button_Details_AddPicture.UseVisualStyleBackColor = false;
+            this.button_Details_AddPicture.Click += new System.EventHandler(this.button_Details_AddPicture_Click);
             // 
             // textBox_Details_Description
             // 
-            this.textBox_Details_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Details_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Details_Description.Location = new System.Drawing.Point(174, 379);
             this.textBox_Details_Description.Multiline = true;
             this.textBox_Details_Description.Name = "textBox_Details_Description";
-            this.textBox_Details_Description.Size = new System.Drawing.Size(183, 53);
+            this.textBox_Details_Description.Size = new System.Drawing.Size(183, 68);
             this.textBox_Details_Description.TabIndex = 38;
             // 
             // label_Details_Description
@@ -182,9 +184,10 @@
             // dateTimePicker_Details_BestBefore
             // 
             this.dateTimePicker_Details_BestBefore.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_Details_BestBefore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Details_BestBefore.Location = new System.Drawing.Point(174, 212);
             this.dateTimePicker_Details_BestBefore.Name = "dateTimePicker_Details_BestBefore";
-            this.dateTimePicker_Details_BestBefore.Size = new System.Drawing.Size(146, 22);
+            this.dateTimePicker_Details_BestBefore.Size = new System.Drawing.Size(146, 24);
             this.dateTimePicker_Details_BestBefore.TabIndex = 31;
             // 
             // comboBox_Details_Type
@@ -201,8 +204,7 @@
             "Suppository",
             "Drops",
             "Gel",
-            "Effervescent",
-            "None"});
+            "Effervescent"});
             this.comboBox_Details_Type.Location = new System.Drawing.Point(174, 151);
             this.comboBox_Details_Type.Name = "comboBox_Details_Type";
             this.comboBox_Details_Type.Size = new System.Drawing.Size(146, 30);
@@ -243,11 +245,11 @@
             // 
             // textBox_Details_Name
             // 
-            this.textBox_Details_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Details_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Details_Name.Location = new System.Drawing.Point(174, 62);
             this.textBox_Details_Name.Multiline = true;
             this.textBox_Details_Name.Name = "textBox_Details_Name";
-            this.textBox_Details_Name.Size = new System.Drawing.Size(146, 32);
+            this.textBox_Details_Name.Size = new System.Drawing.Size(183, 32);
             this.textBox_Details_Name.TabIndex = 25;
             // 
             // label_Details_Name
@@ -285,6 +287,7 @@
             this.button_Details_Delete.TabIndex = 42;
             this.button_Details_Delete.Text = "Delete";
             this.button_Details_Delete.UseVisualStyleBackColor = false;
+            this.button_Details_Delete.Click += new System.EventHandler(this.button_Details_Delete_Click);
             // 
             // DetailsMeds
             // 

@@ -1,6 +1,6 @@
 ﻿namespace Meds_App
 {
-    partial class Home
+    partial class HomeGUI
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,29 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView_Meds = new System.Windows.Forms.ListView();
             this.label_Search = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_search = new System.Windows.Forms.TextBox();
             this.panel_Home_Right = new System.Windows.Forms.Panel();
             this.button_Back = new System.Windows.Forms.Button();
             this.button_Add_Home = new System.Windows.Forms.Button();
             this.button_Details = new System.Windows.Forms.Button();
             this.panel_Home_Left = new System.Windows.Forms.Panel();
+            this.listBox_Meds = new System.Windows.Forms.ListBox();
             this.PanelDetails_In_Home = new Meds_App.UserControls.Home.DetailsMeds();
             this.PanelAddMeds_In_Home = new Meds_App.AddMeds();
             this.panel_Home_Right.SuspendLayout();
             this.panel_Home_Left.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listView_Meds
-            // 
-            this.listView_Meds.BackColor = System.Drawing.Color.PapayaWhip;
-            this.listView_Meds.HideSelection = false;
-            this.listView_Meds.Location = new System.Drawing.Point(18, 12);
-            this.listView_Meds.Name = "listView_Meds";
-            this.listView_Meds.Size = new System.Drawing.Size(323, 510);
-            this.listView_Meds.TabIndex = 0;
-            this.listView_Meds.UseCompatibleStateImageBehavior = false;
             // 
             // label_Search
             // 
@@ -62,16 +52,17 @@
             this.label_Search.TabIndex = 1;
             this.label_Search.Text = "Search :";
             // 
-            // textBox1
+            // textBox_search
             // 
-            this.textBox1.AcceptsTab = true;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(149, 541);
-            this.textBox1.MaxLength = 100;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 32);
-            this.textBox1.TabIndex = 2;
+            this.textBox_search.AcceptsTab = true;
+            this.textBox_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_search.Location = new System.Drawing.Point(149, 541);
+            this.textBox_search.MaxLength = 100;
+            this.textBox_search.Multiline = true;
+            this.textBox_search.Name = "textBox_search";
+            this.textBox_search.Size = new System.Drawing.Size(195, 32);
+            this.textBox_search.TabIndex = 2;
+            this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
             // 
             // panel_Home_Right
             // 
@@ -140,38 +131,51 @@
             // 
             // panel_Home_Left
             // 
-            this.panel_Home_Left.Controls.Add(this.textBox1);
+            this.panel_Home_Left.Controls.Add(this.listBox_Meds);
+            this.panel_Home_Left.Controls.Add(this.textBox_search);
             this.panel_Home_Left.Controls.Add(this.label_Search);
-            this.panel_Home_Left.Controls.Add(this.listView_Meds);
             this.panel_Home_Left.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Home_Left.Location = new System.Drawing.Point(0, 0);
             this.panel_Home_Left.Name = "panel_Home_Left";
-            this.panel_Home_Left.Size = new System.Drawing.Size(344, 590);
+            this.panel_Home_Left.Size = new System.Drawing.Size(351, 590);
             this.panel_Home_Left.TabIndex = 4;
+            // 
+            // listBox_Meds
+            // 
+            this.listBox_Meds.BackColor = System.Drawing.Color.PapayaWhip;
+            this.listBox_Meds.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_Meds.FormattingEnabled = true;
+            this.listBox_Meds.ItemHeight = 38;
+            this.listBox_Meds.Location = new System.Drawing.Point(21, 12);
+            this.listBox_Meds.Name = "listBox_Meds";
+            this.listBox_Meds.Size = new System.Drawing.Size(323, 498);
+            this.listBox_Meds.TabIndex = 3;
+            this.listBox_Meds.SelectedIndexChanged += new System.EventHandler(this.listBox_Meds_SelectedIndexChanged);
             // 
             // PanelDetails_In_Home
             // 
             this.PanelDetails_In_Home.BackColor = System.Drawing.Color.OldLace;
-            this.PanelDetails_In_Home.Location = new System.Drawing.Point(0, 0);
+            this.PanelDetails_In_Home.Location = new System.Drawing.Point(69, 173);
             this.PanelDetails_In_Home.Name = "PanelDetails_In_Home";
-            this.PanelDetails_In_Home.Size = new System.Drawing.Size(415, 590);
+            this.PanelDetails_In_Home.Size = new System.Drawing.Size(408, 590);
             this.PanelDetails_In_Home.TabIndex = 26;
             // 
             // PanelAddMeds_In_Home
             // 
-            this.PanelAddMeds_In_Home.Location = new System.Drawing.Point(0, 0);
+            this.PanelAddMeds_In_Home.Location = new System.Drawing.Point(29, 173);
             this.PanelAddMeds_In_Home.Name = "PanelAddMeds_In_Home";
             this.PanelAddMeds_In_Home.Size = new System.Drawing.Size(415, 590);
             this.PanelAddMeds_In_Home.TabIndex = 24;
             // 
-            // Home
+            // HomeGUI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.OldLace;
             this.Controls.Add(this.panel_Home_Left);
             this.Controls.Add(this.panel_Home_Right);
-            this.Name = "Home";
+            this.Name = "HomeGUI";
             this.Size = new System.Drawing.Size(758, 590);
+            this.Load += new System.EventHandler(this.Home_Load);
             this.panel_Home_Right.ResumeLayout(false);
             this.panel_Home_Left.ResumeLayout(false);
             this.panel_Home_Left.PerformLayout();
@@ -180,10 +184,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView_Meds;
         private System.Windows.Forms.Label label_Search;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.Panel panel_Home_Right;
         private System.Windows.Forms.Panel panel_Home_Left;
         private System.Windows.Forms.Button button_Add_Home;
@@ -191,5 +193,6 @@
         private AddMeds PanelAddMeds_In_Home;
         private System.Windows.Forms.Button button_Details;
         private UserControls.Home.DetailsMeds PanelDetails_In_Home;
+        private System.Windows.Forms.ListBox listBox_Meds;
     }
 }

@@ -97,6 +97,7 @@
             this.button_Add_Save.TabIndex = 21;
             this.button_Add_Save.Text = "Save";
             this.button_Add_Save.UseVisualStyleBackColor = false;
+            this.button_Add_Save.Click += new System.EventHandler(this.button_Add_Save_Click);
             // 
             // pictureBox_Add
             // 
@@ -122,10 +123,11 @@
             this.button_Add_AddPicture.TabIndex = 19;
             this.button_Add_AddPicture.Text = "Add picture";
             this.button_Add_AddPicture.UseVisualStyleBackColor = false;
+            this.button_Add_AddPicture.Click += new System.EventHandler(this.button_Add_AddPicture_Click);
             // 
             // textBox_Add_Description
             // 
-            this.textBox_Add_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Add_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Add_Description.Location = new System.Drawing.Point(174, 378);
             this.textBox_Add_Description.Multiline = true;
             this.textBox_Add_Description.Name = "textBox_Add_Description";
@@ -150,6 +152,7 @@
             this.comboBox_Add_BaseSubstanceQuantity.Items.AddRange(new object[] {
             "mg",
             "ml",
+            "ug",
             "UI"});
             this.comboBox_Add_BaseSubstanceQuantity.Location = new System.Drawing.Point(240, 334);
             this.comboBox_Add_BaseSubstanceQuantity.Name = "comboBox_Add_BaseSubstanceQuantity";
@@ -211,9 +214,10 @@
             // dateTimePicker_Add_BestBefore
             // 
             this.dateTimePicker_Add_BestBefore.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_Add_BestBefore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Add_BestBefore.Location = new System.Drawing.Point(174, 211);
             this.dateTimePicker_Add_BestBefore.Name = "dateTimePicker_Add_BestBefore";
-            this.dateTimePicker_Add_BestBefore.Size = new System.Drawing.Size(146, 22);
+            this.dateTimePicker_Add_BestBefore.Size = new System.Drawing.Size(146, 23);
             this.dateTimePicker_Add_BestBefore.TabIndex = 10;
             // 
             // comboBox_Add_Type
@@ -230,8 +234,7 @@
             "Suppository",
             "Drops",
             "Gel",
-            "Effervescent",
-            "None"});
+            "Effervescent"});
             this.comboBox_Add_Type.Location = new System.Drawing.Point(174, 150);
             this.comboBox_Add_Type.Name = "comboBox_Add_Type";
             this.comboBox_Add_Type.Size = new System.Drawing.Size(146, 30);
@@ -272,7 +275,7 @@
             // 
             // textBox_Add_Name
             // 
-            this.textBox_Add_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Add_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Add_Name.Location = new System.Drawing.Point(174, 61);
             this.textBox_Add_Name.Multiline = true;
             this.textBox_Add_Name.Name = "textBox_Add_Name";
