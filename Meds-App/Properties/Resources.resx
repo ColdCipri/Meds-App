@@ -124,25 +124,25 @@
   <data name="LOGO-OutOfDate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-OutOfDate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Label_Title_ro" xml:space="preserve">
+  <data name="Title_ro" xml:space="preserve">
     <value>Aplicație pentru gestionarea medicamentelor personale</value>
     <comment>Title - Ro</comment>
   </data>
-  <data name="Label_Details_ro" xml:space="preserve">
+  <data name="Details_ro" xml:space="preserve">
     <value>Detalii</value>
     <comment>Details - Ro</comment>
   </data>
   <data name="LOGO-List" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-List.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Label_OutOfDate_ro" xml:space="preserve">
+  <data name="OutOfDate_ro" xml:space="preserve">
     <value>Expirat</value>
     <comment>Out Of Date - Ro</comment>
   </data>
   <data name="LOGO-Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Label_Home_ro" xml:space="preserve">
+  <data name="Home_ro" xml:space="preserve">
     <value>Acasă</value>
     <comment>Home - Ro</comment>
   </data>
@@ -152,7 +152,7 @@
   <data name="LOGO-Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Label_Title_eng" xml:space="preserve">
+  <data name="Title_eng" xml:space="preserve">
     <value>Application for managing home medicines</value>
     <comment>Title - English</comment>
   </data>
@@ -160,22 +160,126 @@
     <value>Meds App</value>
     <comment>Name of the App</comment>
   </data>
-  <data name="Label_Details_eng" xml:space="preserve">
+  <data name="Details_eng" xml:space="preserve">
     <value>Details</value>
     <comment>Details - English</comment>
   </data>
-  <data name="Label_OutOfDate_eng" xml:space="preserve">
+  <data name="OutOfDate_eng" xml:space="preserve">
     <value>Out of date</value>
     <comment>Out Of Date - English</comment>
   </data>
   <data name="LOGO-Med" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Med.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Label_Home_eng" xml:space="preserve">
+  <data name="Home_eng" xml:space="preserve">
     <value>Home</value>
     <comment>Home - English</comment>
   </data>
   <data name="LOGO-Arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_eng" xml:space="preserve">
+    <value>Add Med</value>
+    <comment>Add button - English</comment>
+  </data>
+  <data name="Add_ro" xml:space="preserve">
+    <value>Adaugă medicament</value>
+    <comment>Add button - Ro</comment>
+  </data>
+  <data name="Delete_eng" xml:space="preserve">
+    <value>Delete</value>
+    <comment>Delete button - English</comment>
+  </data>
+  <data name="Delete_ro" xml:space="preserve">
+    <value>Șterge</value>
+    <comment>Delete button - Ro</comment>
+  </data>
+  <data name="Update_eng" xml:space="preserve">
+    <value>Update</value>
+    <comment>Update button - English</comment>
+  </data>
+  <data name="Update_ro" xml:space="preserve">
+    <value>Actualizează</value>
+    <comment>Update button - Ro</comment>
+  </data>
+  <data name="Search_eng" xml:space="preserve">
+    <value>Search</value>
+    <comment>Search - English</comment>
+  </data>
+  <data name="Search_ro" xml:space="preserve">
+    <value>Caută</value>
+    <comment>Search - Ro</comment>
+  </data>
+  <data name="AddPicture_eng" xml:space="preserve">
+    <value>Add picture</value>
+    <comment>Add picture - English</comment>
+  </data>
+  <data name="AddPicture_ro" xml:space="preserve">
+    <value>Adaugă poză</value>
+    <comment>Add picture - Ro</comment>
+  </data>
+  <data name="BaseSubstanceQuantity_eng" xml:space="preserve">
+    <value>Base substance quantity:</value>
+    <comment>Base substance quantity - English</comment>
+  </data>
+  <data name="BaseSubstanceQuantity_ro" xml:space="preserve">
+    <value>Cantitate substanță de bază:</value>
+    <comment>Base substance quantity - Ro</comment>
+  </data>
+  <data name="BaseSubstance_eng" xml:space="preserve">
+    <value>Base substance:</value>
+    <comment>Base substance - English</comment>
+  </data>
+  <data name="BaseSubstance_ro" xml:space="preserve">
+    <value>Substanță de bază:</value>
+    <comment>Base substance - Ro</comment>
+  </data>
+  <data name="BestBefore_eng" xml:space="preserve">
+    <value>Best before:</value>
+    <comment>Best before - English</comment>
+  </data>
+  <data name="BestBefore_ro" xml:space="preserve">
+    <value>Data exipirării:</value>
+    <comment>Best before - Ro</comment>
+  </data>
+  <data name="Description_eng" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description - English</comment>
+  </data>
+  <data name="Description_ro" xml:space="preserve">
+    <value>Descriere</value>
+    <comment>Description - Ro</comment>
+  </data>
+  <data name="Name_eng" xml:space="preserve">
+    <value>Name:</value>
+    <comment>Name - English</comment>
+  </data>
+  <data name="Name_ro" xml:space="preserve">
+    <value>Nume:</value>
+    <comment>Name - Ro</comment>
+  </data>
+  <data name="Pieces_eng" xml:space="preserve">
+    <value>Pieces:</value>
+    <comment>Pieces - English</comment>
+  </data>
+  <data name="Pieces_ro" xml:space="preserve">
+    <value>Bucăți:</value>
+    <comment>Pieces - Ro</comment>
+  </data>
+  <data name="Save_eng" xml:space="preserve">
+    <value>Save</value>
+    <comment>Save - English</comment>
+  </data>
+  <data name="Save_ro" xml:space="preserve">
+    <value>Salvează</value>
+    <comment>Save - Ro</comment>
+  </data>
+  <data name="Type_eng" xml:space="preserve">
+    <value>Type:</value>
+    <comment>Type - English</comment>
+  </data>
+  <data name="Type_ro" xml:space="preserve">
+    <value>Tip:</value>
+    <comment>Type - Ro</comment>
   </data>
 </root>

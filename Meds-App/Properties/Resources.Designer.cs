@@ -61,6 +61,42 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Med.
+        /// </summary>
+        public static string Add_eng {
+            get {
+                return ResourceManager.GetString("Add_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adaugă medicament.
+        /// </summary>
+        public static string Add_ro {
+            get {
+                return ResourceManager.GetString("Add_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add picture.
+        /// </summary>
+        public static string AddPicture_eng {
+            get {
+                return ResourceManager.GetString("AddPicture_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adaugă poză.
+        /// </summary>
+        public static string AddPicture_ro {
+            get {
+                return ResourceManager.GetString("AddPicture_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Meds App.
         /// </summary>
         public static string AppName {
@@ -70,74 +106,128 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Base substance:.
+        /// </summary>
+        public static string BaseSubstance_eng {
+            get {
+                return ResourceManager.GetString("BaseSubstance_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Substanță de bază:.
+        /// </summary>
+        public static string BaseSubstance_ro {
+            get {
+                return ResourceManager.GetString("BaseSubstance_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base substance quantity:.
+        /// </summary>
+        public static string BaseSubstanceQuantity_eng {
+            get {
+                return ResourceManager.GetString("BaseSubstanceQuantity_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cantitate substanță de bază:.
+        /// </summary>
+        public static string BaseSubstanceQuantity_ro {
+            get {
+                return ResourceManager.GetString("BaseSubstanceQuantity_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Best before:.
+        /// </summary>
+        public static string BestBefore_eng {
+            get {
+                return ResourceManager.GetString("BestBefore_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data exipirării:.
+        /// </summary>
+        public static string BestBefore_ro {
+            get {
+                return ResourceManager.GetString("BestBefore_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete_eng {
+            get {
+                return ResourceManager.GetString("Delete_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Șterge.
+        /// </summary>
+        public static string Delete_ro {
+            get {
+                return ResourceManager.GetString("Delete_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description_eng {
+            get {
+                return ResourceManager.GetString("Description_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descriere.
+        /// </summary>
+        public static string Description_ro {
+            get {
+                return ResourceManager.GetString("Description_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
-        public static string Label_Details_eng {
+        public static string Details_eng {
             get {
-                return ResourceManager.GetString("Label_Details_eng", resourceCulture);
+                return ResourceManager.GetString("Details_eng", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Detalii.
         /// </summary>
-        public static string Label_Details_ro {
+        public static string Details_ro {
             get {
-                return ResourceManager.GetString("Label_Details_ro", resourceCulture);
+                return ResourceManager.GetString("Details_ro", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
-        public static string Label_Home_eng {
+        public static string Home_eng {
             get {
-                return ResourceManager.GetString("Label_Home_eng", resourceCulture);
+                return ResourceManager.GetString("Home_eng", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Acasă.
         /// </summary>
-        public static string Label_Home_ro {
+        public static string Home_ro {
             get {
-                return ResourceManager.GetString("Label_Home_ro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Out of date.
-        /// </summary>
-        public static string Label_OutOfDate_eng {
-            get {
-                return ResourceManager.GetString("Label_OutOfDate_eng", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Expirat.
-        /// </summary>
-        public static string Label_OutOfDate_ro {
-            get {
-                return ResourceManager.GetString("Label_OutOfDate_ro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Application for managing home medicines.
-        /// </summary>
-        public static string Label_Title_eng {
-            get {
-                return ResourceManager.GetString("Label_Title_eng", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Aplicație pentru gestionarea medicamentelor personale.
-        /// </summary>
-        public static string Label_Title_ro {
-            get {
-                return ResourceManager.GetString("Label_Title_ro", resourceCulture);
+                return ResourceManager.GetString("Home_ro", resourceCulture);
             }
         }
         
@@ -218,6 +308,150 @@ namespace Meds_App.Properties {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        public static string Name_eng {
+            get {
+                return ResourceManager.GetString("Name_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nume:.
+        /// </summary>
+        public static string Name_ro {
+            get {
+                return ResourceManager.GetString("Name_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Out of date.
+        /// </summary>
+        public static string OutOfDate_eng {
+            get {
+                return ResourceManager.GetString("OutOfDate_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expirat.
+        /// </summary>
+        public static string OutOfDate_ro {
+            get {
+                return ResourceManager.GetString("OutOfDate_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pieces:.
+        /// </summary>
+        public static string Pieces_eng {
+            get {
+                return ResourceManager.GetString("Pieces_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bucăți:.
+        /// </summary>
+        public static string Pieces_ro {
+            get {
+                return ResourceManager.GetString("Pieces_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save_eng {
+            get {
+                return ResourceManager.GetString("Save_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salvează.
+        /// </summary>
+        public static string Save_ro {
+            get {
+                return ResourceManager.GetString("Save_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string Search_eng {
+            get {
+                return ResourceManager.GetString("Search_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caută.
+        /// </summary>
+        public static string Search_ro {
+            get {
+                return ResourceManager.GetString("Search_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application for managing home medicines.
+        /// </summary>
+        public static string Title_eng {
+            get {
+                return ResourceManager.GetString("Title_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aplicație pentru gestionarea medicamentelor personale.
+        /// </summary>
+        public static string Title_ro {
+            get {
+                return ResourceManager.GetString("Title_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type:.
+        /// </summary>
+        public static string Type_eng {
+            get {
+                return ResourceManager.GetString("Type_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tip:.
+        /// </summary>
+        public static string Type_ro {
+            get {
+                return ResourceManager.GetString("Type_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string Update_eng {
+            get {
+                return ResourceManager.GetString("Update_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actualizează.
+        /// </summary>
+        public static string Update_ro {
+            get {
+                return ResourceManager.GetString("Update_ro", resourceCulture);
             }
         }
     }
