@@ -14,17 +14,10 @@ namespace Meds_App
 {
     public partial class MainForm : Form
     {
-        bool languageEng = true;
+        bool languageEng;
         public MainForm()
         {
             InitializeComponent();
-            Transition.run(this.panel_Top, "BackColor", Color.Salmon, new TransitionType_Deceleration(1000));
-            Transition transitionSlide = new Transition(new TransitionType_Linear(700));
-            transitionSlide.add(this.pictureBox_Logo, "Left", 7);
-            transitionSlide.add(this.label_Title, "Top", 0);
-            transitionSlide.run();
-            Transition.run(this.panelHome_In_Main, "Left", 0, new TransitionType_EaseInEaseOut(1000));
-                
         }
         
         private void Button_Exit_Click(object sender, EventArgs e)
@@ -147,20 +140,86 @@ namespace Meds_App
             form.button_Details.Text = Properties.Resources.Details_ro;
         }
 
-        private void button_Settings_Click(object sender, EventArgs e)
+        private void button_Language_Click(object sender, EventArgs e)
         {
+            changeLanguage(languageEng);
+            Utils.Utils.writeToFile(languageEng);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Transition.run(this.panel_Top, "BackColor", Color.Salmon, new TransitionType_Deceleration(1000));
+            Transition transitionSlide = new Transition(new TransitionType_Linear(700));
+            transitionSlide.add(this.pictureBox_Logo, "Left", 7);
+            transitionSlide.add(this.label_Title, "Top", 0);
+            transitionSlide.run();
+            Transition.run(this.panelHome_In_Main, "Left", 0, new TransitionType_EaseInEaseOut(1000));
+            languageEng = Utils.Utils.readFromFile();
+            setLanguage(languageEng);
             if (languageEng)
+            {
+                button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
+            }
+            else
+            {
+                button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
+            }
+        }
+
+        private void changeLanguage(bool value)
+        {
+            if (value)
             {
                 setLanguageRo(this);
                 languageEng = false;
                 panelHome_In_Main.setLanguageRo();
+                panelOutOfDate_In_Main.setLanguageRo();
+                button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
+                Utils.Utils.writeToFile(languageEng);
             }
             else
             {
                 setLanguageEng(this);
                 languageEng = true;
                 panelHome_In_Main.setLanguageEng();
+                panelOutOfDate_In_Main.setLanguageEng();
+                button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
+                Utils.Utils.writeToFile(languageEng);
             }
+        }
+
+        private void setLanguage(bool value)
+        {
+            if (value)
+            {
+                setLanguageEng(this);
+                panelHome_In_Main.setLanguageEng();
+                panelOutOfDate_In_Main.setLanguageEng();
+                button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
+                Utils.Utils.writeToFile(languageEng);
+                
+            }
+            else
+            {
+                setLanguageRo(this);
+                panelHome_In_Main.setLanguageRo();
+                panelOutOfDate_In_Main.setLanguageRo();
+                button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
+                Utils.Utils.writeToFile(languageEng);
+            }
+        }
+
+        //Add shadow on right-bottom
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+
         }
     }
 }

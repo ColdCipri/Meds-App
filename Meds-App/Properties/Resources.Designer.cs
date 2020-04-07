@@ -79,6 +79,24 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add a new med.
+        /// </summary>
+        public static string AddANewMed_eng {
+            get {
+                return ResourceManager.GetString("AddANewMed_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adaugă un medicament nou.
+        /// </summary>
+        public static string AddANewMed_ro {
+            get {
+                return ResourceManager.GetString("AddANewMed_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add picture.
         /// </summary>
         public static string AddPicture_eng {
@@ -178,7 +196,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Description.
+        ///   Looks up a localized string similar to Description:.
         /// </summary>
         public static string Description_eng {
             get {
@@ -187,7 +205,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Descriere.
+        ///   Looks up a localized string similar to Descriere:.
         /// </summary>
         public static string Description_ro {
             get {
@@ -210,6 +228,24 @@ namespace Meds_App.Properties {
         public static string Details_ro {
             get {
                 return ResourceManager.GetString("Details_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can search for a med by name, description or base substance!.
+        /// </summary>
+        public static string HelpSearch_eng {
+            get {
+                return ResourceManager.GetString("HelpSearch_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Puteți să căutați un medicament după nume, descriere sau substanța de bază!.
+        /// </summary>
+        public static string HelpSearch_ro {
+            get {
+                return ResourceManager.GetString("HelpSearch_ro", resourceCulture);
             }
         }
         
@@ -247,6 +283,26 @@ namespace Meds_App.Properties {
         public static System.Drawing.Bitmap LOGO_Exit {
             get {
                 object obj = ResourceManager.GetObject("LOGO_Exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_Flag_Ro {
+            get {
+                object obj = ResourceManager.GetObject("LOGO-Flag-Ro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Logo_Flag_Uk_Small {
+            get {
+                object obj = ResourceManager.GetObject("Logo_Flag_Uk_Small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

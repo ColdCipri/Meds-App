@@ -160,5 +160,37 @@ namespace Meds_App.UserControls.Home
                 pictureBox_Details.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
+
+        public void setLanguageRo()
+        {
+            label_Details_Title.Font = new Font("Microsoft Sans Serif", 22);
+            label_Details_Title.Text = Properties.Resources.Details_ro;
+            label_Details_Name.Text = Properties.Resources.Name_ro;
+            label_Details_Pieces.Text = Properties.Resources.Pieces_ro;
+            label_Details_Type.Text = Properties.Resources.Type_ro;
+            label_Details_BestBefore.Text = Properties.Resources.BestBefore_ro;
+            label_Details_BaseSubstance.Text = Properties.Resources.BaseSubstance_ro;
+            label_Details_BaseSubstanceQuantity.Text = Properties.Resources.BaseSubstanceQuantity_ro;
+            label_Details_Description.Text = Properties.Resources.Description_ro;
+            button_Details_AddPicture.Text = Properties.Resources.AddPicture_ro;
+            button_Details_Delete.Text = Properties.Resources.Delete_ro;
+            button_Details_Update.Text = Properties.Resources.Update_ro;
+        }
+
+        public void setLanguageEng()
+        {
+            label_Details_Title.Font = new Font("Microsoft Sans Serif", 22);
+            label_Details_Title.Text = Properties.Resources.Details_eng;
+            label_Details_Name.Text = Properties.Resources.Name_eng;
+            label_Details_Pieces.Text = Properties.Resources.Pieces_eng;
+            label_Details_Type.Text = Properties.Resources.Type_eng;
+            label_Details_BestBefore.Text = Properties.Resources.BestBefore_eng;
+            label_Details_BaseSubstance.Text = Properties.Resources.BaseSubstance_eng;
+            label_Details_BaseSubstanceQuantity.Text = Properties.Resources.BaseSubstanceQuantity_eng;
+            label_Details_Description.Text = Properties.Resources.Description_eng;
+            button_Details_AddPicture.Text = Properties.Resources.AddPicture_eng;
+            button_Details_Delete.Text = Properties.Resources.Delete_eng;
+            button_Details_Update.Text = Properties.Resources.Update_eng;
+        }
     }
 }

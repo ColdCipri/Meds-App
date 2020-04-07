@@ -98,5 +98,17 @@ namespace Meds_App.UserControls
             fillListBox(dateTimePicker_OutOfDate.Value);
             button_OutOfDate_details.Enabled = false;
         }
+
+        public void setLanguageRo()
+        {
+            this.button_OutOfDate_details.Text = Properties.Resources.Details_ro;
+            this.PanelDetailsMeds_In_OutOfDate.setLanguageRo();
+        }
+
+        public void setLanguageEng()
+        {
+            this.button_OutOfDate_details.Text = Properties.Resources.Details_eng;
+            this.PanelDetailsMeds_In_OutOfDate.setLanguageEng();
+        }
     }
 }

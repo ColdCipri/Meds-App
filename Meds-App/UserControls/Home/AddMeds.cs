@@ -129,5 +129,35 @@ namespace Meds_App
             dateTimePicker_Add_BestBefore.Value = DateTime.Now;
             pictureBox_Add.Image = null;
         }
+
+        public void setLanguageRo()
+        {
+            label_Add_Title.Font = new Font("Microsoft Sans Serif", 18);
+            label_Add_Title.Text = Properties.Resources.AddANewMed_ro;
+            label_Add_Name.Text = Properties.Resources.Name_ro;
+            label_Add_Pieces.Text = Properties.Resources.Pieces_ro;
+            label_Add_Type.Text = Properties.Resources.Type_ro;
+            label_Add_BestBefore.Text = Properties.Resources.BestBefore_ro;
+            label_Add_BaseSubstance.Text = Properties.Resources.BaseSubstance_ro;
+            label_Add_BaseSubstanceQuantity.Text = Properties.Resources.BaseSubstanceQuantity_ro;
+            label_Add_Description.Text = Properties.Resources.Description_ro;
+            button_Add_AddPicture.Text = Properties.Resources.AddPicture_ro;
+            button_Add_Save.Text = Properties.Resources.Save_ro;
+        }
+
+        public void setLanguageEng()
+        {
+            label_Add_Title.Font = new Font("Microsoft Sans Serif", 22);
+            label_Add_Title.Text = Properties.Resources.AddANewMed_eng;
+            label_Add_Name.Text = Properties.Resources.Name_eng;
+            label_Add_Pieces.Text = Properties.Resources.Pieces_eng;
+            label_Add_Type.Text = Properties.Resources.Type_eng;
+            label_Add_BestBefore.Text = Properties.Resources.BestBefore_eng;
+            label_Add_BaseSubstance.Text = Properties.Resources.BaseSubstance_eng;
+            label_Add_BaseSubstanceQuantity.Text = Properties.Resources.BaseSubstanceQuantity_eng;
+            label_Add_Description.Text = Properties.Resources.Description_eng;
+            button_Add_AddPicture.Text = Properties.Resources.AddPicture_eng;
+            button_Add_Save.Text = Properties.Resources.Save_eng;
+        }
     }
 }

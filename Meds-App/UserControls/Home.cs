@@ -15,7 +15,8 @@ namespace Meds_App
 {
     public partial class HomeGUI : UserControl
     {
-        bool languageEng = true;
+        string helpSearch = "test";
+        ToolTip toolTipForSearch = new ToolTip();
         List<Med> medsList = new List<Med>();
         Med medDetails = new Med();
         public HomeGUI()
@@ -94,8 +95,6 @@ namespace Meds_App
         public async void fillListBox()
         {
             medsList = await Http.GetMedsAsync(true);
-            listBox_Meds.Items.Clear();
-
             if (medsList.Count == 0)
             {
                 var result = MessageBox.Show("Meds cound not be retrived from server!", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
@@ -106,6 +105,8 @@ namespace Meds_App
             }
             else
             {
+                listBox_Meds.Items.Clear();
+                listBox_Meds.Enabled = true;
                 foreach (var med in medsList)
                 {
                     listBox_Meds.Items.Add($"{med.Name}");
@@ -117,7 +118,12 @@ namespace Meds_App
         {
             listBox_Meds.Items.Add("Loading...");
             button_Details.Enabled = false;
+            listBox_Meds.Enabled = false;
             fillListBox();
+            toolTipForSearch.SetToolTip(textBox_search, helpSearch);
+            toolTipForSearch.IsBalloon = true;
+            toolTipForSearch.ShowAlways = true;
+            toolTipForSearch.ToolTipIcon = ToolTipIcon.Info;
         }
 
         private void listBox_Meds_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,7 +151,9 @@ namespace Meds_App
             listBox_Meds.Items.Clear();
             foreach (var med in medsList)
             {
-                if (med.Name.ToLower().Contains(textBox_search.Text.ToLower()))
+                if (med.Name.ToLower().Contains(textBox_search.Text.ToLower()) || 
+                    med.Description.ToLower().Contains(textBox_search.Text.ToLower()) || 
+                    med.BaseSubstance.ToLower().Contains(textBox_search.Text.ToLower()))
                 {
                     listBox_Meds.Items.Add(med.Name);
                 }
@@ -158,6 +166,10 @@ namespace Meds_App
             button_Add_Home.Text = Properties.Resources.Add_ro;
             button_Details.Text = Properties.Resources.Details_ro;
             label_Search.Text = Properties.Resources.Search_ro;
+            helpSearch = Properties.Resources.HelpSearch_ro;
+            toolTipForSearch.SetToolTip(textBox_search, helpSearch);
+            PanelAddMeds_In_Home.setLanguageRo();
+            PanelDetails_In_Home.setLanguageRo();
         }
 
         public void setLanguageEng()
@@ -165,6 +177,10 @@ namespace Meds_App
             button_Add_Home.Text = Properties.Resources.Add_eng;
             button_Details.Text = Properties.Resources.Details_eng;
             label_Search.Text = Properties.Resources.Search_eng;
+            helpSearch = Properties.Resources.HelpSearch_eng;
+            toolTipForSearch.SetToolTip(textBox_search, helpSearch);
+            PanelAddMeds_In_Home.setLanguageEng();
+            PanelDetails_In_Home.setLanguageEng();
         }
     }
 }

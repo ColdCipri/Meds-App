@@ -94,6 +94,7 @@
     <Compile Include="UserControls\OutOfDate.Designer.cs">
       <DependentUpon>OutOfDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Utils.cs" />
     <EmbeddedResource Include="UserControls\Details.resx">
       <DependentUpon>Details.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +147,8 @@
     <None Include="Resources\LOGO-List.png" />
     <None Include="Resources\LOGO-Icon.ico" />
     <None Include="Resources\LOGO-Arrow.png" />
+    <None Include="Resources\LOGO-Flag-Ro.png" />
+    <None Include="Resources\Logo-Flag-Uk-Small.png" />
     <Content Include="Resources\LOGO-Med.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
