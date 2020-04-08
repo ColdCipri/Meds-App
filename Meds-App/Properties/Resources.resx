@@ -129,17 +129,21 @@
     <value>Adaugă medicament</value>
     <comment>Add button - Ro</comment>
   </data>
-  <data name="BaseSubstanceQuantity_ro" xml:space="preserve">
-    <value>Cantitate substanță de bază:</value>
-    <comment>Base substance quantity - Ro</comment>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GitHub-Mark-120px-plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GitHub-Mark-120px-plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BaseSubstanceQuantity_eng" xml:space="preserve">
+    <value>Base substance quantity:</value>
+    <comment>Base substance quantity - English</comment>
   </data>
   <data name="Pieces_ro" xml:space="preserve">
     <value>Bucăți:</value>
     <comment>Pieces - Ro</comment>
   </data>
-  <data name="Type_ro" xml:space="preserve">
-    <value>Tip:</value>
-    <comment>Type - Ro</comment>
+  <data name="Home_eng" xml:space="preserve">
+    <value>Home</value>
+    <comment>Home - English</comment>
   </data>
   <data name="Update_eng" xml:space="preserve">
     <value>Update</value>
@@ -149,6 +153,9 @@
     <value>Data exipirării:</value>
     <comment>Best before - Ro</comment>
   </data>
+  <data name="Logo_Flag_Uk_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo-Flag-Uk-Small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Search_eng" xml:space="preserve">
     <value>Search</value>
     <comment>Search - English</comment>
@@ -157,7 +164,6 @@
     <value>Pieces:</value>
     <comment>Pieces - English</comment>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LOGO-Arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,17 +181,13 @@
   <data name="LOGO-Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Name_ro" xml:space="preserve">
-    <value>Nume:</value>
-    <comment>Name - Ro</comment>
-  </data>
   <data name="Type_eng" xml:space="preserve">
     <value>Type:</value>
     <comment>Type - English</comment>
   </data>
-  <data name="Delete_eng" xml:space="preserve">
-    <value>Delete</value>
-    <comment>Delete button - English</comment>
+  <data name="HelpSearch_ro" xml:space="preserve">
+    <value>Puteți să căutați un medicament după nume, descriere sau substanța de bază!</value>
+    <comment>Help search - Ro</comment>
   </data>
   <data name="LOGO-Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,16 +198,12 @@
   <data name="LOGO-List" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-List.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddANewMed_eng" xml:space="preserve">
-    <value>Add a new med</value>
-    <comment>Add a new med - English</comment>
-  </data>
   <data name="LOGO-Med" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Med.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BaseSubstanceQuantity_eng" xml:space="preserve">
-    <value>Base substance quantity:</value>
-    <comment>Base substance quantity - English</comment>
+  <data name="Type_ro" xml:space="preserve">
+    <value>Tip:</value>
+    <comment>Type - Ro</comment>
   </data>
   <data name="BaseSubstance_ro" xml:space="preserve">
     <value>Substanță de bază:</value>
@@ -215,9 +213,9 @@
     <value>Base substance:</value>
     <comment>Base substance - English</comment>
   </data>
-  <data name="Title_ro" xml:space="preserve">
-    <value>Aplicație pentru gestionarea medicamentelor personale</value>
-    <comment>Title - Ro</comment>
+  <data name="AddANewMed_eng" xml:space="preserve">
+    <value>Add a new med</value>
+    <comment>Add a new med - English</comment>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Meds App</value>
@@ -235,24 +233,31 @@
     <value>Adaugă un medicament nou</value>
     <comment>Add a new med - Ro</comment>
   </data>
-  <data name="Search_ro" xml:space="preserve">
-    <value>Caută</value>
-    <comment>Search - Ro</comment>
+  <data name="Title_ro" xml:space="preserve">
+    <value>Aplicație pentru gestionarea medicamentelor personale</value>
+    <comment>Title - Ro</comment>
   </data>
-  <data name="OutOfDate_ro" xml:space="preserve">
-    <value>Expirat</value>
-    <comment>Out Of Date - Ro</comment>
+  <data name="Name_ro" xml:space="preserve">
+    <value>Nume:</value>
+    <comment>Name - Ro</comment>
+  </data>
+  <data name="LOGO-Flag-Ro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO-Flag-Ro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HelpSearch_eng" xml:space="preserve">
+    <value>You can search for a med by name, description or base substance!</value>
+    <comment>Help search - English</comment>
   </data>
   <data name="LOGO-OutOfDate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-OutOfDate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddPicture_eng" xml:space="preserve">
-    <value>Add picture</value>
-    <comment>Add picture - English</comment>
+  <data name="BaseSubstanceQuantity_ro" xml:space="preserve">
+    <value>Cantitate substanță de bază:</value>
+    <comment>Base substance quantity - Ro</comment>
   </data>
-  <data name="Home_eng" xml:space="preserve">
-    <value>Home</value>
-    <comment>Home - English</comment>
+  <data name="Search_ro" xml:space="preserve">
+    <value>Caută</value>
+    <comment>Search - Ro</comment>
   </data>
   <data name="Save_eng" xml:space="preserve">
     <value>Save</value>
@@ -270,9 +275,17 @@
     <value>Application for managing home medicines</value>
     <comment>Title - English</comment>
   </data>
+  <data name="OutOfDate_ro" xml:space="preserve">
+    <value>Expirat</value>
+    <comment>Out Of Date - Ro</comment>
+  </data>
   <data name="Description_eng" xml:space="preserve">
     <value>Description:</value>
     <comment>Description - English</comment>
+  </data>
+  <data name="AddPicture_eng" xml:space="preserve">
+    <value>Add picture</value>
+    <comment>Add picture - English</comment>
   </data>
   <data name="Home_ro" xml:space="preserve">
     <value>Acasă</value>
@@ -282,6 +295,10 @@
     <value>Out of date</value>
     <comment>Out Of Date - English</comment>
   </data>
+  <data name="Delete_eng" xml:space="preserve">
+    <value>Delete</value>
+    <comment>Delete button - English</comment>
+  </data>
   <data name="Details_eng" xml:space="preserve">
     <value>Details</value>
     <comment>Details - English</comment>
@@ -290,18 +307,209 @@
     <value>Șterge</value>
     <comment>Delete button - Ro</comment>
   </data>
-  <data name="LOGO-Flag-Ro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO-Flag-Ro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GitHub-Mark-64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GitHub-Mark-64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo_Flag_Uk_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo-Flag-Uk-Small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HelpSearchTitle_eng" xml:space="preserve">
+    <value>Searching for something?</value>
+    <comment>Help Search Title - English</comment>
   </data>
-  <data name="HelpSearch_eng" xml:space="preserve">
-    <value>You can search for a med by name, description or base substance!</value>
-    <comment>Help search - English</comment>
+  <data name="HelpSearchTitle_ro" xml:space="preserve">
+    <value>Căutați ceva?</value>
+    <comment>Help Search Title - Ro</comment>
   </data>
-  <data name="HelpSearch_ro" xml:space="preserve">
-    <value>Puteți să căutați un medicament după nume, descriere sau substanța de bază!</value>
-    <comment>Help search - Ro</comment>
+  <data name="CopyrightFlag" xml:space="preserve">
+    <value>© PNGGuru</value>
+    <comment>Copyright Flag</comment>
+  </data>
+  <data name="CopyrightGithub" xml:space="preserve">
+    <value>© Github</value>
+    <comment>Copyright Github</comment>
+  </data>
+  <data name="CopyrightHome" xml:space="preserve">
+    <value>© Timothy Miller Free icon</value>
+    <comment>Copyright Home</comment>
+  </data>
+  <data name="Copyright_eng" xml:space="preserve">
+    <value>Copyright</value>
+    <comment>Copyright - English</comment>
+  </data>
+  <data name="Copyright_ro" xml:space="preserve">
+    <value>Drepturi de autor</value>
+    <comment>Copyright - Ro</comment>
+  </data>
+  <data name="SourceCodeApp_eng" xml:space="preserve">
+    <value>Source code for the application is available on github.</value>
+    <comment>Source Code - English</comment>
+  </data>
+  <data name="SourceCodeApp_ro" xml:space="preserve">
+    <value>Codul sursă al aplicației este disponibil pe github.</value>
+    <comment>Source Code - Ro</comment>
+  </data>
+  <data name="SourceCodeServer_eng" xml:space="preserve">
+    <value>Source code for the server is available on github.</value>
+    <comment>Source Code - English</comment>
+  </data>
+  <data name="SourceCodeServer_ro" xml:space="preserve">
+    <value>Codul sursă al serverului este disponibil pe github.</value>
+    <comment>Source Code - Ro</comment>
+  </data>
+  <data name="ErrorBaseSubstQ1_eng" xml:space="preserve">
+    <value>There must be a positive number of base substance quantity!</value>
+  </data>
+  <data name="ErrorBaseSubstQ1_ro" xml:space="preserve">
+    <value>Cantitatea substanței de bază trebuie să fie un număr pozitiv!</value>
+  </data>
+  <data name="ErrorBaseSubstQ2_eng" xml:space="preserve">
+    <value>No base substance quanitity measure selected!</value>
+  </data>
+  <data name="ErrorBaseSubstQ2_ro" xml:space="preserve">
+    <value>Nu ați selectat gramajul substanței be bază!</value>
+  </data>
+  <data name="ErrorBaseSubst_eng" xml:space="preserve">
+    <value>Invalid base substance!</value>
+  </data>
+  <data name="ErrorBaseSubst_ro" xml:space="preserve">
+    <value>Substanță de bază invalidă!</value>
+  </data>
+  <data name="ErrorDescription_eng" xml:space="preserve">
+    <value>Invalid description!</value>
+  </data>
+  <data name="ErrorDescription_ro" xml:space="preserve">
+    <value>Descriere invalidă!</value>
+  </data>
+  <data name="ErrorName_eng" xml:space="preserve">
+    <value>Invalid name!</value>
+  </data>
+  <data name="ErrorName_ro" xml:space="preserve">
+    <value>Nume invalid!</value>
+  </data>
+  <data name="ErrorPieces_eng" xml:space="preserve">
+    <value>There must be a positive number of pieces!</value>
+  </data>
+  <data name="ErrorPieces_ro" xml:space="preserve">
+    <value>Cantitatea medicamentului trebuie să fie un număr pozitiv!</value>
+  </data>
+  <data name="ErrorRetrieve_eng" xml:space="preserve">
+    <value>Meds cound not be retrived from server</value>
+  </data>
+  <data name="ErrorRetrieve_ro" xml:space="preserve">
+    <value>Medicamentele nu au putut fi preluate de pe server</value>
+  </data>
+  <data name="ErrorType_eng" xml:space="preserve">
+    <value>No type selected!</value>
+  </data>
+  <data name="ErrorType_ro" xml:space="preserve">
+    <value>Nu ați selectat un tip!</value>
+  </data>
+  <data name="Error_eng" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error_ro" xml:space="preserve">
+    <value>Eroare</value>
+  </data>
+  <data name="FailedToAdd_eng" xml:space="preserve">
+    <value>failed to add! Please try again!</value>
+  </data>
+  <data name="FailedToAdd_ro" xml:space="preserve">
+    <value>nu a fost adăugat! Vă rog să mai încercați!</value>
+  </data>
+  <data name="ImageFiles_eng" xml:space="preserve">
+    <value>Image files(*.jpg;*.png)|*.jpg;*.png|All files(*.*)|*.*</value>
+  </data>
+  <data name="ImageFiles_ro" xml:space="preserve">
+    <value>Fișiere imagine(*.jpg;*.png)|*.jpg;*.png|Toate fișierele(*.*)|*.*</value>
+  </data>
+  <data name="MedAdded_eng" xml:space="preserve">
+    <value>Med added</value>
+  </data>
+  <data name="MedAdded_ro" xml:space="preserve">
+    <value>Medicament adaugat</value>
+  </data>
+  <data name="OutOfDateDetails_eng" xml:space="preserve">
+    <value>This medicine is out of date from </value>
+    <comment>Out Of Date details - English</comment>
+  </data>
+  <data name="OutOfDateDetails_ro" xml:space="preserve">
+    <value>Acest medicament a expirat în </value>
+    <comment>Out Of Date details - Ro</comment>
+  </data>
+  <data name="SuccessfullyAdded_eng" xml:space="preserve">
+    <value>successfully added!</value>
+  </data>
+  <data name="SuccessfullyAdded_ro" xml:space="preserve">
+    <value>adăugat cu succes!</value>
+  </data>
+  <data name="SuccessfullyDeleted_eng" xml:space="preserve">
+    <value>Successfully deleted</value>
+  </data>
+  <data name="SuccessfullyDeleted_ro" xml:space="preserve">
+    <value>Am șters cu succes</value>
+  </data>
+  <data name="SuccessfullyUpdated_eng" xml:space="preserve">
+    <value>Successfully updated</value>
+  </data>
+  <data name="SuccessfullyUpdated_ro" xml:space="preserve">
+    <value>Am actualizat cu succes</value>
+  </data>
+  <data name="Success_eng" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="Success_ro" xml:space="preserve">
+    <value>Succes</value>
+  </data>
+  <data name="Warning_eng" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Warning_ro" xml:space="preserve">
+    <value>Atentie</value>
+  </data>
+  <data name="TypeCream_eng" xml:space="preserve">
+    <value>Cream</value>
+  </data>
+  <data name="TypeCream_ro" xml:space="preserve">
+    <value>Cremă</value>
+  </data>
+  <data name="TypeDrops_eng" xml:space="preserve">
+    <value>Drops</value>
+  </data>
+  <data name="TypeDrops_ro" xml:space="preserve">
+    <value>Picături</value>
+  </data>
+  <data name="TypeEffervescent_eng" xml:space="preserve">
+    <value>Effervescent</value>
+  </data>
+  <data name="TypeEffervescent_ro" xml:space="preserve">
+    <value>Efervescent</value>
+  </data>
+  <data name="TypeGel" xml:space="preserve">
+    <value>Gel</value>
+  </data>
+  <data name="TypePill_eng" xml:space="preserve">
+    <value>Pill</value>
+  </data>
+  <data name="TypePill_ro" xml:space="preserve">
+    <value>Pastilă</value>
+  </data>
+  <data name="TypeSpray" xml:space="preserve">
+    <value>Spray</value>
+  </data>
+  <data name="TypeSuppository_eng" xml:space="preserve">
+    <value>Suppository</value>
+  </data>
+  <data name="TypeSuppository_ro" xml:space="preserve">
+    <value>Supozitor</value>
+  </data>
+  <data name="TypeSyrup_eng" xml:space="preserve">
+    <value>Syrup</value>
+  </data>
+  <data name="TypeSyrup_ro" xml:space="preserve">
+    <value>Sirop</value>
+  </data>
+  <data name="TypeTea_eng" xml:space="preserve">
+    <value>Tea</value>
+  </data>
+  <data name="TypeTea_ro" xml:space="preserve">
+    <value>Ceai</value>
   </data>
 </root>

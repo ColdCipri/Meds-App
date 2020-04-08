@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Transitions;
 using Meds_App.Model;
-using Meds_App.UserControls.Home;
+using System.Threading;
 
 namespace Meds_App
 {
     public partial class HomeGUI : UserControl
     {
-        string helpSearch = "test";
+        private string helpSearch, outofdatedetails, warning, error_retrieve, error;
         ToolTip toolTipForSearch = new ToolTip();
         List<Med> medsList = new List<Med>();
         Med medDetails = new Med();
@@ -46,7 +41,7 @@ namespace Meds_App
         }
 
 
-        private void button_Back_Click(object sender, EventArgs e)
+        public void button_Back_Click(object sender, EventArgs e)
         {
             if (PanelAddMeds_In_Home.Location.X == 0)
             {
@@ -97,7 +92,7 @@ namespace Meds_App
             medsList = await Http.GetMedsAsync(true);
             if (medsList.Count == 0)
             {
-                var result = MessageBox.Show("Meds cound not be retrived from server!", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                var result = MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 while (result == DialogResult.Retry)
                 {
                     fillListBox();
@@ -119,6 +114,8 @@ namespace Meds_App
             listBox_Meds.Items.Add("Loading...");
             button_Details.Enabled = false;
             listBox_Meds.Enabled = false;
+            System.Diagnostics.Process.Start(@"C:\Users\Cipri\source\repos\Meds-App\Meds-App\Resources\openServer.bat");
+            Thread.Sleep(4000);
             fillListBox();
             toolTipForSearch.SetToolTip(textBox_search, helpSearch);
             toolTipForSearch.IsBalloon = true;
@@ -133,6 +130,10 @@ namespace Meds_App
             {
                 button_Details.Enabled = true;
                 medDetails = medsList[selectedItem];
+                if (DateTime.Compare(medDetails.BestBefore, DateTime.Now) <= 0)
+                {
+                    MessageBox.Show($"{outofdatedetails} {medDetails.BestBefore}!", warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 refreshDetails(medDetails);
             }
             else
@@ -168,6 +169,11 @@ namespace Meds_App
             label_Search.Text = Properties.Resources.Search_ro;
             helpSearch = Properties.Resources.HelpSearch_ro;
             toolTipForSearch.SetToolTip(textBox_search, helpSearch);
+            toolTipForSearch.ToolTipTitle = Properties.Resources.HelpSearchTitle_ro;
+            outofdatedetails = Properties.Resources.OutOfDateDetails_ro;
+            warning = "Atentie!";
+            error = Properties.Resources.Error_ro;
+            error_retrieve = Properties.Resources.ErrorRetrieve_ro;
             PanelAddMeds_In_Home.setLanguageRo();
             PanelDetails_In_Home.setLanguageRo();
         }
@@ -179,6 +185,11 @@ namespace Meds_App
             label_Search.Text = Properties.Resources.Search_eng;
             helpSearch = Properties.Resources.HelpSearch_eng;
             toolTipForSearch.SetToolTip(textBox_search, helpSearch);
+            toolTipForSearch.ToolTipTitle = Properties.Resources.HelpSearchTitle_eng;
+            outofdatedetails = Properties.Resources.OutOfDateDetails_eng;
+            warning = "Warning!";
+            error = Properties.Resources.Error_eng;
+            error_retrieve = Properties.Resources.ErrorRetrieve_eng;
             PanelAddMeds_In_Home.setLanguageEng();
             PanelDetails_In_Home.setLanguageEng();
         }

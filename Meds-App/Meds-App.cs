@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Transitions;
-using Meds_App.Model;
 
 namespace Meds_App
 {
@@ -54,6 +47,8 @@ namespace Meds_App
             button_Home.BackColor = Color.OldLace;
             button_OutOfDate.BackColor = Color.Moccasin;
             button_Details.BackColor = Color.Moccasin;
+
+            panelHome_In_Main.fillListBox();
         }
         
         private void Button_OutOfDate_Click(object sender, EventArgs e)
@@ -174,6 +169,7 @@ namespace Meds_App
                 languageEng = false;
                 panelHome_In_Main.setLanguageRo();
                 panelOutOfDate_In_Main.setLanguageRo();
+                panelDetails_In_Main.setLanguageRo();
                 button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
                 Utils.Utils.writeToFile(languageEng);
             }
@@ -183,6 +179,7 @@ namespace Meds_App
                 languageEng = true;
                 panelHome_In_Main.setLanguageEng();
                 panelOutOfDate_In_Main.setLanguageEng();
+                panelDetails_In_Main.setLanguageEng();
                 button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
                 Utils.Utils.writeToFile(languageEng);
             }
@@ -195,6 +192,7 @@ namespace Meds_App
                 setLanguageEng(this);
                 panelHome_In_Main.setLanguageEng();
                 panelOutOfDate_In_Main.setLanguageEng();
+                panelDetails_In_Main.setLanguageEng();
                 button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
                 Utils.Utils.writeToFile(languageEng);
                 
@@ -204,6 +202,7 @@ namespace Meds_App
                 setLanguageRo(this);
                 panelHome_In_Main.setLanguageRo();
                 panelOutOfDate_In_Main.setLanguageRo();
+                panelDetails_In_Main.setLanguageRo();
                 button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
                 Utils.Utils.writeToFile(languageEng);
             }
