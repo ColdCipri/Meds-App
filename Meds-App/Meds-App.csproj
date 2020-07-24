@@ -138,6 +138,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Logo-Theme-White_small.png" />
+    <None Include="Resources\Logo-Theme-Dark_small.png" />
+    <None Include="Resources\LOGO-Refresh.png" />
     <None Include="Resources\LOGO-OutOfDate.png" />
     <None Include="Resources\LOGO-Settings.png" />
     <None Include="Resources\LOGO-Exit.bmp" />

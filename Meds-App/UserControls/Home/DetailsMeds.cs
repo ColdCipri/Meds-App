@@ -12,9 +12,9 @@ namespace Meds_App.UserControls.Home
         private string error, error_name, error_pieces, error_type,
             error_basesubst, error_basesubstq1, error_basesubstq2,
             error_description, successfully_updated, successfully_deleted,
-            imgFile, success, imgLocation;
+            imgFile, success, imgLocation = "";
         private List<string> typeList =
-            new List<string> { "Pill", "Cream", "Tea", "Spray", "Syrup", 
+            new List<string> { "Pill", "Cream", "Tea", "Spray", "Syrup",
                 "Suppository", "Drops", "Gel", "Effervescent" };
         Med med = new Med();
 
@@ -145,24 +145,25 @@ namespace Meds_App.UserControls.Home
                 updatedMed.BaseSubstance = textBox_Details_BaseSubstance.Text;
                 updatedMed.BaseSubstanceQuantity = $"{numericUpDown_Details_BaseSubstanceQuantity.Value} {comboBox_Details_BaseSubstanceQuantity.SelectedItem}";
                 updatedMed.Description = textBox_Details_Description.Text;
-            }
 
-            if (imgLocation.Equals(""))
-            {
-                updatedMed.Picture = med.Picture;
-            }
-            else
-            {
-                byte[] image = null;
-                FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                BinaryReader binaryReader = new BinaryReader(stream);
-                image = binaryReader.ReadBytes((int)(stream.Length));
 
-                updatedMed.Picture = image;
+                if (imgLocation.Equals(""))
+                {
+                    updatedMed.Picture = med.Picture;
+                }
+                else
+                {
+                    byte[] image = null;
+                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader binaryReader = new BinaryReader(stream);
+                    image = binaryReader.ReadBytes((int)(stream.Length));
 
+                    updatedMed.Picture = image;
+
+                }
+                MessageBox.Show($"{successfully_updated} {updatedMed.Name}!", success, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Http.PutMedAsync(updatedMed, med.Id);
             }
-            MessageBox.Show($"{successfully_updated} {updatedMed.Name}!", success, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Http.PutMedAsync(updatedMed, med.Id);
         }
 
         private void button_Details_Delete_Click(object sender, EventArgs e)

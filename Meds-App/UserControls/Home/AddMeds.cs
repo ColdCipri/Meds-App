@@ -14,7 +14,7 @@ namespace Meds_App
 {
     public partial class AddMeds : UserControl
     {
-        private string imgLocation, imgFile, error, error_name,
+        private string imgLocation = "", imgFile, error, error_name,
             error_pieces, error_type, error_basesubst, error_basesubstq1,
             error_basesubstq2, error_description, successfully_added,
             med_added, failed_to_add;

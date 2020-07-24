@@ -641,9 +641,39 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap LOGO_Refresh {
+            get {
+                object obj = ResourceManager.GetObject("LOGO-Refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LOGO_Settings {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Logo_Theme_Dark_small {
+            get {
+                object obj = ResourceManager.GetObject("Logo-Theme-Dark_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Logo_Theme_White_small {
+            get {
+                object obj = ResourceManager.GetObject("Logo-Theme-White_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -699,6 +729,24 @@ namespace Meds_App.Properties {
         public static string OutOfDate_ro {
             get {
                 return ResourceManager.GetString("OutOfDate_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  medicines are out of date! Do you want to see them?.
+        /// </summary>
+        public static string OutOfDateCount_eng {
+            get {
+                return ResourceManager.GetString("OutOfDateCount_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  medicamente expirate! Doriți să vedeți care sunt acestea?.
+        /// </summary>
+        public static string OutOfDateCount_ro {
+            get {
+                return ResourceManager.GetString("OutOfDateCount_ro", resourceCulture);
             }
         }
         
