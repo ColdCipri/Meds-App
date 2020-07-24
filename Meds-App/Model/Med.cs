@@ -67,7 +67,7 @@ namespace Meds_App.Model
         static string path = "http://localhost:5050/Meds";
         static string pathSorted = path + "/sorted";
         static string pathOutOfDate = path + "/date";
-        static string pathOutOfDateSorted = path + "/date/sorted";
+        static string pathOutOfDateSorted = path + "/sortedDate";
 
         public static async Task<bool> PostMedAsync(Med med)
         {
@@ -84,6 +84,8 @@ namespace Meds_App.Model
                 Console.WriteLine($"Med with name {med.Name} added on server!");
                 return true;
             }
+
+            Console.WriteLine($"Med with name {med.Name} failed to add on server!");
             return false;
         }
 
@@ -149,6 +151,7 @@ namespace Meds_App.Model
             }
         }
 
+        //TODO When open app call this function and count how many meds are out of date. Show messagebox
         public static async Task<List<Med>> GetOutOfDateMedsAsync(bool sorted)
         {
             HttpClient client = new HttpClient();
@@ -196,8 +199,15 @@ namespace Meds_App.Model
 
             HttpResponseMessage response = await client.PutAsJsonAsync($"Meds/{id}", med);
             response.EnsureSuccessStatusCode();
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"Med with name {med.Name} updated on server!");
+            }
+            else
+            {
 
-            Console.WriteLine($"Med with name {med.Name} updated on server!");
+                Console.WriteLine($"Med with name {med.Name} failed to update on server!");
+            }
         }
 
         public static async void DeleteMedAsync(int id)
@@ -210,8 +220,15 @@ namespace Meds_App.Model
 
             HttpResponseMessage response = await client.DeleteAsync(
                 $"Meds/{id}");
+            if (response.IsSuccessStatusCode)
+            {
 
-            Console.WriteLine($"Med with id {id} deleted on server!");
+                Console.WriteLine($"Med with id {id} deleted from server!");
+            }
+            else
+            {
+                Console.WriteLine($"Med with id {id} failed to delete from server!");
+            }
         }
     }
 }

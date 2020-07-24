@@ -5,12 +5,13 @@ using System.Windows.Forms;
 using Transitions;
 using Meds_App.Model;
 using System.Threading;
+using System.Diagnostics;
 
 namespace Meds_App
 {
     public partial class HomeGUI : UserControl
     {
-        private string helpSearch, outofdatedetails, warning, error_retrieve, error;
+        private string helpSearch, outofdatedetails, warning, error_retrieve, error, outofdatemeds;
         ToolTip toolTipForSearch = new ToolTip();
         List<Med> medsList = new List<Med>();
         Med medDetails = new Med();
@@ -66,6 +67,7 @@ namespace Meds_App
                 changePannel.run();
             }
             this.button_Add_Home.Enabled = true;
+            this.textBox_search.Text = "";
             fillListBox();
         }
 
@@ -114,13 +116,35 @@ namespace Meds_App
             listBox_Meds.Items.Add("Loading...");
             button_Details.Enabled = false;
             listBox_Meds.Enabled = false;
-            System.Diagnostics.Process.Start(@"C:\Users\Cipri\source\repos\Meds-App\Meds-App\Resources\openServer.bat");
-            Thread.Sleep(4000);
+            try
+            {
+                Process process = Process.GetProcessesByName("Meds-Server")[0]; 
+
+            } catch (Exception)
+            {
+                Process.Start(@"C:\Users\Cipri\source\repos\Meds-App\Meds-App\Resources\openServer.bat");
+                Thread.Sleep(5000);
+            }
+
+            showOutOfDateMedicinesCount();
             fillListBox();
             toolTipForSearch.SetToolTip(textBox_search, helpSearch);
             toolTipForSearch.IsBalloon = true;
             toolTipForSearch.ShowAlways = true;
             toolTipForSearch.ToolTipIcon = ToolTipIcon.Info;
+        }
+
+        public async void showOutOfDateMedicinesCount()
+        {
+            List<Med> outOfDateMeds = await Http.GetOutOfDateMedsAsync(true);
+            if (outOfDateMeds.Count == 0)
+            {
+                MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show(outOfDateMeds.Count + outofdatemeds, warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void listBox_Meds_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,16 +174,22 @@ namespace Meds_App
         private void textBox_search_TextChanged(object sender, EventArgs e)
         {
             listBox_Meds.Items.Clear();
+            List<Med> medsListSearch = new List<Med>();
             foreach (var med in medsList)
             {
-                if (med.Name.ToLower().Contains(textBox_search.Text.ToLower()) || 
-                    med.Description.ToLower().Contains(textBox_search.Text.ToLower()) || 
+                if (med.Name.ToLower().Contains(textBox_search.Text.ToLower()) ||
+                    med.Description.ToLower().Contains(textBox_search.Text.ToLower()) ||
                     med.BaseSubstance.ToLower().Contains(textBox_search.Text.ToLower()))
                 {
+                    medsListSearch.Add(med);
                     listBox_Meds.Items.Add(med.Name);
                 }
             }
-
+            medsList = medsListSearch;
+            if (textBox_search.Text.Length == 0)
+            {
+                fillListBox();
+            }
         }
 
         public void setLanguageRo()
@@ -171,6 +201,7 @@ namespace Meds_App
             toolTipForSearch.SetToolTip(textBox_search, helpSearch);
             toolTipForSearch.ToolTipTitle = Properties.Resources.HelpSearchTitle_ro;
             outofdatedetails = Properties.Resources.OutOfDateDetails_ro;
+            outofdatemeds = Properties.Resources.OutOfDateCount_ro;
             warning = "Atentie!";
             error = Properties.Resources.Error_ro;
             error_retrieve = Properties.Resources.ErrorRetrieve_ro;
@@ -187,6 +218,7 @@ namespace Meds_App
             toolTipForSearch.SetToolTip(textBox_search, helpSearch);
             toolTipForSearch.ToolTipTitle = Properties.Resources.HelpSearchTitle_eng;
             outofdatedetails = Properties.Resources.OutOfDateDetails_eng;
+            outofdatemeds = Properties.Resources.OutOfDateCount_eng;
             warning = "Warning!";
             error = Properties.Resources.Error_eng;
             error_retrieve = Properties.Resources.ErrorRetrieve_eng;

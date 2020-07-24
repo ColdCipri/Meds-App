@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Transitions;
@@ -7,7 +8,7 @@ namespace Meds_App
 {
     public partial class MainForm : Form
     {
-        bool languageEng;
+        bool languageEng, theme;
         public MainForm()
         {
             InitializeComponent();
@@ -15,6 +16,11 @@ namespace Meds_App
         
         private void Button_Exit_Click(object sender, EventArgs e)
         {
+            Process process = Process.GetProcessesByName("Meds-Server")[0];
+            if (process != null)
+            {
+                process.Kill();
+            }
             this.Close();
         }
 
@@ -138,18 +144,27 @@ namespace Meds_App
         private void button_Language_Click(object sender, EventArgs e)
         {
             changeLanguage(languageEng);
-            Utils.Utils.writeToFile(languageEng);
+            Utils.Utils.writeToFileLanguage(languageEng);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Transition.run(this.panel_Top, "BackColor", Color.Salmon, new TransitionType_Deceleration(1000));
             Transition transitionSlide = new Transition(new TransitionType_Linear(700));
             transitionSlide.add(this.pictureBox_Logo, "Left", 7);
             transitionSlide.add(this.label_Title, "Top", 0);
             transitionSlide.run();
             Transition.run(this.panelHome_In_Main, "Left", 0, new TransitionType_EaseInEaseOut(1000));
-            languageEng = Utils.Utils.readFromFile();
+            languageEng = Utils.Utils.readFromFileLanguage();
+
+           /* //LEFT HERE TO MODIFY
+            Tuple<bool,int> changeScreen = this.panelHome_In_Main.checkChangeScreen();
+
+            var result = MessageBox.Show(changeScreen.Item2 + outofdatemeds, warning, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                Button_OutOfDate_Click(sender, e);
+            }*/
+
             setLanguage(languageEng);
             if (languageEng)
             {
@@ -171,7 +186,7 @@ namespace Meds_App
                 panelOutOfDate_In_Main.setLanguageRo();
                 panelDetails_In_Main.setLanguageRo();
                 button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
-                Utils.Utils.writeToFile(languageEng);
+                Utils.Utils.writeToFileLanguage(languageEng);
             }
             else
             {
@@ -181,7 +196,7 @@ namespace Meds_App
                 panelOutOfDate_In_Main.setLanguageEng();
                 panelDetails_In_Main.setLanguageEng();
                 button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
-                Utils.Utils.writeToFile(languageEng);
+                Utils.Utils.writeToFileLanguage(languageEng);
             }
         }
 
@@ -194,7 +209,7 @@ namespace Meds_App
                 panelOutOfDate_In_Main.setLanguageEng();
                 panelDetails_In_Main.setLanguageEng();
                 button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
-                Utils.Utils.writeToFile(languageEng);
+                Utils.Utils.writeToFileLanguage(languageEng);
                 
             }
             else
@@ -204,7 +219,7 @@ namespace Meds_App
                 panelOutOfDate_In_Main.setLanguageRo();
                 panelDetails_In_Main.setLanguageRo();
                 button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
-                Utils.Utils.writeToFile(languageEng);
+                Utils.Utils.writeToFileLanguage(languageEng);
             }
         }
 
@@ -219,6 +234,32 @@ namespace Meds_App
                 return cp;
             }
 
+        }
+
+        private void button_Refresh_Click(object sender, EventArgs e)
+        {
+            if (button_Home.BackColor.Equals(Color.OldLace))
+                panelHome_In_Main.fillListBox();
+            else if (button_OutOfDate.BackColor.Equals(Color.OldLace))
+                panelOutOfDate_In_Main.fillListBox(DateTime.Now);
+        }
+
+        private void button_Theme_Click(object sender, EventArgs e)
+        {
+            changeTheme(theme);
+            Utils.Utils.writeToFileTheme(theme);
+        }
+
+        private void changeTheme(bool theme)
+        {
+            if (button_Theme.Image == Properties.Resources.Logo_Theme_Dark_small)
+            {
+                button_Theme.Image = Properties.Resources.Logo_Theme_White_small;
+            }
+            else
+            {
+                button_Theme.Image = Properties.Resources.Logo_Theme_Dark_small;
+            }
         }
     }
 }

@@ -35,8 +35,9 @@
             this.button_Home = new System.Windows.Forms.Button();
             this.pictureBox_Logo = new System.Windows.Forms.PictureBox();
             this.panel_Top = new System.Windows.Forms.Panel();
+            this.button_Theme = new System.Windows.Forms.Button();
             this.label_Title = new System.Windows.Forms.Label();
-            this.button_Help = new System.Windows.Forms.Button();
+            this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Language = new System.Windows.Forms.Button();
             this.button_Exit = new System.Windows.Forms.Button();
             this.panel_Main = new System.Windows.Forms.Panel();
@@ -135,8 +136,9 @@
             // panel_Top
             // 
             this.panel_Top.BackColor = System.Drawing.Color.Salmon;
+            this.panel_Top.Controls.Add(this.button_Refresh);
+            this.panel_Top.Controls.Add(this.button_Theme);
             this.panel_Top.Controls.Add(this.label_Title);
-            this.panel_Top.Controls.Add(this.button_Help);
             this.panel_Top.Controls.Add(this.button_Language);
             this.panel_Top.Controls.Add(this.button_Exit);
             this.panel_Top.Dock = System.Windows.Forms.DockStyle.Top;
@@ -144,6 +146,24 @@
             this.panel_Top.Name = "panel_Top";
             this.panel_Top.Size = new System.Drawing.Size(758, 39);
             this.panel_Top.TabIndex = 1;
+            // 
+            // button_Theme
+            // 
+            this.button_Theme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_Theme.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Theme.FlatAppearance.BorderColor = System.Drawing.Color.Salmon;
+            this.button_Theme.FlatAppearance.BorderSize = 0;
+            this.button_Theme.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.button_Theme.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LavenderBlush;
+            this.button_Theme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Theme.ForeColor = System.Drawing.Color.Salmon;
+            this.button_Theme.Image = global::Meds_App.Properties.Resources.Logo_Theme_Dark_small;
+            this.button_Theme.Location = new System.Drawing.Point(607, 0);
+            this.button_Theme.Name = "button_Theme";
+            this.button_Theme.Size = new System.Drawing.Size(42, 39);
+            this.button_Theme.TabIndex = 5;
+            this.button_Theme.UseVisualStyleBackColor = true;
+            this.button_Theme.Click += new System.EventHandler(this.button_Theme_Click);
             // 
             // label_Title
             // 
@@ -154,22 +174,23 @@
             this.label_Title.TabIndex = 4;
             this.label_Title.Text = "Application for managing home medicines";
             // 
-            // button_Help
+            // button_Refresh
             // 
-            this.button_Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button_Help.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Help.FlatAppearance.BorderColor = System.Drawing.Color.Salmon;
-            this.button_Help.FlatAppearance.BorderSize = 0;
-            this.button_Help.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.button_Help.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LavenderBlush;
-            this.button_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Help.ForeColor = System.Drawing.Color.Salmon;
-            this.button_Help.Image = global::Meds_App.Properties.Resources.LOGO_Help;
-            this.button_Help.Location = new System.Drawing.Point(607, 0);
-            this.button_Help.Name = "button_Help";
-            this.button_Help.Size = new System.Drawing.Size(42, 39);
-            this.button_Help.TabIndex = 3;
-            this.button_Help.UseVisualStyleBackColor = true;
+            this.button_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_Refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.Salmon;
+            this.button_Refresh.FlatAppearance.BorderSize = 0;
+            this.button_Refresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.button_Refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LavenderBlush;
+            this.button_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Refresh.ForeColor = System.Drawing.Color.Salmon;
+            this.button_Refresh.Image = global::Meds_App.Properties.Resources.LOGO_Refresh;
+            this.button_Refresh.Location = new System.Drawing.Point(559, 0);
+            this.button_Refresh.Name = "button_Refresh";
+            this.button_Refresh.Size = new System.Drawing.Size(42, 39);
+            this.button_Refresh.TabIndex = 3;
+            this.button_Refresh.UseVisualStyleBackColor = true;
+            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
             // button_Language
             // 
@@ -221,9 +242,9 @@
             // 
             // panelDetails_In_Main
             // 
-            this.panelDetails_In_Main.Location = new System.Drawing.Point(0, 577);
+            this.panelDetails_In_Main.Location = new System.Drawing.Point(1000, 0);
             this.panelDetails_In_Main.Name = "panelDetails_In_Main";
-            this.panelDetails_In_Main.Size = new System.Drawing.Size(758, 486);
+            this.panelDetails_In_Main.Size = new System.Drawing.Size(758, 376);
             this.panelDetails_In_Main.TabIndex = 2;
             // 
             // panelOutOfDate_In_Main
@@ -271,7 +292,7 @@
         private System.Windows.Forms.Panel panel_Top;
         private System.Windows.Forms.Button button_Exit;
         private System.Windows.Forms.Button button_Language;
-        private System.Windows.Forms.Button button_Help;
+        private System.Windows.Forms.Button button_Refresh;
         private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.Button button_Details;
         private System.Windows.Forms.Button button_OutOfDate;
@@ -280,6 +301,7 @@
         private HomeGUI panelHome_In_Main;
         private UserControls.OutOfDate panelOutOfDate_In_Main;
         private UserControls.Details panelDetails_In_Main;
+        private System.Windows.Forms.Button button_Theme;
     }
 }
 
