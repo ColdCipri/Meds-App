@@ -13,16 +13,47 @@ namespace Meds_App
         {
             InitializeComponent();
         }
-        
-        private void Button_Exit_Click(object sender, EventArgs e)
+
+
+        //-------------------------------------------MAIN COMPONENTS--------------------------------------------
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            Process process = Process.GetProcessesByName("Meds-Server")[0];
-            if (process != null)
+            Transition transitionSlide = new Transition(new TransitionType_Linear(700));
+            transitionSlide.add(this.pictureBox_Logo, "Left", 7);
+            transitionSlide.add(this.label_Title, "Top", 0);
+            transitionSlide.run();
+            Transition.run(this.panelHome_In_Main, "Left", 0, new TransitionType_EaseInEaseOut(1000));
+            languageEng = Utils.Utils.readFromFileLanguage();
+            theme = Utils.Utils.readFromFileTheme();
+
+            setLanguage(languageEng);
+            if (languageEng)
             {
-                process.Kill();
+                button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
             }
-            this.Close();
+            else
+            {
+                button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
+            }
+
+            setTheme(theme);
         }
+
+        //Add shadow on right-bottom
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+
+        }
+
+        //-------------------------------------------BUTTONS LEFT--------------------------------------------
 
         private void Button_Home_Click(object sender, EventArgs e)
         {
@@ -119,61 +150,147 @@ namespace Meds_App
             button_Details.BackColor = Color.OldLace;
         }
 
-        public static void setLanguageEng(MainForm form)
+        //-------------------------------------------BUTTONS TOP--------------------------------------------
+
+        //-------------------------------------------BUTTONS TOP - REFRESH---------------------------------
+
+        private void button_Refresh_Click(object sender, EventArgs e)
         {
-            form.label_Title.Font = new Font("Script MT Bold", 20, FontStyle.Bold);
-            form.label_Title.Location = new Point(0, 0);
-            form.label_Title.Text = Properties.Resources.Title_eng;
-            form.button_Home.Text = Properties.Resources.Home_eng;
-            form.button_OutOfDate.Text = Properties.Resources.OutOfDate_eng;
-            form.button_OutOfDate.Font = new Font("Franklin Gothic Medium Cond", 16);
-            form.button_Details.Text = Properties.Resources.Details_eng;
+            if (button_Home.BackColor.Equals(Color.OldLace))
+                panelHome_In_Main.fillListBox();
+            else if (button_OutOfDate.BackColor.Equals(Color.OldLace))
+                panelOutOfDate_In_Main.fillListBox(DateTime.Now);
         }
 
-        public static void setLanguageRo(MainForm form)
+
+        //-------------------------------------------BUTTONS TOP - THEME---------------------------------
+
+        private void button_Theme_Click(object sender, EventArgs e)
         {
-            form.label_Title.Font = new Font("Script MT Bold", 18, FontStyle.Bold);
-            form.label_Title.Location = new Point(0, 2);
-            form.label_Title.Text = Properties.Resources.Title_ro;
-            form.button_Home.Text = Properties.Resources.Home_ro;
-            form.button_OutOfDate.Text = Properties.Resources.OutOfDate_ro;
-            form.button_OutOfDate.Font = new Font("Franklin Gothic Medium Cond", 20);
-            form.button_Details.Text = Properties.Resources.Details_ro;
+            if (theme)
+            {
+                setThemeDark(); //change theme to dark
+                theme = false;
+                button_Theme.Image = Properties.Resources.Logo_Theme_White_small;
+                Utils.Utils.writeToFileTheme(theme);
+            }
+            else
+            {
+                setThemeWhite(); //change theme to white
+                theme = true;
+                button_Theme.Image = Properties.Resources.Logo_Theme_Dark_small;
+                Utils.Utils.writeToFileTheme(theme);
+            }
         }
+
+        private void setTheme(bool theme)
+        {
+            if (theme) //theme true = white
+            {
+                setThemeWhite();
+            }
+            else //theme false = dark
+            {
+                setThemeDark();
+            }
+            Utils.Utils.writeToFileTheme(theme);
+        }
+
+        private void setThemeDark()
+        {
+            // TOP + TOP-BUTTONS
+
+            button_Theme.Image = Properties.Resources.Logo_Theme_White_small;
+            button_Refresh.Image = Properties.Resources.LOGO_Refresh_White;
+            button_Exit.Image = Properties.Resources.LOGO_Exit_White;
+
+            panel_Top.BackColor =
+                button_Refresh.ForeColor = button_Theme.ForeColor = button_Language.ForeColor = button_Exit.ForeColor = //ForeColor for buttons
+                button_Refresh.BackColor = button_Theme.BackColor = button_Language.BackColor = button_Exit.BackColor = //BackColor for buttons
+                button_Refresh.FlatAppearance.BorderColor = button_Theme.FlatAppearance.BorderColor = 
+                button_Language.FlatAppearance.BorderColor = button_Exit.FlatAppearance.BorderColor = //BorderColor for buttons
+                Color.MidnightBlue;
+
+            button_Refresh.FlatAppearance.MouseDownBackColor = button_Theme.FlatAppearance.MouseDownBackColor =
+                button_Language.FlatAppearance.MouseDownBackColor = button_Exit.FlatAppearance.MouseDownBackColor =
+                Color.Gainsboro; //Color when button is pressed
+
+            button_Refresh.FlatAppearance.MouseOverBackColor = button_Theme.FlatAppearance.MouseOverBackColor =
+                button_Language.FlatAppearance.MouseOverBackColor = button_Exit.FlatAppearance.MouseOverBackColor =
+                Color.Gainsboro; //Color when button is released
+
+            label_Title.ForeColor = Color.White;
+
+            // LEFT + LEFT-BUTTONS
+
+            panel_Left.BackColor = Color.Moccasin;
+            if (button_Home.BackColor == Color.OldLace) //equivalent in dark mode.
+            {
+                button_Home.BackColor = Color.OldLace;
+                button_OutOfDate.BackColor = button_Details.BackColor = Color.Moccasin;
+            }
+            else if (button_OutOfDate.BackColor == Color.OldLace)
+            {
+                button_OutOfDate.BackColor = Color.OldLace;
+                button_Home.BackColor = button_Details.BackColor = Color.Moccasin;
+            }
+            else
+            {
+                button_Details.BackColor = Color.OldLace;
+                button_Home.BackColor = button_OutOfDate.BackColor = Color.Moccasin;
+            }
+
+        }
+
+        private void setThemeWhite()
+        {
+            // TOP + TOP-BUTTONS
+
+            button_Theme.Image = Properties.Resources.Logo_Theme_Dark_small;
+            button_Refresh.Image = Properties.Resources.LOGO_Refresh;
+            button_Exit.Image = Properties.Resources.LOGO_Exit;
+
+            panel_Top.BackColor = 
+                button_Refresh.ForeColor = button_Theme.ForeColor = button_Language.ForeColor = button_Exit.ForeColor = //ForeColor for buttons
+                button_Refresh.BackColor = button_Theme.BackColor = button_Language.BackColor = button_Exit.BackColor = //BackColor for buttons
+                button_Refresh.FlatAppearance.BorderColor = button_Theme.FlatAppearance.BorderColor = button_Language.FlatAppearance.BorderColor = button_Exit.FlatAppearance.BorderColor = //BorderColor for buttons
+                Color.Salmon;
+
+            button_Refresh.FlatAppearance.MouseDownBackColor = button_Theme.FlatAppearance.MouseDownBackColor = 
+                button_Language.FlatAppearance.MouseDownBackColor = button_Exit.FlatAppearance.MouseDownBackColor =
+                Color.Gainsboro; //Color when button is pressed
+
+            button_Refresh.FlatAppearance.MouseOverBackColor = button_Theme.FlatAppearance.MouseOverBackColor =
+                button_Language.FlatAppearance.MouseOverBackColor = button_Exit.FlatAppearance.MouseOverBackColor =
+                Color.Gainsboro; //Color when button is released
+
+            label_Title.ForeColor = Color.Black;
+
+            // LEFT + LEFT-BUTTONS
+            panel_Left.BackColor = Color.Moccasin;
+            if (button_Home.BackColor == Color.OldLace) //equivalent in dark mode.
+            {
+                button_Home.BackColor = Color.OldLace;
+                button_OutOfDate.BackColor = button_Details.BackColor = Color.Moccasin;
+            } 
+            else if (button_OutOfDate.BackColor == Color.OldLace)
+            {
+                button_OutOfDate.BackColor = Color.OldLace;
+                button_Home.BackColor = button_Details.BackColor = Color.Moccasin;
+            }
+            else
+            {
+                button_Details.BackColor = Color.OldLace;
+                button_Home.BackColor = button_OutOfDate.BackColor = Color.Moccasin;
+            }
+
+        }
+
+        //-------------------------------------------BUTTONS TOP - LANGUAGE---------------------------------
 
         private void button_Language_Click(object sender, EventArgs e)
         {
             changeLanguage(languageEng);
-            Utils.Utils.writeToFileLanguage(languageEng);
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            Transition transitionSlide = new Transition(new TransitionType_Linear(700));
-            transitionSlide.add(this.pictureBox_Logo, "Left", 7);
-            transitionSlide.add(this.label_Title, "Top", 0);
-            transitionSlide.run();
-            Transition.run(this.panelHome_In_Main, "Left", 0, new TransitionType_EaseInEaseOut(1000));
-            languageEng = Utils.Utils.readFromFileLanguage();
-
-           /* //LEFT HERE TO MODIFY
-            Tuple<bool,int> changeScreen = this.panelHome_In_Main.checkChangeScreen();
-
-            var result = MessageBox.Show(changeScreen.Item2 + outofdatemeds, warning, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                Button_OutOfDate_Click(sender, e);
-            }*/
-
-            setLanguage(languageEng);
-            if (languageEng)
-            {
-                button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
-            }
-            else
-            {
-                button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
-            }
         }
 
         private void changeLanguage(bool value)
@@ -210,7 +327,7 @@ namespace Meds_App
                 panelDetails_In_Main.setLanguageEng();
                 button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
                 Utils.Utils.writeToFileLanguage(languageEng);
-                
+
             }
             else
             {
@@ -223,43 +340,46 @@ namespace Meds_App
             }
         }
 
-        //Add shadow on right-bottom
-        protected override CreateParams CreateParams
+        public static void setLanguageEng(MainForm form)
         {
-            get
+            form.label_Title.Font = new Font("Script MT Bold", 20, FontStyle.Bold);
+            form.label_Title.Location = new Point(0, 0);
+            form.label_Title.Text = Properties.Resources.Title_eng;
+            form.button_Home.Text = Properties.Resources.Home_eng;
+            form.button_OutOfDate.Text = Properties.Resources.OutOfDate_eng;
+            form.button_OutOfDate.Font = new Font("Franklin Gothic Medium Cond", 16);
+            form.button_Details.Text = Properties.Resources.Details_eng;
+        }
+
+        public static void setLanguageRo(MainForm form)
+        {
+            form.label_Title.Font = new Font("Script MT Bold", 18, FontStyle.Bold);
+            form.label_Title.Location = new Point(0, 2);
+            form.label_Title.Text = Properties.Resources.Title_ro;
+            form.button_Home.Text = Properties.Resources.Home_ro;
+            form.button_OutOfDate.Text = Properties.Resources.OutOfDate_ro;
+            form.button_OutOfDate.Font = new Font("Franklin Gothic Medium Cond", 20);
+            form.button_Details.Text = Properties.Resources.Details_ro;
+        }
+
+        //-------------------------------------------BUTTONS TOP - EXIT---------------------------------
+
+        private void Button_Exit_Click(object sender, EventArgs e)
+        {
+            try
             {
-                const int CS_DROPSHADOW = 0x20000;
-                CreateParams cp = base.CreateParams;
-                cp.ClassStyle |= CS_DROPSHADOW;
-                return cp;
+                Process process = Process.GetProcessesByName("Meds-Server")[0];
+                if (process != null)
+                {
+                    //process.Kill();
+                }
+                this.Close();
             }
-
-        }
-
-        private void button_Refresh_Click(object sender, EventArgs e)
-        {
-            if (button_Home.BackColor.Equals(Color.OldLace))
-                panelHome_In_Main.fillListBox();
-            else if (button_OutOfDate.BackColor.Equals(Color.OldLace))
-                panelOutOfDate_In_Main.fillListBox(DateTime.Now);
-        }
-
-        private void button_Theme_Click(object sender, EventArgs e)
-        {
-            changeTheme(theme);
-            Utils.Utils.writeToFileTheme(theme);
-        }
-
-        private void changeTheme(bool theme)
-        {
-            if (button_Theme.Image == Properties.Resources.Logo_Theme_Dark_small)
+            catch
             {
-                button_Theme.Image = Properties.Resources.Logo_Theme_White_small;
-            }
-            else
-            {
-                button_Theme.Image = Properties.Resources.Logo_Theme_Dark_small;
+                this.Close();
             }
         }
+
     }
 }

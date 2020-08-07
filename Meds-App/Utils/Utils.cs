@@ -9,12 +9,13 @@ namespace Meds_App.Utils
 {
     public static class Utils
     {
-        public static string pathLanguage = @"C:\Users\Cipri\source\repos\Meds-App\Meds-App\Resources\language.txt";
-        public static string pathTheme = @"C:\Users\Cipri\source\repos\Meds-App\Meds-App\Resources\theme.txt";
+        public static string pathLanguage = @"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\language.txt";
+        public static string pathTheme = @"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\theme.txt";
         public static void writeToFileLanguage(bool value)
         {
             //value.true = English
             //value.false = Ro
+            Console.WriteLine("Language = " + value.ToString());
             try
             {
                 using (FileStream file = File.Create(pathLanguage))
@@ -59,6 +60,7 @@ namespace Meds_App.Utils
         {
             //value.true = White
             //value.false = Dark
+            Console.WriteLine("Theme = " + value.ToString());
             try
             {
                 using (FileStream file = File.Create(pathTheme))

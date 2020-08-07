@@ -35,9 +35,9 @@
             this.button_Home = new System.Windows.Forms.Button();
             this.pictureBox_Logo = new System.Windows.Forms.PictureBox();
             this.panel_Top = new System.Windows.Forms.Panel();
+            this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Theme = new System.Windows.Forms.Button();
             this.label_Title = new System.Windows.Forms.Label();
-            this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Language = new System.Windows.Forms.Button();
             this.button_Exit = new System.Windows.Forms.Button();
             this.panel_Main = new System.Windows.Forms.Panel();
@@ -135,7 +135,7 @@
             // 
             // panel_Top
             // 
-            this.panel_Top.BackColor = System.Drawing.Color.Salmon;
+            this.panel_Top.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel_Top.Controls.Add(this.button_Refresh);
             this.panel_Top.Controls.Add(this.button_Theme);
             this.panel_Top.Controls.Add(this.label_Title);
@@ -146,6 +146,24 @@
             this.panel_Top.Name = "panel_Top";
             this.panel_Top.Size = new System.Drawing.Size(758, 39);
             this.panel_Top.TabIndex = 1;
+            // 
+            // button_Refresh
+            // 
+            this.button_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_Refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.Salmon;
+            this.button_Refresh.FlatAppearance.BorderSize = 0;
+            this.button_Refresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.button_Refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LavenderBlush;
+            this.button_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Refresh.ForeColor = System.Drawing.Color.Salmon;
+            this.button_Refresh.Image = global::Meds_App.Properties.Resources.LOGO_Refresh;
+            this.button_Refresh.Location = new System.Drawing.Point(559, 0);
+            this.button_Refresh.Name = "button_Refresh";
+            this.button_Refresh.Size = new System.Drawing.Size(42, 39);
+            this.button_Refresh.TabIndex = 3;
+            this.button_Refresh.UseVisualStyleBackColor = true;
+            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
             // button_Theme
             // 
@@ -173,24 +191,6 @@
             this.label_Title.Size = new System.Drawing.Size(578, 41);
             this.label_Title.TabIndex = 4;
             this.label_Title.Text = "Application for managing home medicines";
-            // 
-            // button_Refresh
-            // 
-            this.button_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button_Refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Refresh.FlatAppearance.BorderColor = System.Drawing.Color.Salmon;
-            this.button_Refresh.FlatAppearance.BorderSize = 0;
-            this.button_Refresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.button_Refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LavenderBlush;
-            this.button_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Refresh.ForeColor = System.Drawing.Color.Salmon;
-            this.button_Refresh.Image = global::Meds_App.Properties.Resources.LOGO_Refresh;
-            this.button_Refresh.Location = new System.Drawing.Point(559, 0);
-            this.button_Refresh.Name = "button_Refresh";
-            this.button_Refresh.Size = new System.Drawing.Size(42, 39);
-            this.button_Refresh.TabIndex = 3;
-            this.button_Refresh.UseVisualStyleBackColor = true;
-            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
             // button_Language
             // 

@@ -118,16 +118,17 @@ namespace Meds_App
             listBox_Meds.Enabled = false;
             try
             {
-                Process process = Process.GetProcessesByName("Meds-Server")[0]; 
+                Process process = Process.GetProcessesByName("Meds-Server")[0];
 
-            } catch (Exception)
+            }
+            catch (Exception)
             {
-                Process.Start(@"C:\Users\Cipri\source\repos\Meds-App\Meds-App\Resources\openServer.bat");
+                Process.Start(@"C:\Users\colde\source\repos\ColdCipri\Meds-Server\Meds-Server\openServer.bat");
                 Thread.Sleep(5000);
             }
 
-            showOutOfDateMedicinesCount();
             fillListBox();
+            showOutOfDateMedicinesCount();
             toolTipForSearch.SetToolTip(textBox_search, helpSearch);
             toolTipForSearch.IsBalloon = true;
             toolTipForSearch.ShowAlways = true;
@@ -137,13 +138,17 @@ namespace Meds_App
         public async void showOutOfDateMedicinesCount()
         {
             List<Med> outOfDateMeds = await Http.GetOutOfDateMedsAsync(true);
-            if (outOfDateMeds.Count == 0)
+            if (medsList.Count != 0)
             {
-                MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (outOfDateMeds.Count != 0)
+                {
+                    MessageBox.Show(outOfDateMeds.Count + outofdatemeds, warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
             else
             {
-                MessageBox.Show(outOfDateMeds.Count + outofdatemeds, warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
         }
 

@@ -138,6 +138,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\LOGO-Refresh_White.png" />
     <None Include="Resources\Logo-Theme-White_small.png" />
     <None Include="Resources\Logo-Theme-Dark_small.png" />
     <None Include="Resources\LOGO-Refresh.png" />
@@ -154,6 +155,7 @@
     <None Include="Resources\Logo-Flag-Uk-Small.png" />
     <None Include="Resources\GitHub-Mark-120px-plus.png" />
     <None Include="Resources\GitHub-Mark-64px.png" />
+    <None Include="Resources\LOGO-Exit_White.png" />
     <Content Include="Resources\LOGO-Med.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
