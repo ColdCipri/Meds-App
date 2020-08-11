@@ -11,7 +11,7 @@ namespace Meds_App.Utils
     {
         public static string pathLanguage = @"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\language.txt";
         public static string pathTheme = @"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\theme.txt";
-        public static void writeToFileLanguage(bool value)
+        public static void Write_To_File_Language(bool value)
         {
             //value.true = English
             //value.false = Ro
@@ -30,7 +30,7 @@ namespace Meds_App.Utils
             }
         }
 
-        public static bool readFromFileLanguage()
+        public static bool Read_From_File_Language()
         {
             //value.true = English
             //value.false = Ro
@@ -56,7 +56,7 @@ namespace Meds_App.Utils
             }
         }
 
-        public static void writeToFileTheme(bool value)
+        public static void Write_To_File_Theme(bool value)
         {
             //value.true = White
             //value.false = Dark
@@ -75,7 +75,7 @@ namespace Meds_App.Utils
             }
         }
 
-        public static bool readFromFileTheme()
+        public static bool Read_From_File_Theme()
         {
             //value.true = White
             //value.false = Dark

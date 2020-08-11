@@ -99,13 +99,13 @@ namespace Meds_App.UserControls
             button_OutOfDate_details.Enabled = false;
         }
 
-        public void setLanguageRo()
+        public void Set_Language_Ro()
         {
             this.button_OutOfDate_details.Text = Properties.Resources.Details_ro;
             this.PanelDetailsMeds_In_OutOfDate.setLanguageRo();
         }
 
-        public void setLanguageEng()
+        public void Set_Language_Eng()
         {
             this.button_OutOfDate_details.Text = Properties.Resources.Details_eng;
             this.PanelDetailsMeds_In_OutOfDate.setLanguageEng();

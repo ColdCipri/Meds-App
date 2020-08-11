@@ -197,7 +197,7 @@ namespace Meds_App
             }
         }
 
-        public void setLanguageRo()
+        public void Set_Language_Ro()
         {
             button_Add_Home.Text = Properties.Resources.Add_ro;
             button_Details.Text = Properties.Resources.Details_ro;
@@ -214,7 +214,7 @@ namespace Meds_App
             PanelDetails_In_Home.setLanguageRo();
         }
 
-        public void setLanguageEng()
+        public void Set_Language_Eng()
         {
             button_Add_Home.Text = Properties.Resources.Add_eng;
             button_Details.Text = Properties.Resources.Details_eng;

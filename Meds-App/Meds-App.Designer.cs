@@ -163,7 +163,7 @@
             this.button_Refresh.Size = new System.Drawing.Size(42, 39);
             this.button_Refresh.TabIndex = 3;
             this.button_Refresh.UseVisualStyleBackColor = true;
-            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
+            this.button_Refresh.Click += new System.EventHandler(this.Button_Refresh_Click);
             // 
             // button_Theme
             // 
@@ -181,7 +181,7 @@
             this.button_Theme.Size = new System.Drawing.Size(42, 39);
             this.button_Theme.TabIndex = 5;
             this.button_Theme.UseVisualStyleBackColor = true;
-            this.button_Theme.Click += new System.EventHandler(this.button_Theme_Click);
+            this.button_Theme.Click += new System.EventHandler(this.Button_Theme_Click);
             // 
             // label_Title
             // 
@@ -208,7 +208,7 @@
             this.button_Language.Size = new System.Drawing.Size(46, 39);
             this.button_Language.TabIndex = 2;
             this.button_Language.UseVisualStyleBackColor = true;
-            this.button_Language.Click += new System.EventHandler(this.button_Language_Click);
+            this.button_Language.Click += new System.EventHandler(this.Button_Language_Click);
             // 
             // button_Exit
             // 
