@@ -621,9 +621,29 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap LOGO_Home_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Home_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LOGO_List {
             get {
                 object obj = ResourceManager.GetObject("LOGO-List", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_List_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_List_White", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -641,9 +661,39 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap LOGO_Med_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Med_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_Med_white2 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Med_white2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LOGO_OutOfDate {
             get {
                 object obj = ResourceManager.GetObject("LOGO-OutOfDate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_OutOfDate_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_OutOfDate_White", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

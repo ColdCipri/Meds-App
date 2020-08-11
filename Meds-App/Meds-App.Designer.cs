@@ -52,7 +52,7 @@
             // 
             // panel_Left
             // 
-            this.panel_Left.BackColor = System.Drawing.Color.Moccasin;
+            this.panel_Left.BackColor = System.Drawing.Color.Black;
             this.panel_Left.Controls.Add(this.button_Details);
             this.panel_Left.Controls.Add(this.button_OutOfDate);
             this.panel_Left.Controls.Add(this.button_Home);
