@@ -1,16 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Meds_App.Utils
 {
     public static class Utils
     {
-        public static string pathLanguage = @"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\language.txt";
-        public static string pathTheme = @"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\theme.txt";
+        public static readonly Color ColorBackground = Color.FromArgb(0, 0, 18);
+        public static readonly Color ColorButton = Color.FromArgb(40, 40, 50);
+        public static readonly Color ColorMouseDownButtonLight = Color.FromArgb(255, 192, 128);
+        public static readonly Color ColorMouseOverButtonLight = Color.FromArgb(255, 192, 192);
+        public static readonly Color ColorMouseOverButtonDark = Color.FromArgb(50, 50, 50);
+        public static readonly Color ColorMouseDownButtonDark = Color.FromArgb(50, 50, 80);
+        public static readonly Color ColorButtonCRUD = Color.FromArgb(0, 15, 30);
+
+        //colors for black theme
+        public static readonly Color ColorTopBlack = Color.FromArgb(4, 16, 86);
+        public static readonly Color ColorLeftBlack = Color.FromArgb(24, 24, 24);
+
+        private const string pathLanguage = @"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\language.txt";
+        private const string pathTheme = @"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\theme.txt";
         public static void Write_To_File_Language(bool value)
         {
             //value.true = English

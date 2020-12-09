@@ -52,7 +52,7 @@
             // 
             // panel_Left
             // 
-            this.panel_Left.BackColor = System.Drawing.Color.Black;
+            this.panel_Left.BackColor = System.Drawing.Color.Moccasin;
             this.panel_Left.Controls.Add(this.button_Details);
             this.panel_Left.Controls.Add(this.button_OutOfDate);
             this.panel_Left.Controls.Add(this.button_Home);
@@ -135,7 +135,7 @@
             // 
             // panel_Top
             // 
-            this.panel_Top.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel_Top.BackColor = System.Drawing.Color.Salmon;
             this.panel_Top.Controls.Add(this.button_Refresh);
             this.panel_Top.Controls.Add(this.button_Theme);
             this.panel_Top.Controls.Add(this.label_Title);
@@ -278,6 +278,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meds App";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.panel_Left.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).EndInit();
             this.panel_Top.ResumeLayout(false);

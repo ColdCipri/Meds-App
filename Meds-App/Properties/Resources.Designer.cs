@@ -561,6 +561,16 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap LOGO_Arrow_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Arrow_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LOGO_Exit {
             get {
                 object obj = ResourceManager.GetObject("LOGO_Exit", resourceCulture);
@@ -781,6 +791,19 @@ namespace Meds_App.Properties {
         public static string Name_ro {
             get {
                 return ResourceManager.GetString("Name_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to echo off
+        ///cls
+        ///echo Server will open soon...
+        ///cd &quot;C:\Users\colde\source\repos\ColdCipri\Meds-Server\Meds-Server&quot;
+        ///dotnet run --urls http://*:5050.
+        /// </summary>
+        public static string openServer {
+            get {
+                return ResourceManager.GetString("openServer", resourceCulture);
             }
         }
         

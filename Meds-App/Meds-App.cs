@@ -3,17 +3,13 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Transitions;
+using static Meds_App.Utils.Utils;
 
 namespace Meds_App
 {
     public partial class MainForm : Form
     {
-        //bools for language and theme.
-        bool languageEng, theme;
-
-        //colors for black theme
-        private static Color ColorTopBlack = Color.FromArgb(4, 16, 86);
-        private static Color ColorLeftBlack = Color.FromArgb(24, 24, 24);
+        bool languageEng, theme;    //booleans for language and theme.
 
         public MainForm()
         {
@@ -36,8 +32,8 @@ namespace Meds_App
             Transition.run(this.panelHome_In_Main, "Left", 0, new TransitionType_EaseInEaseOut(1000));
 
 
-            languageEng = Utils.Utils.Read_From_File_Language();
-            theme = Utils.Utils.Read_From_File_Theme();
+            languageEng = Read_From_File_Language();
+            theme = Read_From_File_Theme();
 
             Set_Language(languageEng);
             Set_Theme(theme);
@@ -54,6 +50,27 @@ namespace Meds_App
                 return cp;
             }
 
+        }
+
+        //Generated method
+        //
+        //This method is called after the Load method from the panelHome_In_Main
+        //If the app does not connect to server then this method will show an error
+        //Otherwise it will call the Show_OutOfDate_Medicines_Count method
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            if (panelHome_In_Main.medsList.Count == 0)
+            {
+                var result = MessageBox.Show(panelHome_In_Main.error_retrieve, panelHome_In_Main.error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (result == DialogResult.Retry)
+                {
+                    panelHome_In_Main.Fill_ListBox();
+                }
+            }
+            else
+            {
+                panelHome_In_Main.Show_OutOfDate_Medicines_Count();
+            }
         }
 
 
@@ -118,6 +135,9 @@ namespace Meds_App
         //-------------------------------------------BUTTONS LEFT--------------------------------------------
 
 
+        //-------------------------------------------BUTTONS LEFT - HOME BUTTON------------------------------
+
+
         //Generated method
         //
         //When the Button_Home button is clicked, it will show a slide animation from the active panel to the Home panel.
@@ -153,8 +173,12 @@ namespace Meds_App
             }
 
             Change_Selected_Button(button_Home);
-            panelHome_In_Main.fillListBox();
+            panelHome_In_Main.Fill_ListBox();
         }
+
+
+        //-------------------------------------------BUTTONS LEFT - OUTOFDATE BUTTON-------------------------
+
 
         //Generated method
         //
@@ -191,6 +215,10 @@ namespace Meds_App
             Change_Selected_Button(button_OutOfDate);
             panelOutOfDate_In_Main.fillListBox(DateTime.Now);
         }
+
+
+        //-------------------------------------------BUTTONS LEFT - DETAILS BUTTON---------------------------
+
 
         //Generated method
         //
@@ -242,7 +270,7 @@ namespace Meds_App
         private void Button_Refresh_Click(object sender, EventArgs e)
         {
             if (Check_Active_Button(button_Home))
-                panelHome_In_Main.fillListBox();
+                panelHome_In_Main.Fill_ListBox();
             else if (Check_Active_Button(button_OutOfDate))
                 panelOutOfDate_In_Main.fillListBox(DateTime.Now);
         }
@@ -259,16 +287,15 @@ namespace Meds_App
         {
             if (theme)
             {
-                Set_Theme_Dark();   //Change theme to dark
-                theme = false;      //Change value to false (dark)
-                Utils.Utils.Write_To_File_Theme(theme); 
+                Set_Theme_Dark();                   //Change theme to dark to current form
+                theme = false;                      //Change value to false (dark)
             }
             else
             {
-                Set_Theme_Light();  //Change theme to light
-                theme = true;       //Change value to true (light)
-                Utils.Utils.Write_To_File_Theme(theme);
+                Set_Theme_Light();                  //Change theme to light to current form
+                theme = true;                       //Change value to true (light)
             }
+            Write_To_File_Theme(theme);
         }
 
 
@@ -343,7 +370,7 @@ namespace Meds_App
                 button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
             }
 
-            Utils.Utils.Write_To_File_Language(languageEng);
+            Write_To_File_Language(languageEng);
         }
 
         //Input: a MainForm 
@@ -401,7 +428,7 @@ namespace Meds_App
                 button_Home.BackColor = Color.Black;    //Button color
                 button_Home.ForeColor = Color.DarkGray; //Text color
             }
-            Utils.Utils.Write_To_File_Theme(theme);
+            Write_To_File_Theme(theme);
         }
 
         //Input: -
@@ -410,6 +437,9 @@ namespace Meds_App
         //This method changes the buttons and other objects from the main form to Dark mode.
         private void Set_Theme_Dark()
         {
+
+            panelHome_In_Main.Set_Theme_Dark(); //Change theme to dark to Home panel
+
             // TOP + TOP-BUTTONS
 
             button_Theme.Image = Properties.Resources.Logo_Theme_White_small;   //
@@ -468,6 +498,7 @@ namespace Meds_App
                 button_Home.BackColor = button_OutOfDate.BackColor = ColorLeftBlack;        //Sets the color of the rest of the left side buttons to RGB value ColorLeftBlack
             }
 
+            panel_Main.BackColor = Color.Black;     //Sets the color of the main panel to Black
         }
 
         //Input: -
@@ -476,6 +507,9 @@ namespace Meds_App
         //This method changes the buttons and other objects from the main form to Light mode.
         private void Set_Theme_Light()
         {
+
+            panelHome_In_Main.Set_Theme_Light();//Change theme to light to Home panel
+
             // TOP + TOP-BUTTONS
 
             button_Theme.Image = Properties.Resources.Logo_Theme_Dark_small;    //
@@ -533,6 +567,7 @@ namespace Meds_App
                 button_Home.BackColor = button_OutOfDate.BackColor = Color.Moccasin;        //Sets the color of the rest of the left side buttons to Moccasin
             }
 
+            panel_Main.BackColor = Color.OldLace;   //Sets the color of the main panel to OldLace
         }
 
     }

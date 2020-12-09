@@ -114,7 +114,7 @@ namespace Meds_App.Model
             }
         }
 
-        public static async Task<List<Med>> GetMedsAsync(bool sorted)
+        public static async Task<List<Med>> Get_Meds_Async(bool sorted)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(uri);
@@ -152,7 +152,7 @@ namespace Meds_App.Model
         }
 
         //TODO When open app call this function and count how many meds are out of date. Show messagebox
-        public static async Task<List<Med>> GetOutOfDateMedsAsync(bool sorted)
+        public static async Task<List<Med>> Get_OutOfDate_Meds_Async(bool sorted)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(uri);

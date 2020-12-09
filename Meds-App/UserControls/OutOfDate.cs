@@ -33,7 +33,7 @@ namespace Meds_App.UserControls
 
         public async void fillListBox(DateTime date)
         {
-            medsList = await Http.GetMedsAsync(true);
+            medsList = await Http.Get_Meds_Async(true);
             listBox_OutOfDate.Items.Clear();
 
             List<Med> outofdateList = new List<Med>();
@@ -53,7 +53,7 @@ namespace Meds_App.UserControls
 
         private void button_OutOfDate_details_Click(object sender, EventArgs e)
         {
-            this.PanelDetailsMeds_In_OutOfDate.fillDetails(medDetails);
+            this.PanelDetailsMeds_In_OutOfDate.Fill_Med(medDetails);
             this.button_OutOfDate_Back.Location = new Point(1000, 0);
             this.PanelDetailsMeds_In_OutOfDate.Location = new Point(1000, 0);
             Transition changePannel = new Transition(new TransitionType_EaseInEaseOut(700));
@@ -89,7 +89,7 @@ namespace Meds_App.UserControls
         }
         private void refreshDetails(Med medDetails)
         {
-            this.PanelDetailsMeds_In_OutOfDate.fillDetails(medDetails);
+            this.PanelDetailsMeds_In_OutOfDate.Fill_Med(medDetails);
         }
 
         private void dateTimePicker_OutOfDate_ValueChanged(object sender, EventArgs e)

@@ -62,11 +62,11 @@
     <Compile Include="UserControls\Details.Designer.cs">
       <DependentUpon>Details.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Home\AddMeds.cs">
+    <Compile Include="UserControls\Home\Medicines.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Home\AddMeds.Designer.cs">
-      <DependentUpon>AddMeds.cs</DependentUpon>
+    <Compile Include="UserControls\Home\Medicines.Designer.cs">
+      <DependentUpon>Medicines.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Home.cs">
       <SubType>UserControl</SubType>
@@ -98,8 +98,8 @@
     <EmbeddedResource Include="UserControls\Details.resx">
       <DependentUpon>Details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Home\AddMeds.resx">
-      <DependentUpon>AddMeds.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Home\Medicines.resx">
+      <DependentUpon>Medicines.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -133,6 +133,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\openServer.bat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -161,6 +162,7 @@
     <None Include="Resources\LOGO-Exit_White.png" />
     <None Include="Resources\LOGO-Home_White.png" />
     <None Include="Resources\LOGO-List_White.png" />
+    <None Include="Resources\LOGO-Arrow_White.png" />
     <Content Include="Resources\LOGO-Med.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
