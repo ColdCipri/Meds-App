@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Threading;
+using System.Diagnostics;
 using Transitions;
 using Meds_App.Model;
 using static Meds_App.Utils.Utils;
-using System.Threading;
-using System.Diagnostics;
 
 namespace Meds_App
 {
@@ -14,12 +14,12 @@ namespace Meds_App
     {
         public string helpSearch, outofdatedetails,        //Strings for texts. These ones were saved here because they can be modified by the language
             warning, error_retrieve, error, outofdatemeds;
-        private bool themeDark;
-        private bool firstTime = false;
-        private bool ok = true;
+
+        private bool themeDark, firstTime = false, ok = true;   //Bool values
+
         private DialogResult result;
         private ToolTip toolTipForSearch = new ToolTip();           //It initialises a new ToolTip which would be set later
-        public List<Med> medsList = new List<Med>();               //It initialises an empty list which would be later filled with medicines from the server
+        public List<Med> medsList = new List<Med>();                //It initialises an empty list which would be later filled with medicines from the server
         private Med medDetails = new Med();                         //It initialises an empty medicine which would be later modified
 
         //Constructor - Generated method
@@ -31,7 +31,6 @@ namespace Meds_App
             InitializeComponent();
             button_Back.Location = new Point(1000, 0);
             PanelMedicines_In_Home.Location = new Point(1000, 0);
-            PanelDetails_In_Home.Location = new Point(1000, 0);
         }
 
 
@@ -75,25 +74,25 @@ namespace Meds_App
         }
 
 
-            //-------------------------------------------BUTTONS--------------------------------------------
+        //-------------------------------------------BUTTONS--------------------------------------------
 
 
-            //-------------------------------------------BUTTONS - ADD BUTTON-------------------------------
+        //-------------------------------------------BUTTONS - ADD BUTTON-------------------------------
 
 
-            //Generated method
-            //
-            //When the Add_Home button is clicked, it sets the positions of back button and add panel to 1000,0 in order to work the transition as expected
-            //It creates the transition and adds the two objects: the add panel and the back button, then acording to theme, it adds the two buttons: add and details with the according colors
-            //Now it runs the transition. While it runs, the add and details buttons are disabled and the back button is bringed to front.
-            private void Button_Add_Home_Click(object sender, EventArgs e)
+        //Generated method
+        //
+        //When the Add_Home button is clicked, it sets the positions of back button and add panel to 1000, 0 in order to work the transition as expected
+        //It creates the transition and adds the two objects: the add panel and the back button, then acording to theme, it adds the two buttons: add and details with the according colors
+        //Now it runs the transition. While it runs, the add and details buttons are disabled and the back button is bringed to front.
+        private void Button_Add_Home_Click(object sender, EventArgs e)
         {
             button_Back.Location = new Point(1000, 0);
             PanelMedicines_In_Home.Location = new Point(1000, 0);
 
             Transition changePannel = new Transition(new TransitionType_EaseInEaseOut(700));
-            changePannel.add(PanelMedicines_In_Home, "Left", 0);      //It changes the Left atribute of PanelAddMeds_In_Home to 0
-            changePannel.add(button_Back, "Left", 3);               //It changes the Left atribute of button_Back to 3 because it needs to be a little to the right than the panel
+            changePannel.add(PanelMedicines_In_Home, "Left", 0);    //It changes the Left atribute of PanelAddMeds_In_Home to 0
+            changePannel.add(button_Back, "Left", 3);               //It changes the Left atribute of back button to 3 because it needs to be a little to the right than the panel
 
             if (themeDark) // if the theme is dark then it changes both buttons text and color to match the background
             {
@@ -129,39 +128,10 @@ namespace Meds_App
         //It calls the Button_Add_Home_Click method because it does the same things
         private void Button_Details_Click(object sender, EventArgs e)
         {
-            PanelMedicines_In_Home.Fill_Med(medDetails);  //needs to be modified for addpanel.
+            PanelMedicines_In_Home.Fill_Med(medDetails);
             Button_Add_Home_Click(sender, e); 
 
             PanelMedicines_In_Home.SetSaveButtonOff(); //When the panel is opened, there will be the update and delete buttons down.
-
-            /*button_Back.Location = new Point(1000, 0);
-            PanelDetails_In_Home.Location = new Point(1000, 0);
-
-            Transition changePannel = new Transition(new TransitionType_EaseInEaseOut(700));
-            changePannel.add(PanelDetails_In_Home, "Left", 0);
-            changePannel.add(button_Back, "Left", 3);
-
-
-            if (themeDark) // if the theme is dark then it changes both buttons text and color to match the background
-            {
-                changePannel.add(button_Add_Home, "BackColor", Color.Black);    //Color of button
-                changePannel.add(button_Add_Home, "ForeColor", Color.Black);    //Color of text
-                changePannel.add(button_Details, "BackColor", Color.Black);     //Color of button
-                changePannel.add(button_Details, "ForeColor", Color.Black);     //Color of text
-            }
-            else if (!themeDark) // if theme is white same happens, but with the white theme color
-            {
-                changePannel.add(button_Add_Home, "BackColor", Color.OldLace);  //Color of button
-                changePannel.add(button_Add_Home, "ForeColor", Color.OldLace);  //Color of text
-                changePannel.add(button_Details, "BackColor", Color.OldLace);   //Color of button
-                changePannel.add(button_Details, "ForeColor", Color.OldLace);   //Color of text
-            }
-            changePannel.run();
-
-            button_Add_Home.Enabled = false;
-            button_Details.Enabled = false;
-
-            button_Back.BringToFront();*/
         }
 
 
@@ -175,9 +145,6 @@ namespace Meds_App
         public void Button_Back_Click(object sender, EventArgs e)
         {
             Transition changePannel = new Transition(new TransitionType_EaseInEaseOut(700));
-
-            /*if (PanelAddMeds_In_Home.Location.X == 0)
-            {*/
             changePannel.add(PanelMedicines_In_Home, "Left", 1000);
             changePannel.add(button_Back, "Left", 1000);
 
@@ -195,28 +162,6 @@ namespace Meds_App
                 changePannel.add(button_Details, "BackColor", Color.AntiqueWhite);  //Color of the button
                 changePannel.add(button_Details, "ForeColor", Color.Black);         //Color of the text
             }
-            /*}
-            else
-            {
-                changePannel.add(PanelDetails_In_Home, "Left", 1000);
-                changePannel.add(button_Back, "Left", 1000);
-
-                if (!themeDark)
-                {
-                    changePannel.add(button_Add_Home, "BackColor", Color.AntiqueWhite);
-                    changePannel.add(button_Add_Home, "ForeColor", Color.Black);
-                    changePannel.add(button_Details, "BackColor", Color.AntiqueWhite);
-                    changePannel.add(button_Details, "ForeColor", Color.Black);
-                }
-                else if (themeDark)
-                {
-                    changePannel.add(button_Add_Home, "BackColor", ColorButton);
-                    changePannel.add(button_Add_Home, "ForeColor", Color.White);
-                    changePannel.add(button_Details, "BackColor", ColorButton);
-                    changePannel.add(button_Details, "ForeColor", Color.White);
-                }
-
-            }*/
             changePannel.run();
 
             button_Add.Enabled = true;
@@ -233,9 +178,9 @@ namespace Meds_App
         //Generated method
         //
         //When the selected item in list changes to a positive number then we enable Details button
-        //this button opens the details page but with the fields filled by the medicine that have been clicked in the list
+        //This button opens the details page but with the fields filled by the medicine that have been clicked in the list
         //If the medicine that is clicked is out of date than an warning message will be showed
-        private void listBox_Meds_SelectedIndexChanged(object sender, EventArgs e)
+        private void Listbox_Meds_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedItem = listBox_Meds.SelectedIndex;
             if (selectedItem != -1)
@@ -402,7 +347,7 @@ namespace Meds_App
         //This method sends the input medicine to the details pannel to fill the textboxes and atributes
         private void Refresh_Details(Med medDetails)
         {
-            PanelDetails_In_Home.Fill_Med(medDetails);
+            PanelMedicines_In_Home.Fill_Med(medDetails);
         }
 
 
@@ -412,7 +357,7 @@ namespace Meds_App
         //-------------------------------------LANGUAGE - RO--------------------------------
 
 
-        internal void Set_Language_Ro()
+        internal void Set_Language_Home_Ro()
         {
             button_Add.Text = Properties.Resources.Add_ro;
             button_Details.Text = Properties.Resources.Details_ro;
@@ -425,14 +370,14 @@ namespace Meds_App
             warning = "Atentie!";
             error = Properties.Resources.Error_ro;
             error_retrieve = Properties.Resources.ErrorRetrieve_ro;
-            PanelMedicines_In_Home.setLanguageRo();
+            PanelMedicines_In_Home.Set_Language_Medicines_Ro();
         }
 
 
         //-------------------------------------LANGUAGE - ENG-------------------------------
 
 
-        internal void Set_Language_Eng()
+        internal void Set_Language_Home_Eng()
         {
             button_Add.Text = Properties.Resources.Add_eng;
             button_Details.Text = Properties.Resources.Details_eng;
@@ -445,7 +390,7 @@ namespace Meds_App
             warning = "Warning!";
             error = Properties.Resources.Error_eng;
             error_retrieve = Properties.Resources.ErrorRetrieve_eng;
-            PanelMedicines_In_Home.setLanguageEng();
+            PanelMedicines_In_Home.Set_Language_Medicines_Eng();
         }
 
 
@@ -467,18 +412,18 @@ namespace Meds_App
 
             button_Back.Image = Properties.Resources.LOGO_Arrow_White;  //Sets the arrow color to white
 
-            label_Search.ForeColor =        //Set color of search label text to White
-                textBox_search.ForeColor =  //Set color of search box text to White
-                listBox_Meds.ForeColor =    //Set color of listbox elements text to White
-                button_Add.ForeColor = //Set color of add button text to White
-                button_Details.ForeColor =  //Set color of details button text to White
+            label_Search.ForeColor =        //Sets color of search label text to White
+                textBox_search.ForeColor =  //Sets color of search box text to White
+                listBox_Meds.ForeColor =    //Sets color of listbox elements text to White
+                button_Add.ForeColor =      //Sets color of add button text to White
+                button_Details.ForeColor =  //Sets color of details button text to White
                 Color.White;
 
             listBox_Meds.BackColor =        //Sets the color of the listbox to a RGB value ColorBackground
                 textBox_search.BackColor =  //Sets the color of the search box to a RGB value ColorBackground
                 ColorBackground;
 
-            button_Add.BackColor =     //Sets the color of the add button to a RGB value ColorButton
+            button_Add.BackColor =          //Sets the color of the add button to a RGB value ColorButton
                 button_Details.BackColor =  //Sets the color of the details button to a RGB value ColorButton
                 ColorButton;
 

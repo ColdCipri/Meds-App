@@ -49,7 +49,8 @@
             this.label_Pieces = new System.Windows.Forms.Label();
             this.textBox_Name = new System.Windows.Forms.TextBox();
             this.label_Name = new System.Windows.Forms.Label();
-            this.label_Title = new System.Windows.Forms.Label();
+            this.label_Title_Add = new System.Windows.Forms.Label();
+            this.label_Title_Details = new System.Windows.Forms.Label();
             this.panel_AddMeds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_BaseSubstanceQuantity)).BeginInit();
@@ -79,7 +80,8 @@
             this.panel_AddMeds.Controls.Add(this.label_Pieces);
             this.panel_AddMeds.Controls.Add(this.textBox_Name);
             this.panel_AddMeds.Controls.Add(this.label_Name);
-            this.panel_AddMeds.Controls.Add(this.label_Title);
+            this.panel_AddMeds.Controls.Add(this.label_Title_Add);
+            this.panel_AddMeds.Controls.Add(this.label_Title_Details);
             this.panel_AddMeds.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_AddMeds.Location = new System.Drawing.Point(0, 0);
             this.panel_AddMeds.Name = "panel_AddMeds";
@@ -342,13 +344,23 @@
             // 
             // label_Title
             // 
-            this.label_Title.AutoSize = true;
-            this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Title.Location = new System.Drawing.Point(59, 5);
-            this.label_Title.Name = "label_Title";
-            this.label_Title.Size = new System.Drawing.Size(282, 44);
-            this.label_Title.TabIndex = 0;
-            this.label_Title.Text = "Add a new med";
+            this.label_Title_Add.AutoSize = true;
+            this.label_Title_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title_Add.Location = new System.Drawing.Point(59, 5);
+            this.label_Title_Add.Name = "label_Title";
+            this.label_Title_Add.Size = new System.Drawing.Size(282, 44);
+            this.label_Title_Add.TabIndex = 0;
+            this.label_Title_Add.Text = "Add a new med";
+            // 
+            // label_Title_Details
+            // 
+            this.label_Title_Details.AutoSize = true;
+            this.label_Title_Details.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title_Details.Location = new System.Drawing.Point(59, 5);
+            this.label_Title_Details.Name = "label_Title_Details";
+            this.label_Title_Details.Size = new System.Drawing.Size(282, 44);
+            this.label_Title_Details.TabIndex = 45;
+            this.label_Title_Details.Text = "Add a new med";
             // 
             // Medicines
             // 
@@ -368,7 +380,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_AddMeds;
-        private System.Windows.Forms.Label label_Title;
+        private System.Windows.Forms.Label label_Title_Add;
         private System.Windows.Forms.NumericUpDown numericUpDown_Pieces;
         private System.Windows.Forms.Label label_Pieces;
         private System.Windows.Forms.TextBox textBox_Name;
@@ -389,5 +401,6 @@
         private System.Windows.Forms.Button button_AddPicture;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Button button_Update;
+        private System.Windows.Forms.Label label_Title_Details;
     }
 }

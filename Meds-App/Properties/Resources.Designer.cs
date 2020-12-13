@@ -79,7 +79,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add a new med.
+        ///   Looks up a localized string similar to Add a new medicine.
         /// </summary>
         public static string AddANewMed_eng {
             get {
@@ -273,6 +273,24 @@ namespace Meds_App.Properties {
         public static string Details_ro {
             get {
                 return ResourceManager.GetString("Details_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details about medicine.
+        /// </summary>
+        public static string DetailsAbout_eng {
+            get {
+                return ResourceManager.GetString("DetailsAbout_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detalii despre medicament.
+        /// </summary>
+        public static string DetailsAbout_ro {
+            get {
+                return ResourceManager.GetString("DetailsAbout_ro", resourceCulture);
             }
         }
         

@@ -234,7 +234,7 @@
     <value>Substanță de bază invalidă!</value>
   </data>
   <data name="AddANewMed_eng" xml:space="preserve">
-    <value>Add a new med</value>
+    <value>Add a new medicine</value>
     <comment>Add a new med - English</comment>
   </data>
   <data name="TypePill_eng" xml:space="preserve">
@@ -323,9 +323,8 @@
   <data name="LOGO-Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Details_ro" xml:space="preserve">
-    <value>Detalii</value>
-    <comment>Details - Ro</comment>
+  <data name="DetailsAbout_ro" xml:space="preserve">
+    <value>Detalii despre medicament</value>
   </data>
   <data name="Error_ro" xml:space="preserve">
     <value>Eroare</value>
@@ -348,9 +347,8 @@
     <value>Căutați ceva?</value>
     <comment>Help Search Title - Ro</comment>
   </data>
-  <data name="Details_eng" xml:space="preserve">
-    <value>Details</value>
-    <comment>Details - English</comment>
+  <data name="DetailsAbout_eng" xml:space="preserve">
+    <value>Details about medicine</value>
   </data>
   <data name="SuccessfullyDeleted_eng" xml:space="preserve">
     <value>Successfully deleted</value>
@@ -553,5 +551,13 @@
   </data>
   <data name="openServer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\openServer.bat;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Details_eng" xml:space="preserve">
+    <value>Details</value>
+    <comment>Details - English</comment>
+  </data>
+  <data name="Details_ro" xml:space="preserve">
+    <value>Detalii</value>
+    <comment>Details - Ro</comment>
   </data>
 </root>

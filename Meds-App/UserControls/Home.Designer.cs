@@ -32,7 +32,7 @@
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.panel_Home_Right = new System.Windows.Forms.Panel();
             this.button_Back = new System.Windows.Forms.Button();
-            this.PanelDetails_In_Home = new Meds_App.UserControls.Home.DetailsMeds();
+            //this.PanelDetails_In_Home = new Meds_App.UserControls.Home.DetailsMeds();
             this.PanelMedicines_In_Home = new Meds_App.Medicines();
             this.button_Add = new System.Windows.Forms.Button();
             this.button_Details = new System.Windows.Forms.Button();
@@ -67,7 +67,6 @@
             // panel_Home_Right
             // 
             this.panel_Home_Right.Controls.Add(this.button_Back);
-            this.panel_Home_Right.Controls.Add(this.PanelDetails_In_Home);
             this.panel_Home_Right.Controls.Add(this.PanelMedicines_In_Home);
             this.panel_Home_Right.Controls.Add(this.button_Add);
             this.panel_Home_Right.Controls.Add(this.button_Details);
@@ -94,14 +93,6 @@
             this.button_Back.TabIndex = 23;
             this.button_Back.UseVisualStyleBackColor = true;
             this.button_Back.Click += new System.EventHandler(this.Button_Back_Click);
-            // 
-            // PanelDetails_In_Home
-            // 
-            this.PanelDetails_In_Home.BackColor = System.Drawing.Color.OldLace;
-            this.PanelDetails_In_Home.Location = new System.Drawing.Point(449, 0);
-            this.PanelDetails_In_Home.Name = "PanelDetails_In_Home";
-            this.PanelDetails_In_Home.Size = new System.Drawing.Size(391, 590);
-            this.PanelDetails_In_Home.TabIndex = 26;
             // 
             // PanelMedicines_In_Home
             // 
@@ -165,7 +156,7 @@
             this.listBox_Meds.Name = "listBox_Meds";
             this.listBox_Meds.Size = new System.Drawing.Size(323, 498);
             this.listBox_Meds.TabIndex = 3;
-            this.listBox_Meds.SelectedIndexChanged += new System.EventHandler(this.listBox_Meds_SelectedIndexChanged);
+            this.listBox_Meds.SelectedIndexChanged += new System.EventHandler(this.Listbox_Meds_SelectedIndexChanged);
             // 
             // HomeGUI
             // 
@@ -192,7 +183,7 @@
         private System.Windows.Forms.Button button_Back;
         private Medicines PanelMedicines_In_Home;
         private System.Windows.Forms.Button button_Details;
-        private UserControls.Home.DetailsMeds PanelDetails_In_Home;
+        //private UserControls.Home.DetailsMeds PanelDetails_In_Home;
         private System.Windows.Forms.ListBox listBox_Meds;
     }
 }

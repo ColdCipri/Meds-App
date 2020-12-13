@@ -16,7 +16,6 @@ namespace Meds_App
             successfully_added, med_added, failed_to_add, 
             successfully_updated, successfully_deleted, success;
 
-
         private List<string> typeList =         //It initialises a new list with the types of medicines
             new List<string> { "Pill", "Cream", "Tea", "Spray", "Syrup", 
                 "Suppository", "Drops", "Gel", "Effervescent" };
@@ -360,6 +359,9 @@ namespace Meds_App
             button_Update.Visible = false;
             button_Delete.Visible = false;
 
+            label_Title_Add.Visible = true;
+            label_Title_Details.Visible = false;
+
             textBox_Name.Enabled = true;
         }
 
@@ -373,6 +375,9 @@ namespace Meds_App
             button_Delete.Visible = true;
             button_Save.Visible = false;
 
+            label_Title_Add.Visible = false;
+            label_Title_Details.Visible = true;
+
             textBox_Name.Enabled = false;
         }
 
@@ -383,10 +388,12 @@ namespace Meds_App
         //-------------------------------------LANGUAGE - RO--------------------------------
 
 
-        public void setLanguageRo()
+        public void Set_Language_Medicines_Ro()
         {
-            label_Title.Font = new Font("Microsoft Sans Serif", 18);
-            label_Title.Text = Properties.Resources.AddANewMed_ro;
+            label_Title_Add.Font = label_Title_Details.Font = 
+                new Font("Microsoft Sans Serif", 18);
+            label_Title_Add.Text = Properties.Resources.AddANewMed_ro;
+            label_Title_Details.Text = Properties.Resources.DetailsAbout_ro;
             label_Name.Text = Properties.Resources.Name_ro;
             label_Pieces.Text = Properties.Resources.Pieces_ro;
             label_Type.Text = Properties.Resources.Type_ro;
@@ -448,10 +455,12 @@ namespace Meds_App
         //-------------------------------------LANGUAGE - ENG--------------------------------
 
 
-        public void setLanguageEng()
+        public void Set_Language_Medicines_Eng()
         {
-            label_Title.Font = new Font("Microsoft Sans Serif", 22);
-            label_Title.Text = Properties.Resources.AddANewMed_eng;
+            label_Title_Add.Font = label_Title_Details.Font =
+                new Font("Microsoft Sans Serif", 22);
+            label_Title_Add.Text = Properties.Resources.AddANewMed_eng;
+            label_Title_Details.Text = Properties.Resources.DetailsAbout_eng;
             label_Name.Text = Properties.Resources.Name_eng;
             label_Pieces.Text = Properties.Resources.Pieces_eng;
             label_Type.Text = Properties.Resources.Type_eng;
@@ -520,7 +529,8 @@ namespace Meds_App
         {
             panel_AddMeds.BackColor = Color.Black;  //Set the background color of panel to black
 
-            label_Title.ForeColor =             //Set the text color of Title to white
+            label_Title_Add.ForeColor =         //Set the text color of add Title to white
+                label_Title_Details.ForeColor = //Set the text color of details Title to white
                 label_Name.ForeColor =          //Set the text color of Name label to white
                 textBox_Name.ForeColor =        //Set the text color of Name textbox to white
                 label_Pieces.ForeColor =        //Set the text color of Pieces label to white
@@ -586,7 +596,8 @@ namespace Meds_App
         {
             panel_AddMeds.BackColor = Color.OldLace;//Set the background color of panel to OldLace
 
-            label_Title.ForeColor =             //Set the text color of Title to black
+            label_Title_Add.ForeColor =         //Set the text color of add Title to black
+                label_Title_Details.ForeColor = //Set the text color of details Title to black
                 label_Name.ForeColor =          //Set the text color of Name label to black
                 textBox_Name.ForeColor =        //Set the text color of Name textbox to black
                 label_Pieces.ForeColor =        //Set the text color of Pieces label to black

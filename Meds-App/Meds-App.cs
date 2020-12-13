@@ -213,7 +213,7 @@ namespace Meds_App
             }
 
             Change_Selected_Button(button_OutOfDate);
-            panelOutOfDate_In_Main.fillListBox(DateTime.Now);
+            panelOutOfDate_In_Main.Fill_Listbox(DateTime.Now);
         }
 
 
@@ -272,7 +272,7 @@ namespace Meds_App
             if (Check_Active_Button(button_Home))
                 panelHome_In_Main.Fill_ListBox();
             else if (Check_Active_Button(button_OutOfDate))
-                panelOutOfDate_In_Main.fillListBox(DateTime.Now);
+                panelOutOfDate_In_Main.Fill_Listbox(DateTime.Now);
         }
 
 
@@ -354,8 +354,8 @@ namespace Meds_App
             {
                 Set_Language_Eng(this);
                 languageEng = true;
-                panelHome_In_Main.Set_Language_Eng();
-                panelOutOfDate_In_Main.Set_Language_Eng();
+                panelHome_In_Main.Set_Language_Home_Eng();
+                panelOutOfDate_In_Main.Set_Language_OutOfDate_Eng();
                 panelDetails_In_Main.Set_Language_Eng();
                 button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
 
@@ -364,8 +364,8 @@ namespace Meds_App
             {
                 Set_Language_Ro(this);
                 languageEng = false;
-                panelHome_In_Main.Set_Language_Ro();
-                panelOutOfDate_In_Main.Set_Language_Ro();
+                panelHome_In_Main.Set_Language_Home_Ro();
+                panelOutOfDate_In_Main.Set_Language_OutOfDate_Ro();
                 panelDetails_In_Main.Set_Language_Ro();
                 button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
             }
@@ -438,7 +438,8 @@ namespace Meds_App
         private void Set_Theme_Dark()
         {
 
-            panelHome_In_Main.Set_Theme_Dark(); //Change theme to dark to Home panel
+            panelHome_In_Main.Set_Theme_Dark();     //Change theme to dark to Home panel
+            panelOutOfDate_In_Main.Set_Theme_Dark();//Change theme to dark to OutOfDate panel
 
             // TOP + TOP-BUTTONS
 
@@ -508,7 +509,8 @@ namespace Meds_App
         private void Set_Theme_Light()
         {
 
-            panelHome_In_Main.Set_Theme_Light();//Change theme to light to Home panel
+            panelHome_In_Main.Set_Theme_Light();        //Change theme to light to Home panel
+            panelOutOfDate_In_Main.Set_Theme_Light();   //Change theme to light to OutOfDate panel
 
             // TOP + TOP-BUTTONS
 
