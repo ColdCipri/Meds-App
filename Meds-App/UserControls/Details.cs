@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Meds_App.UserControls
 {
-    public partial class Details : UserControl
+    public partial class Report : UserControl
     {
-        public Details()
+        public Report()
         {
             InitializeComponent();
         }

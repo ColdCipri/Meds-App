@@ -1,6 +1,6 @@
 ﻿namespace Meds_App.UserControls
 {
-    partial class Details
+    partial class Report
     {
         /// <summary> 
         /// Required designer variable.

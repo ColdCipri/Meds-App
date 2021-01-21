@@ -295,6 +295,33 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email*:.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to reportbugpassword2020.
+        /// </summary>
+        public static string Email_password {
+            get {
+                return ResourceManager.GetString("Email_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to reportmedicinebug@gmail.com.
+        /// </summary>
+        public static string Email_user {
+            get {
+                return ResourceManager.GetString("Email_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error_eng {
@@ -385,6 +412,42 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The email is invalid or is empty!.
+        /// </summary>
+        public static string ErrorEmail_eng {
+            get {
+                return ResourceManager.GetString("ErrorEmail_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adresa de email invalidă!.
+        /// </summary>
+        public static string ErrorEmail_ro {
+            get {
+                return ResourceManager.GetString("ErrorEmail_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is no problem description!.
+        /// </summary>
+        public static string ErrorMessage_eng {
+            get {
+                return ResourceManager.GetString("ErrorMessage_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nu ați completat descrierea problemei!.
+        /// </summary>
+        public static string ErrorMessage_ro {
+            get {
+                return ResourceManager.GetString("ErrorMessage_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid name!.
         /// </summary>
         public static string ErrorName_eng {
@@ -471,6 +534,24 @@ namespace Meds_App.Properties {
         public static string FailedToAdd_ro {
             get {
                 return ResourceManager.GetString("FailedToAdd_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bug was not reported! Please try again!.
+        /// </summary>
+        public static string FailedToSend_eng {
+            get {
+                return ResourceManager.GetString("FailedToSend_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Problema nu a fost raportată! Vă rog să mai încercați!.
+        /// </summary>
+        public static string FailedToSend_ro {
+            get {
+                return ResourceManager.GetString("FailedToSend_ro", resourceCulture);
             }
         }
         
@@ -786,7 +867,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Medicament adaugat.
+        ///   Looks up a localized string similar to Medicament adăugat.
         /// </summary>
         public static string MedAdded_ro {
             get {
@@ -898,6 +979,42 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Problem description*:.
+        /// </summary>
+        public static string ProblemDescription_eng {
+            get {
+                return ResourceManager.GetString("ProblemDescription_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descrierea problemei*:.
+        /// </summary>
+        public static string ProblemDescription_ro {
+            get {
+                return ResourceManager.GetString("ProblemDescription_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report a bug.
+        /// </summary>
+        public static string Report_eng {
+            get {
+                return ResourceManager.GetString("Report_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raportează o problemă.
+        /// </summary>
+        public static string Report_ro {
+            get {
+                return ResourceManager.GetString("Report_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save_eng {
@@ -930,6 +1047,24 @@ namespace Meds_App.Properties {
         public static string Search_ro {
             get {
                 return ResourceManager.GetString("Search_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Send_eng {
+            get {
+                return ResourceManager.GetString("Send_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trimite.
+        /// </summary>
+        public static string Send_ro {
+            get {
+                return ResourceManager.GetString("Send_ro", resourceCulture);
             }
         }
         
@@ -1024,6 +1159,24 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Report sent! Thank you for your feedback!.
+        /// </summary>
+        public static string SuccessfullySend_eng {
+            get {
+                return ResourceManager.GetString("SuccessfullySend_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Problema a fost raportată! Mulțumim pentru feedback-ul tău!.
+        /// </summary>
+        public static string SuccessfullySend_ro {
+            get {
+                return ResourceManager.GetString("SuccessfullySend_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Successfully updated.
         /// </summary>
         public static string SuccessfullyUpdated_eng {
@@ -1047,6 +1200,24 @@ namespace Meds_App.Properties {
         public static string Title_eng {
             get {
                 return ResourceManager.GetString("Title_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report a bug!.
+        /// </summary>
+        public static string Title_Report_eng {
+            get {
+                return ResourceManager.GetString("Title_Report_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raportează o eroare!.
+        /// </summary>
+        public static string Title_Report_ro {
+            get {
+                return ResourceManager.GetString("Title_Report_ro", resourceCulture);
             }
         }
         

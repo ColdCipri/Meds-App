@@ -164,7 +164,7 @@
             this.button_AddPicture.Name = "button_AddPicture";
             this.button_AddPicture.Size = new System.Drawing.Size(134, 46);
             this.button_AddPicture.TabIndex = 19;
-            this.button_AddPicture.Text = "Add picture";
+            this.button_AddPicture.Text = "(";
             this.button_AddPicture.UseVisualStyleBackColor = false;
             this.button_AddPicture.Click += new System.EventHandler(this.button_AddPicture_Click);
             // 
@@ -342,12 +342,12 @@
             this.label_Name.TabIndex = 1;
             this.label_Name.Text = "Name:";
             // 
-            // label_Title
+            // label_Title_Add
             // 
             this.label_Title_Add.AutoSize = true;
             this.label_Title_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Title_Add.Location = new System.Drawing.Point(59, 5);
-            this.label_Title_Add.Name = "label_Title";
+            this.label_Title_Add.Name = "label_Title_Add";
             this.label_Title_Add.Size = new System.Drawing.Size(282, 44);
             this.label_Title_Add.TabIndex = 0;
             this.label_Title_Add.Text = "Add a new med";

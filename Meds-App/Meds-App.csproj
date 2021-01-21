@@ -94,6 +94,12 @@
     <Compile Include="UserControls\OutOfDate.Designer.cs">
       <DependentUpon>OutOfDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ReportBug.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReportBug.Designer.cs">
+      <DependentUpon>ReportBug.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Utils.cs" />
     <EmbeddedResource Include="UserControls\Details.resx">
       <DependentUpon>Details.cs</DependentUpon>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\OutOfDate.resx">
       <DependentUpon>OutOfDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ReportBug.resx">
+      <DependentUpon>ReportBug.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -26,10 +26,10 @@ namespace Meds_App
         private void MainForm_Load(object sender, EventArgs e)
         {
             Transition transitionSlide = new Transition(new TransitionType_Linear(700));
-            transitionSlide.add(this.pictureBox_Logo, "Left", 7);
-            transitionSlide.add(this.label_Title, "Top", 0);
+            transitionSlide.add(pictureBox_Logo, "Left", 7);
+            transitionSlide.add(label_Title, "Top", 0);
             transitionSlide.run();
-            Transition.run(this.panelHome_In_Main, "Left", 0, new TransitionType_EaseInEaseOut(1000));
+            Transition.run(panelHome_In_Main, "Left", 0, new TransitionType_EaseInEaseOut(1000));
 
 
             languageEng = Read_From_File_Language();
@@ -107,27 +107,27 @@ namespace Meds_App
             {
                 button_Home.BackColor = Color.Moccasin;
                 button_OutOfDate.BackColor = Color.Moccasin;
-                button_Details.BackColor = Color.Moccasin;
+                button_Report.BackColor = Color.Moccasin;
 
                 if (button.Equals(button_Home))
                     button_Home.BackColor = Color.OldLace;
                 else if (button.Equals(button_OutOfDate))
                     button_OutOfDate.BackColor = Color.OldLace;
-                else if (button.Equals(button_Details))
-                    button_Details.BackColor = Color.OldLace;
+                else if (button.Equals(button_Report))
+                    button_Report.BackColor = Color.OldLace;
             }
             else
             {
                 button_Home.BackColor = ColorLeftBlack;
                 button_OutOfDate.BackColor = ColorLeftBlack;
-                button_Details.BackColor = ColorLeftBlack;
+                button_Report.BackColor = ColorLeftBlack;
 
                 if (button.Equals(button_Home))
                     button_Home.BackColor = Color.Black;
                 else if (button.Equals(button_OutOfDate))
                     button_OutOfDate.BackColor = Color.Black;
-                else if (button.Equals(button_Details))
-                    button_Details.BackColor = Color.Black;
+                else if (button.Equals(button_Report))
+                    button_Report.BackColor = Color.Black;
             }
         }
 
@@ -149,26 +149,27 @@ namespace Meds_App
         {
             if (Check_Active_Button(button_OutOfDate))
             {
-                this.panelHome_In_Main.Location = new Point(0, -700);
+                panelHome_In_Main.Location = new Point(0, -700);
                 Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
-                slidePanels.add(this.panelHome_In_Main, "Top", 0);
-                slidePanels.add(this.panelOutOfDate_In_Main, "Top", 700);
+                slidePanels.add(panelHome_In_Main, "Top", 0);
+                slidePanels.add(panelOutOfDate_In_Main, "Top", 700);
                 slidePanels.run();
             }
-            else if (Check_Active_Button(button_Details))
+            else if (Check_Active_Button(button_Report))
             {
-                this.panelHome_In_Main.Location = new Point(0, -1400);
-                this.panelOutOfDate_In_Main.Location = new Point(0, -700);
+                panelHome_In_Main.Location = new Point(0, -1400);
+                panelOutOfDate_In_Main.Location = new Point(0, -700);
                 Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
-                slidePanels.add(this.panelHome_In_Main, "Top", 0);
-                slidePanels.add(this.panelOutOfDate_In_Main, "Top", 700);
-                slidePanels.add(this.panelDetails_In_Main, "Top", 1400);
+                slidePanels.add(panelHome_In_Main, "Top", 0);
+                slidePanels.add(panelOutOfDate_In_Main, "Top", 700);
+                //slidePanels.add(panelDetails_In_Main, "Top", 1400);
+                slidePanels.add(panelReport_In_Main, "Top", 1400);
                 slidePanels.run();
             }
             else
             {
                 Transition emphasis = new Transition(new TransitionType_Flash(2, 300));
-                emphasis.add(this.panelHome_In_Main, "BackColor", Color.Pink);
+                emphasis.add(panelHome_In_Main, "BackColor", Color.Pink);
                 emphasis.run();
             }
 
@@ -193,22 +194,23 @@ namespace Meds_App
             {
                 panelOutOfDate_In_Main.Location = new Point(0, 700);
                 Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
-                slidePanels.add(this.panelHome_In_Main, "Top", -700);
-                slidePanels.add(this.panelOutOfDate_In_Main, "Top", 0);
+                slidePanels.add(panelHome_In_Main, "Top", -700);
+                slidePanels.add(panelOutOfDate_In_Main, "Top", 0);
                 slidePanels.run();
             }
-            else if (Check_Active_Button(button_Details))
+            else if (Check_Active_Button(button_Report))
             {
                 panelOutOfDate_In_Main.Location = new Point(0, -700);
                 Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
-                slidePanels.add(this.panelDetails_In_Main, "Top", 700); 
-                slidePanels.add(this.panelOutOfDate_In_Main, "Top", 0);
+                //slidePanels.add(panelDetails_In_Main, "Top", 700); 
+                slidePanels.add(panelReport_In_Main, "Top", 700); 
+                slidePanels.add(panelOutOfDate_In_Main, "Top", 0);
                 slidePanels.run();
             }
             else
             {
                 Transition emphasis = new Transition(new TransitionType_Flash(2, 300));
-                emphasis.add(this.panelOutOfDate_In_Main, "BackColor", Color.Pink);
+                emphasis.add(panelOutOfDate_In_Main, "BackColor", Color.Pink);
                 emphasis.run();
             }
 
@@ -230,30 +232,35 @@ namespace Meds_App
         {
             if (Check_Active_Button(button_OutOfDate))
             {
-                this.panelDetails_In_Main.Location = new Point(0, 700);
+                //panelDetails_In_Main.Location = new Point(0, 700);
+                panelReport_In_Main.Location = new Point(0, 700);
                 Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
-                slidePanels.add(this.panelDetails_In_Main, "Top", 0);
-                slidePanels.add(this.panelOutOfDate_In_Main, "Top", -700);
+                //slidePanels.add(this.panelDetails_In_Main, "Top", 0);
+                slidePanels.add(panelReport_In_Main, "Top", 0);
+                slidePanels.add(panelOutOfDate_In_Main, "Top", -700);
                 slidePanels.run();
             }
             else if (Check_Active_Button(button_Home))
             {
-                this.panelDetails_In_Main.Location = new Point(0, 1400);
-                this.panelOutOfDate_In_Main.Location = new Point(0, 700);
+                //this.panelDetails_In_Main.Location = new Point(0, 1400);
+                panelReport_In_Main.Location = new Point(0, 1400);
+                panelOutOfDate_In_Main.Location = new Point(0, 700);
                 Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
-                slidePanels.add(this.panelHome_In_Main, "Top", -1400);
-                slidePanels.add(this.panelOutOfDate_In_Main, "Top", -700);
-                slidePanels.add(this.panelDetails_In_Main, "Top", 0);
+                slidePanels.add(panelHome_In_Main, "Top", -1400);
+                slidePanels.add(panelOutOfDate_In_Main, "Top", -700);
+                //slidePanels.add(this.panelDetails_In_Main, "Top", 0);
+                slidePanels.add(panelReport_In_Main, "Top", 0);
                 slidePanels.run();
             }
             else
             {
                 Transition emphasis = new Transition(new TransitionType_Flash(2, 300));
-                emphasis.add(this.panelDetails_In_Main, "BackColor", Color.Pink);
+                //emphasis.add(panelDetails_In_Main, "BackColor", Color.Pink);
+                emphasis.add(panelReport_In_Main, "BackColor", Color.Pink);
                 emphasis.run();
             }
 
-            Change_Selected_Button(button_Details);
+            Change_Selected_Button(button_Report);
         }
 
 
@@ -356,7 +363,8 @@ namespace Meds_App
                 languageEng = true;
                 panelHome_In_Main.Set_Language_Home_Eng();
                 panelOutOfDate_In_Main.Set_Language_OutOfDate_Eng();
-                panelDetails_In_Main.Set_Language_Eng();
+                //panelDetails_In_Main.Set_Language_Eng();
+                panelReport_In_Main.Set_Language_Eng();
                 button_Language.Image = Properties.Resources.LOGO_Flag_Ro;
 
             }
@@ -366,7 +374,8 @@ namespace Meds_App
                 languageEng = false;
                 panelHome_In_Main.Set_Language_Home_Ro();
                 panelOutOfDate_In_Main.Set_Language_OutOfDate_Ro();
-                panelDetails_In_Main.Set_Language_Ro();
+                //panelDetails_In_Main.Set_Language_Ro();
+                panelReport_In_Main.Set_Language_Ro();
                 button_Language.Image = Properties.Resources.Logo_Flag_Uk_Small;
             }
 
@@ -386,7 +395,7 @@ namespace Meds_App
             form.button_Home.Text = Properties.Resources.Home_eng;
             form.button_OutOfDate.Text = Properties.Resources.OutOfDate_eng;
             form.button_OutOfDate.Font = new Font("Franklin Gothic Medium Cond", 16);
-            form.button_Details.Text = Properties.Resources.Details_eng;
+            form.button_Report.Text = Properties.Resources.Report_eng;
         }
 
         //Input: a MainForm 
@@ -402,7 +411,7 @@ namespace Meds_App
             form.button_Home.Text = Properties.Resources.Home_ro;
             form.button_OutOfDate.Text = Properties.Resources.OutOfDate_ro;
             form.button_OutOfDate.Font = new Font("Franklin Gothic Medium Cond", 20);
-            form.button_Details.Text = Properties.Resources.Details_ro;
+            form.button_Report.Text = Properties.Resources.Report_ro;
         }
 
 
@@ -440,6 +449,7 @@ namespace Meds_App
 
             panelHome_In_Main.Set_Theme_Dark();     //Change theme to dark to Home panel
             panelOutOfDate_In_Main.Set_Theme_Dark();//Change theme to dark to OutOfDate panel
+            panelReport_In_Main.Set_Theme_Dark();   //Change theme to dark to Report panel
 
             // TOP + TOP-BUTTONS
 
@@ -472,30 +482,30 @@ namespace Meds_App
 
             button_Home.Image = Properties.Resources.LOGO_Home_White;           //
             button_OutOfDate.Image = Properties.Resources.LOGO_OutOfDate_White; //Sets the logos from the left buttons to White
-            button_Details.Image = Properties.Resources.LOGO_List_White;        //
+            button_Report.Image = Properties.Resources.LOGO_List_White;        //
 
 
-            button_Home.ForeColor = button_OutOfDate.ForeColor = button_Details.ForeColor = Color.White;    //Sets the text color of left panel buttons to White
+            button_Home.ForeColor = button_OutOfDate.ForeColor = button_Report.ForeColor = Color.White;    //Sets the text color of left panel buttons to White
 
             button_Home.FlatAppearance.MouseDownBackColor = button_OutOfDate.FlatAppearance.MouseDownBackColor =
-                button_Details.FlatAppearance.MouseDownBackColor = ColorLeftBlack;      //Sets the color of the left buttons when they are pressed to a RGB value ColorLeftBlack
+                button_Report.FlatAppearance.MouseDownBackColor = ColorLeftBlack;      //Sets the color of the left buttons when they are pressed to a RGB value ColorLeftBlack
 
             button_Home.FlatAppearance.MouseOverBackColor = button_OutOfDate.FlatAppearance.MouseOverBackColor =
-                button_Details.FlatAppearance.MouseOverBackColor = Color.Black;         //Sets the color of the left buttons when they are hovered to Black
+                button_Report.FlatAppearance.MouseOverBackColor = Color.Black;         //Sets the color of the left buttons when they are hovered to Black
 
             if (button_Home.BackColor == Color.OldLace)
             {
                 button_Home.BackColor = Color.Black;                                        //Sets the color of the old active button to Black
-                button_OutOfDate.BackColor = button_Details.BackColor = ColorLeftBlack;     //Sets the color of the rest of the left side buttons to RGB value ColorLeftBlack
+                button_OutOfDate.BackColor = button_Report.BackColor = ColorLeftBlack;     //Sets the color of the rest of the left side buttons to RGB value ColorLeftBlack
             }
             else if (button_OutOfDate.BackColor == Color.OldLace)
             {
                 button_OutOfDate.BackColor = Color.Black;                                   //Sets the color of the old active button to Black
-                button_Home.BackColor = button_Details.BackColor = ColorLeftBlack;          //Sets the color of the rest of the left side buttons to RGB value ColorLeftBlack
+                button_Home.BackColor = button_Report.BackColor = ColorLeftBlack;          //Sets the color of the rest of the left side buttons to RGB value ColorLeftBlack
             }
-            else if (button_Details.BackColor == Color.OldLace)
+            else if (button_Report.BackColor == Color.OldLace)
             {
-                button_Details.BackColor = Color.Black;                                     //Sets the color of the old active button to Black
+                button_Report.BackColor = Color.Black;                                     //Sets the color of the old active button to Black
                 button_Home.BackColor = button_OutOfDate.BackColor = ColorLeftBlack;        //Sets the color of the rest of the left side buttons to RGB value ColorLeftBlack
             }
 
@@ -511,6 +521,7 @@ namespace Meds_App
 
             panelHome_In_Main.Set_Theme_Light();        //Change theme to light to Home panel
             panelOutOfDate_In_Main.Set_Theme_Light();   //Change theme to light to OutOfDate panel
+            panelReport_In_Main.Set_Theme_Light();      //Change theme to dark to Report panel
 
             // TOP + TOP-BUTTONS
 
@@ -543,29 +554,29 @@ namespace Meds_App
 
             button_Home.Image = Properties.Resources.LOGO_Home;             //
             button_OutOfDate.Image = Properties.Resources.LOGO_OutOfDate;   //Sets the logos from the left buttons to Black
-            button_Details.Image = Properties.Resources.LOGO_List;          //
+            button_Report.Image = Properties.Resources.LOGO_List;          //
 
-            button_Home.ForeColor = button_OutOfDate.ForeColor = button_Details.ForeColor = Color.Black;    //Sets the text color of left panel buttons to Black
+            button_Home.ForeColor = button_OutOfDate.ForeColor = button_Report.ForeColor = Color.Black;    //Sets the text color of left panel buttons to Black
 
             button_Home.FlatAppearance.MouseDownBackColor = button_OutOfDate.FlatAppearance.MouseDownBackColor =
-                button_Details.FlatAppearance.MouseDownBackColor = Color.Moccasin;      //Sets the color of the left buttons when they are pressed to Moccasin
+                button_Report.FlatAppearance.MouseDownBackColor = Color.Moccasin;      //Sets the color of the left buttons when they are pressed to Moccasin
 
             button_Home.FlatAppearance.MouseOverBackColor = button_OutOfDate.FlatAppearance.MouseOverBackColor =
-                button_Details.FlatAppearance.MouseOverBackColor = Color.OldLace;       //Sets the color of the left buttons when they are hovered to OldLace
+                button_Report.FlatAppearance.MouseOverBackColor = Color.OldLace;       //Sets the color of the left buttons when they are hovered to OldLace
 
             if (button_Home.BackColor == Color.Black) 
             {
                 button_Home.BackColor = Color.OldLace;                                      //Sets the color of the old active button to OldLace
-                button_OutOfDate.BackColor = button_Details.BackColor = Color.Moccasin;     //Sets the color of the rest of the left side buttons to Moccasin
+                button_OutOfDate.BackColor = button_Report.BackColor = Color.Moccasin;     //Sets the color of the rest of the left side buttons to Moccasin
             }
             else if (button_OutOfDate.BackColor == Color.Black)
             {
                 button_OutOfDate.BackColor = Color.OldLace;                                 //Sets the color of the old active button to OldLace
-                button_Home.BackColor = button_Details.BackColor = Color.Moccasin;          //Sets the color of the rest of the left side buttons to Moccasin
+                button_Home.BackColor = button_Report.BackColor = Color.Moccasin;          //Sets the color of the rest of the left side buttons to Moccasin
             }
-            else if (button_Details.BackColor == Color.Black)
+            else if (button_Report.BackColor == Color.Black)
             {
-                button_Details.BackColor = Color.OldLace;                                   //Sets the color of the old active button to OldLace
+                button_Report.BackColor = Color.OldLace;                                   //Sets the color of the old active button to OldLace
                 button_Home.BackColor = button_OutOfDate.BackColor = Color.Moccasin;        //Sets the color of the rest of the left side buttons to Moccasin
             }
 

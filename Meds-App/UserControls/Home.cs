@@ -54,7 +54,7 @@ namespace Meds_App
             {
                 button_Add.Enabled = true;
                 textBox_search.Enabled = true;
-                Process process = Process.GetProcessesByName("Meds-Server")[0];
+                Process process = Process.GetProcessesByName("Meds-Server-Backup")[0]; // If I run another server I need to change the name here
             }
             catch (Exception)
             {
@@ -212,6 +212,7 @@ namespace Meds_App
 
         private void textBox_search_TextChanged(object sender, EventArgs e)
         {
+            throw new Exception("Here I can create a list with the medicines names, description and base substance and autogenerate when searching for something");
             listBox_Meds.Items.Clear();
             List<Med> medsListSearch = new List<Med>();
             foreach (var med in medsList)
@@ -415,6 +416,7 @@ namespace Meds_App
             label_Search.ForeColor =        //Sets color of search label text to White
                 textBox_search.ForeColor =  //Sets color of search box text to White
                 listBox_Meds.ForeColor =    //Sets color of listbox elements text to White
+
                 button_Add.ForeColor =      //Sets color of add button text to White
                 button_Details.ForeColor =  //Sets color of details button text to White
                 Color.White;
