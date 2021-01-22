@@ -576,6 +576,50 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A clear and concise description of the issue.
+        ///Describe what happened and what you expected to happen.
+        ///Steps to reproduce the issue, if available.
+        ///Screenshots of the issue, if relevant.
+        ///Any error messages you received..
+        /// </summary>
+        public static string HelpReport_eng {
+            get {
+                return ResourceManager.GetString("HelpReport_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O descriere clară și concisă a problemei. 
+        ///Descrieți ce s-a întâmplat și ce v-ați așteptatat să se întâmple.
+        ///Pașii pentru a reproduce problema, dacă îi m-ai știți.
+        ///Capturi de ecran ale problemei, dacă credeți că este relevant.
+        ///Orice mesaj de eroare ați primit..
+        /// </summary>
+        public static string HelpReport_ro {
+            get {
+                return ResourceManager.GetString("HelpReport_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What should I include in my bug report?.
+        /// </summary>
+        public static string HelpReportTitle_eng {
+            get {
+                return ResourceManager.GetString("HelpReportTitle_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ce ar trebui să includ în raportul meu de erori?.
+        /// </summary>
+        public static string HelpReportTitle_ro {
+            get {
+                return ResourceManager.GetString("HelpReportTitle_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You can search for a med by name, description or base substance!.
         /// </summary>
         public static string HelpSearch_eng {
@@ -713,6 +757,16 @@ namespace Meds_App.Properties {
         public static System.Drawing.Bitmap LOGO_Help {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_Help_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Help_White", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

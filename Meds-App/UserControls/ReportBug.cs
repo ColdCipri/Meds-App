@@ -17,7 +17,9 @@ namespace Meds_App.UserControls
     public partial class ReportBug : UserControl
     {
         private string error_email, error_message, error, failed_to_send,   //Strings for texts. These ones were saved here because they can be modified by the language
-            imgFile, success, successfully_sent, imgLocation = "";
+            imgFile, success, successfully_sent, imgLocation = "", help;
+
+        private readonly ToolTip toolTipForHelp = new ToolTip();   //It initialises a new ToolTip which would be set later
 
         //Constructor - Generated method
         //
@@ -25,14 +27,14 @@ namespace Meds_App.UserControls
         {
             InitializeComponent();
 
-            string message = " What should I include in my bug report? " +
-                "A clear and concise description of the issue." +
-                "Describe what happened and what you expected to happen." +
-                "Steps to reproduce the issue, if available." +
-                "Screenshots of the issue, if relevant." +
-                "Any error messages you received.";
+            toolTipForHelp.SetToolTip(pictureBox_help, help);
+            toolTipForHelp.IsBalloon = true;
+            toolTipForHelp.ShowAlways = true;
+            toolTipForHelp.ToolTipIcon = ToolTipIcon.Info;
+            toolTipForHelp.AutoPopDelay = 13000;
 
-            throw new Exception(message);
+
+            //throw new Exception(message);
         }
 
 
@@ -169,6 +171,10 @@ namespace Meds_App.UserControls
 
             successfully_sent = Properties.Resources.SuccessfullySend_ro;
 
+            help = Properties.Resources.HelpReport_ro;
+            toolTipForHelp.SetToolTip(pictureBox_help, help);
+            toolTipForHelp.ToolTipTitle = Properties.Resources.HelpReportTitle_ro;
+
             setErrorsRo();
         }
 
@@ -202,6 +208,11 @@ namespace Meds_App.UserControls
 
             successfully_sent = Properties.Resources.SuccessfullySend_eng;
 
+            help = Properties.Resources.HelpReport_eng;
+            Console.WriteLine(help);
+            toolTipForHelp.SetToolTip(pictureBox_help, help);
+            toolTipForHelp.ToolTipTitle = Properties.Resources.HelpReportTitle_eng;
+
             setErrorsEng();
         }
 
@@ -225,6 +236,8 @@ namespace Meds_App.UserControls
         internal void Set_Theme_Dark()
         {
             panel_full.BackColor = Color.Black;  //Set the background color of panel to black
+
+            pictureBox_help.Image = Properties.Resources.LOGO_Help_White;   //Set the help logo to white
 
             label_Title.ForeColor =             //Set the text color of Title to white
 
@@ -268,6 +281,8 @@ namespace Meds_App.UserControls
         internal void Set_Theme_Light()
         {
             panel_full.BackColor = Color.OldLace;//Set the background color of panel to OldLace
+
+            pictureBox_help.Image = Properties.Resources.LOGO_Help;   //Set the help logo to black
 
             label_Title.ForeColor =             //Set the text color of Title to black
 

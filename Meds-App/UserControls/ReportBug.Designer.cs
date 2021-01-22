@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_full = new System.Windows.Forms.Panel();
+            this.pictureBox_help = new System.Windows.Forms.PictureBox();
             this.button_Send = new System.Windows.Forms.Button();
             this.button_AddPicture = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -40,11 +41,13 @@
             this.label_Email = new System.Windows.Forms.Label();
             this.label_Title = new System.Windows.Forms.Label();
             this.panel_full.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_full
             // 
+            this.panel_full.Controls.Add(this.pictureBox_help);
             this.panel_full.Controls.Add(this.button_Send);
             this.panel_full.Controls.Add(this.button_AddPicture);
             this.panel_full.Controls.Add(this.pictureBox);
@@ -59,6 +62,18 @@
             this.panel_full.Name = "panel_full";
             this.panel_full.Size = new System.Drawing.Size(758, 590);
             this.panel_full.TabIndex = 0;
+            // 
+            // pictureBox_help
+            // 
+            this.pictureBox_help.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureBox_help.Image = global::Meds_App.Properties.Resources.LOGO_Help;
+            this.pictureBox_help.InitialImage = null;
+            this.pictureBox_help.Location = new System.Drawing.Point(662, 29);
+            this.pictureBox_help.Name = "pictureBox_help";
+            this.pictureBox_help.Size = new System.Drawing.Size(63, 56);
+            this.pictureBox_help.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_help.TabIndex = 43;
+            this.pictureBox_help.TabStop = false;
             // 
             // button_Send
             // 
@@ -168,7 +183,7 @@
             // 
             this.label_Title.AutoSize = true;
             this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Title.Location = new System.Drawing.Point(253, 10);
+            this.label_Title.Location = new System.Drawing.Point(253, 17);
             this.label_Title.Name = "label_Title";
             this.label_Title.Size = new System.Drawing.Size(244, 42);
             this.label_Title.TabIndex = 0;
@@ -183,6 +198,7 @@
             this.Size = new System.Drawing.Size(758, 590);
             this.panel_full.ResumeLayout(false);
             this.panel_full.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_help)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -201,5 +217,6 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button button_AddPicture;
         private System.Windows.Forms.Button button_Send;
+        private System.Windows.Forms.PictureBox pictureBox_help;
     }
 }

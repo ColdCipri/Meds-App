@@ -164,7 +164,7 @@
             this.button_AddPicture.Name = "button_AddPicture";
             this.button_AddPicture.Size = new System.Drawing.Size(134, 46);
             this.button_AddPicture.TabIndex = 19;
-            this.button_AddPicture.Text = "(";
+            this.button_AddPicture.Text = "Add Picture";
             this.button_AddPicture.UseVisualStyleBackColor = false;
             this.button_AddPicture.Click += new System.EventHandler(this.button_AddPicture_Click);
             // 

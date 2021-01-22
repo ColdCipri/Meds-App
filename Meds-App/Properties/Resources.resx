@@ -617,4 +617,27 @@
   <data name="Report_ro" xml:space="preserve">
     <value>Raportează o problemă</value>
   </data>
+  <data name="HelpReportTitle_eng" xml:space="preserve">
+    <value>What should I include in my bug report?</value>
+  </data>
+  <data name="HelpReportTitle_ro" xml:space="preserve">
+    <value>Ce ar trebui să includ în raportul meu de erori?</value>
+  </data>
+  <data name="HelpReport_eng" xml:space="preserve">
+    <value>A clear and concise description of the issue.
+Describe what happened and what you expected to happen.
+Steps to reproduce the issue, if available.
+Screenshots of the issue, if relevant.
+Any error messages you received.</value>
+  </data>
+  <data name="HelpReport_ro" xml:space="preserve">
+    <value>O descriere clară și concisă a problemei. 
+Descrieți ce s-a întâmplat și ce v-ați așteptatat să se întâmple.
+Pașii pentru a reproduce problema, dacă îi m-ai știți.
+Capturi de ecran ale problemei, dacă credeți că este relevant.
+Orice mesaj de eroare ați primit.</value>
+  </data>
+  <data name="LOGO_Help_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO-Help_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

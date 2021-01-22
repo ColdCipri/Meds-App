@@ -159,7 +159,6 @@
     <None Include="Resources\LOGO-Settings.png" />
     <None Include="Resources\LOGO-Exit.bmp" />
     <None Include="Resources\LOGO-Exit.png" />
-    <None Include="Resources\LOGO-Help.png" />
     <None Include="Resources\LOGO-Home.png" />
     <None Include="Resources\LOGO-List.png" />
     <None Include="Resources\LOGO-Icon.ico" />
@@ -172,6 +171,8 @@
     <None Include="Resources\LOGO-Home_White.png" />
     <None Include="Resources\LOGO-List_White.png" />
     <None Include="Resources\LOGO-Arrow_White.png" />
+    <None Include="Resources\LOGO-Help.png" />
+    <None Include="Resources\LOGO-Help_White.png" />
     <Content Include="Resources\LOGO-Med.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

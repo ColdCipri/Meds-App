@@ -20,6 +20,7 @@ namespace Meds_App
         private DialogResult result;
         private ToolTip toolTipForSearch = new ToolTip();           //It initialises a new ToolTip which would be set later
         public List<Med> medsList = new List<Med>();                //It initialises an empty list which would be later filled with medicines from the server
+        private AutoCompleteStringCollection autofillList = new AutoCompleteStringCollection();     //It initialises an empty list which would be used for an easier way to search medicines
         private Med medDetails = new Med();                         //It initialises an empty medicine which would be later modified
 
         //Constructor - Generated method
@@ -212,7 +213,6 @@ namespace Meds_App
 
         private void textBox_search_TextChanged(object sender, EventArgs e)
         {
-            throw new Exception("Here I can create a list with the medicines names, description and base substance and autogenerate when searching for something");
             listBox_Meds.Items.Clear();
             List<Med> medsListSearch = new List<Med>();
             foreach (var med in medsList)
@@ -225,7 +225,7 @@ namespace Meds_App
                     listBox_Meds.Items.Add(med.Name);
                 }
             }
-            medsList = medsListSearch;
+            //medsList = medsListSearch; //I deleted this because when I written an example (Coldred) and deleted the last character, then it would have not find the elements again
             if (textBox_search.Text.Length == 0)
             {
                 Fill_ListBox();
@@ -244,6 +244,18 @@ namespace Meds_App
         public async void Fill_ListBox()
         {
             medsList = await Http.Get_Meds_Async(true);
+            if (autofillList.Count == 0)
+            {
+                foreach (var item in medsList)
+                {
+                    autofillList.AddRange(new string[] { item.Name, item.BaseSubstance, item.Description });
+                }
+                textBox_search.AutoCompleteCustomSource = autofillList; 
+                foreach (var item in textBox_search.AutoCompleteCustomSource)
+                {
+                    Console.WriteLine(item);
+                }
+            }
 
             if (medsList.Count == 0 && firstTime)
             {
