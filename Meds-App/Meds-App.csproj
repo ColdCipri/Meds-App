@@ -62,11 +62,11 @@
     <Compile Include="UserControls\Details.Designer.cs">
       <DependentUpon>Details.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Home\AddMeds.cs">
+    <Compile Include="UserControls\Home\Medicines.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Home\AddMeds.Designer.cs">
-      <DependentUpon>AddMeds.cs</DependentUpon>
+    <Compile Include="UserControls\Home\Medicines.Designer.cs">
+      <DependentUpon>Medicines.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Home.cs">
       <SubType>UserControl</SubType>
@@ -94,12 +94,18 @@
     <Compile Include="UserControls\OutOfDate.Designer.cs">
       <DependentUpon>OutOfDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ReportBug.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReportBug.Designer.cs">
+      <DependentUpon>ReportBug.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Utils.cs" />
     <EmbeddedResource Include="UserControls\Details.resx">
       <DependentUpon>Details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Home\AddMeds.resx">
-      <DependentUpon>AddMeds.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\Home\Medicines.resx">
+      <DependentUpon>Medicines.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -123,6 +129,9 @@
     <EmbeddedResource Include="UserControls\OutOfDate.resx">
       <DependentUpon>OutOfDate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ReportBug.resx">
+      <DependentUpon>ReportBug.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -133,11 +142,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\openServer.bat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\LOGO-OutOfDate_White.png" />
+    <None Include="Resources\LOGO-Med_white2.png" />
+    <None Include="Resources\LOGO-Med_White.png" />
+    <None Include="Resources\LOGO-Refresh_White.png" />
     <None Include="Resources\Logo-Theme-White_small.png" />
     <None Include="Resources\Logo-Theme-Dark_small.png" />
     <None Include="Resources\LOGO-Refresh.png" />
@@ -145,7 +159,6 @@
     <None Include="Resources\LOGO-Settings.png" />
     <None Include="Resources\LOGO-Exit.bmp" />
     <None Include="Resources\LOGO-Exit.png" />
-    <None Include="Resources\LOGO-Help.png" />
     <None Include="Resources\LOGO-Home.png" />
     <None Include="Resources\LOGO-List.png" />
     <None Include="Resources\LOGO-Icon.ico" />
@@ -154,6 +167,12 @@
     <None Include="Resources\Logo-Flag-Uk-Small.png" />
     <None Include="Resources\GitHub-Mark-120px-plus.png" />
     <None Include="Resources\GitHub-Mark-64px.png" />
+    <None Include="Resources\LOGO-Exit_White.png" />
+    <None Include="Resources\LOGO-Home_White.png" />
+    <None Include="Resources\LOGO-List_White.png" />
+    <None Include="Resources\LOGO-Arrow_White.png" />
+    <None Include="Resources\LOGO-Help.png" />
+    <None Include="Resources\LOGO-Help_White.png" />
     <Content Include="Resources\LOGO-Med.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

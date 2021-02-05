@@ -50,11 +50,11 @@ namespace Meds_App.Model
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(this.Name);
+            stringBuilder.Append(Name);
             stringBuilder.Append("\t");
-            stringBuilder.Append(this.Pieces);
+            stringBuilder.Append(Pieces);
             stringBuilder.Append("\t");
-            stringBuilder.Append(this.Type);
+            stringBuilder.Append(Type);
             stringBuilder.Append("\t");
             return stringBuilder.ToString();
         }
@@ -76,20 +76,26 @@ namespace Meds_App.Model
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue(appjson));
-
-            HttpResponseMessage response = await client.PostAsJsonAsync("Meds", med);
-            response.EnsureSuccessStatusCode();
-            if (response.IsSuccessStatusCode)
+            try
             {
-                Console.WriteLine($"Med with name {med.Name} added on server!");
-                return true;
+                HttpResponseMessage response = await client.PostAsJsonAsync("Meds", med);
+                response.EnsureSuccessStatusCode();
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine($"Med with name {med.Name} added on server!");
+                    return true;
+                }
+            }
+            catch
+            {
+                Console.WriteLine($"Med with name {med.Name} failed to add on server!");
+                return false;
             }
 
-            Console.WriteLine($"Med with name {med.Name} failed to add on server!");
             return false;
         }
 
-       public static async Task<Med> GetMedByIdAsync(int id)
+       /*public static async Task<Med> GetMedByIdAsync(int id)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(uri);
@@ -107,14 +113,15 @@ namespace Meds_App.Model
                     return (Med)JsonConvert.DeserializeObject(await response.Content.ReadAsStringAsync(), typeof(Med));
                 }
                 throw new Exception($"Received status: {response.StatusCode}");
-            }catch(Exception e)
+            }
+            catch(Exception e)
             {
                 Console.WriteLine(e);
                 return null;
             }
-        }
+        }*/
 
-        public static async Task<List<Med>> GetMedsAsync(bool sorted)
+        public static async Task<List<Med>> Get_Meds_Async(bool sorted)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(uri);
@@ -152,7 +159,7 @@ namespace Meds_App.Model
         }
 
         //TODO When open app call this function and count how many meds are out of date. Show messagebox
-        public static async Task<List<Med>> GetOutOfDateMedsAsync(bool sorted)
+        public static async Task<List<Med>> Get_OutOfDate_Meds_Async(bool sorted)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(uri);
@@ -189,7 +196,7 @@ namespace Meds_App.Model
             }
         }
 
-        public static async void PutMedAsync(Med med, int id)
+        public static async Task<bool> PutMedAsync(Med med, int id)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(uri);
@@ -197,38 +204,50 @@ namespace Meds_App.Model
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue(appjson));
 
-            HttpResponseMessage response = await client.PutAsJsonAsync($"Meds/{id}", med);
-            response.EnsureSuccessStatusCode();
-            if (response.IsSuccessStatusCode)
+            try
             {
-                Console.WriteLine($"Med with name {med.Name} updated on server!");
+                HttpResponseMessage response = await client.PutAsJsonAsync($"Meds/{id}", med);
+                response.EnsureSuccessStatusCode();
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine($"Med with name {med.Name} updated on server!");
+                    return true;
+                }
             }
-            else
+            catch
             {
-
                 Console.WriteLine($"Med with name {med.Name} failed to update on server!");
+                return false;
             }
+
+            return false;
+
         }
 
-        public static async void DeleteMedAsync(int id)
+        public static async Task<bool> DeleteMedAsync(int id)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(uri);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue(appjson));
-
-            HttpResponseMessage response = await client.DeleteAsync(
-                $"Meds/{id}");
-            if (response.IsSuccessStatusCode)
+            try
             {
-
-                Console.WriteLine($"Med with id {id} deleted from server!");
+                HttpResponseMessage response = await client.DeleteAsync(
+                   $"Meds/{id}");
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine($"Med with id {id} deleted from server!");
+                    return true;
+                }
             }
-            else
+            catch
             {
                 Console.WriteLine($"Med with id {id} failed to delete from server!");
+                return false;
             }
+
+            return false;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Meds_App.UserControls.Home
             InitializeComponent();
         }
 
-        public void fillDetails(Med medExt)
+        public void Fill_Med(Med medExt)
         {
             med = medExt;
             textBox_Details_Name.Text = med.Name;

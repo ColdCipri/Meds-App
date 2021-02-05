@@ -79,7 +79,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add a new med.
+        ///   Looks up a localized string similar to Add a new medicine.
         /// </summary>
         public static string AddANewMed_eng {
             get {
@@ -277,6 +277,51 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Details about medicine.
+        /// </summary>
+        public static string DetailsAbout_eng {
+            get {
+                return ResourceManager.GetString("DetailsAbout_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detalii despre medicament.
+        /// </summary>
+        public static string DetailsAbout_ro {
+            get {
+                return ResourceManager.GetString("DetailsAbout_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email*:.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to reportbugpassword2020.
+        /// </summary>
+        public static string Email_password {
+            get {
+                return ResourceManager.GetString("Email_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to reportmedicinebug@gmail.com.
+        /// </summary>
+        public static string Email_user {
+            get {
+                return ResourceManager.GetString("Email_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error_eng {
@@ -363,6 +408,42 @@ namespace Meds_App.Properties {
         public static string ErrorDescription_ro {
             get {
                 return ResourceManager.GetString("ErrorDescription_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The email is invalid or is empty!.
+        /// </summary>
+        public static string ErrorEmail_eng {
+            get {
+                return ResourceManager.GetString("ErrorEmail_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adresa de email invalidă!.
+        /// </summary>
+        public static string ErrorEmail_ro {
+            get {
+                return ResourceManager.GetString("ErrorEmail_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is no problem description!.
+        /// </summary>
+        public static string ErrorMessage_eng {
+            get {
+                return ResourceManager.GetString("ErrorMessage_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nu ați completat descrierea problemei!.
+        /// </summary>
+        public static string ErrorMessage_ro {
+            get {
+                return ResourceManager.GetString("ErrorMessage_ro", resourceCulture);
             }
         }
         
@@ -457,6 +538,60 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to failed to delete! Please try again!.
+        /// </summary>
+        public static string FailedToDelete_eng {
+            get {
+                return ResourceManager.GetString("FailedToDelete_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nu a fost șters! Vă rog să mai încercați!.
+        /// </summary>
+        public static string FailedToDelete_ro {
+            get {
+                return ResourceManager.GetString("FailedToDelete_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bug was not reported! Please try again!.
+        /// </summary>
+        public static string FailedToSend_eng {
+            get {
+                return ResourceManager.GetString("FailedToSend_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Problema nu a fost raportată! Vă rog să mai încercați!.
+        /// </summary>
+        public static string FailedToSend_ro {
+            get {
+                return ResourceManager.GetString("FailedToSend_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to failed to update! Please try again!.
+        /// </summary>
+        public static string FailedToUpdate_eng {
+            get {
+                return ResourceManager.GetString("FailedToUpdate_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nu a fost actualizat! Vă rog să mai încercați!.
+        /// </summary>
+        public static string FailedToUpdate_ro {
+            get {
+                return ResourceManager.GetString("FailedToUpdate_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap GitHub_Mark_120px_plus {
@@ -473,6 +608,50 @@ namespace Meds_App.Properties {
             get {
                 object obj = ResourceManager.GetObject("GitHub-Mark-64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A clear and concise description of the issue.
+        ///Describe what happened and what you expected to happen.
+        ///Steps to reproduce the issue, if available.
+        ///Screenshots of the issue, if relevant.
+        ///Any error messages you received..
+        /// </summary>
+        public static string HelpReport_eng {
+            get {
+                return ResourceManager.GetString("HelpReport_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O descriere clară și concisă a problemei. 
+        ///Descrieți ce s-a întâmplat și ce v-ați așteptatat să se întâmple.
+        ///Pașii pentru a reproduce problema, dacă îi m-ai știți.
+        ///Capturi de ecran ale problemei, dacă credeți că este relevant.
+        ///Orice mesaj de eroare ați primit..
+        /// </summary>
+        public static string HelpReport_ro {
+            get {
+                return ResourceManager.GetString("HelpReport_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What should I include in my bug report?.
+        /// </summary>
+        public static string HelpReportTitle_eng {
+            get {
+                return ResourceManager.GetString("HelpReportTitle_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ce ar trebui să includ în raportul meu de erori?.
+        /// </summary>
+        public static string HelpReportTitle_ro {
+            get {
+                return ResourceManager.GetString("HelpReportTitle_ro", resourceCulture);
             }
         }
         
@@ -561,9 +740,29 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap LOGO_Arrow_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Arrow_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LOGO_Exit {
             get {
                 object obj = ResourceManager.GetObject("LOGO_Exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_Exit_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Exit_White", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -601,9 +800,29 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap LOGO_Help_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Help_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LOGO_Home {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_Home_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Home_White", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -621,9 +840,39 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap LOGO_List_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_List_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LOGO_Med {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Med", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_Med_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Med_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_Med_white2 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Med_white2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -641,9 +890,29 @@ namespace Meds_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap LOGO_OutOfDate_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_OutOfDate_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap LOGO_Refresh {
             get {
                 object obj = ResourceManager.GetObject("LOGO-Refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LOGO_Refresh_White {
+            get {
+                object obj = ResourceManager.GetObject("LOGO_Refresh_White", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -688,7 +957,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Medicament adaugat.
+        ///   Looks up a localized string similar to Medicament adăugat.
         /// </summary>
         public static string MedAdded_ro {
             get {
@@ -711,6 +980,19 @@ namespace Meds_App.Properties {
         public static string Name_ro {
             get {
                 return ResourceManager.GetString("Name_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to echo off
+        ///cls
+        ///echo Server will open soon...
+        ///cd &quot;C:\Users\colde\source\repos\ColdCipri\Meds-Server\Meds-Server&quot;
+        ///dotnet run --urls http://*:5050.
+        /// </summary>
+        public static string openServer {
+            get {
+                return ResourceManager.GetString("openServer", resourceCulture);
             }
         }
         
@@ -787,6 +1069,42 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Problem description*:.
+        /// </summary>
+        public static string ProblemDescription_eng {
+            get {
+                return ResourceManager.GetString("ProblemDescription_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descrierea problemei*:.
+        /// </summary>
+        public static string ProblemDescription_ro {
+            get {
+                return ResourceManager.GetString("ProblemDescription_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report a bug.
+        /// </summary>
+        public static string Report_eng {
+            get {
+                return ResourceManager.GetString("Report_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raportează o problemă.
+        /// </summary>
+        public static string Report_ro {
+            get {
+                return ResourceManager.GetString("Report_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         public static string Save_eng {
@@ -819,6 +1137,24 @@ namespace Meds_App.Properties {
         public static string Search_ro {
             get {
                 return ResourceManager.GetString("Search_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Send_eng {
+            get {
+                return ResourceManager.GetString("Send_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trimite.
+        /// </summary>
+        public static string Send_ro {
+            get {
+                return ResourceManager.GetString("Send_ro", resourceCulture);
             }
         }
         
@@ -895,7 +1231,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Successfully deleted.
+        ///   Looks up a localized string similar to successfully deleted!.
         /// </summary>
         public static string SuccessfullyDeleted_eng {
             get {
@@ -904,7 +1240,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Am șters cu succes.
+        ///   Looks up a localized string similar to a fost șters cu succes!.
         /// </summary>
         public static string SuccessfullyDeleted_ro {
             get {
@@ -913,7 +1249,25 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Successfully updated.
+        ///   Looks up a localized string similar to Report sent! Thank you for your feedback!.
+        /// </summary>
+        public static string SuccessfullySend_eng {
+            get {
+                return ResourceManager.GetString("SuccessfullySend_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Problema a fost raportată! Mulțumim pentru feedback-ul tău!.
+        /// </summary>
+        public static string SuccessfullySend_ro {
+            get {
+                return ResourceManager.GetString("SuccessfullySend_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to successfully updated!.
         /// </summary>
         public static string SuccessfullyUpdated_eng {
             get {
@@ -922,7 +1276,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Am actualizat cu succes.
+        ///   Looks up a localized string similar to actualizat cu succes!.
         /// </summary>
         public static string SuccessfullyUpdated_ro {
             get {
@@ -936,6 +1290,24 @@ namespace Meds_App.Properties {
         public static string Title_eng {
             get {
                 return ResourceManager.GetString("Title_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report a bug!.
+        /// </summary>
+        public static string Title_Report_eng {
+            get {
+                return ResourceManager.GetString("Title_Report_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raportează o eroare!.
+        /// </summary>
+        public static string Title_Report_ro {
+            get {
+                return ResourceManager.GetString("Title_Report_ro", resourceCulture);
             }
         }
         

@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel_Left = new System.Windows.Forms.Panel();
-            this.button_Details = new System.Windows.Forms.Button();
+            this.button_Report = new System.Windows.Forms.Button();
             this.button_OutOfDate = new System.Windows.Forms.Button();
             this.button_Home = new System.Windows.Forms.Button();
             this.pictureBox_Logo = new System.Windows.Forms.PictureBox();
             this.panel_Top = new System.Windows.Forms.Panel();
+            this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Theme = new System.Windows.Forms.Button();
             this.label_Title = new System.Windows.Forms.Label();
-            this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Language = new System.Windows.Forms.Button();
             this.button_Exit = new System.Windows.Forms.Button();
             this.panel_Main = new System.Windows.Forms.Panel();
-            this.panelDetails_In_Main = new Meds_App.UserControls.Details();
+            this.panelReport_In_Main = new Meds_App.UserControls.ReportBug();
+            this.panelDetails_In_Main = new Meds_App.UserControls.Report();
             this.panelOutOfDate_In_Main = new Meds_App.UserControls.OutOfDate();
             this.panelHome_In_Main = new Meds_App.HomeGUI();
             this.panel_Left.SuspendLayout();
@@ -53,7 +54,7 @@
             // panel_Left
             // 
             this.panel_Left.BackColor = System.Drawing.Color.Moccasin;
-            this.panel_Left.Controls.Add(this.button_Details);
+            this.panel_Left.Controls.Add(this.button_Report);
             this.panel_Left.Controls.Add(this.button_OutOfDate);
             this.panel_Left.Controls.Add(this.button_Home);
             this.panel_Left.Controls.Add(this.pictureBox_Logo);
@@ -63,25 +64,25 @@
             this.panel_Left.Size = new System.Drawing.Size(198, 629);
             this.panel_Left.TabIndex = 0;
             // 
-            // button_Details
+            // button_Report
             // 
-            this.button_Details.BackColor = System.Drawing.Color.Moccasin;
-            this.button_Details.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Details.FlatAppearance.BorderSize = 0;
-            this.button_Details.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Moccasin;
-            this.button_Details.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
-            this.button_Details.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Details.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Details.Image = global::Meds_App.Properties.Resources.LOGO_List;
-            this.button_Details.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Details.Location = new System.Drawing.Point(22, 481);
-            this.button_Details.Name = "button_Details";
-            this.button_Details.Size = new System.Drawing.Size(176, 93);
-            this.button_Details.TabIndex = 4;
-            this.button_Details.Text = "Details";
-            this.button_Details.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Details.UseVisualStyleBackColor = false;
-            this.button_Details.Click += new System.EventHandler(this.Button_Details_Click);
+            this.button_Report.BackColor = System.Drawing.Color.Moccasin;
+            this.button_Report.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Report.FlatAppearance.BorderSize = 0;
+            this.button_Report.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Moccasin;
+            this.button_Report.FlatAppearance.MouseOverBackColor = System.Drawing.Color.AntiqueWhite;
+            this.button_Report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Report.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Report.Image = global::Meds_App.Properties.Resources.LOGO_List;
+            this.button_Report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Report.Location = new System.Drawing.Point(22, 481);
+            this.button_Report.Name = "button_Report";
+            this.button_Report.Size = new System.Drawing.Size(176, 93);
+            this.button_Report.TabIndex = 4;
+            this.button_Report.Text = "Details";
+            this.button_Report.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Report.UseVisualStyleBackColor = false;
+            this.button_Report.Click += new System.EventHandler(this.Button_Details_Click);
             // 
             // button_OutOfDate
             // 
@@ -147,33 +148,6 @@
             this.panel_Top.Size = new System.Drawing.Size(758, 39);
             this.panel_Top.TabIndex = 1;
             // 
-            // button_Theme
-            // 
-            this.button_Theme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button_Theme.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Theme.FlatAppearance.BorderColor = System.Drawing.Color.Salmon;
-            this.button_Theme.FlatAppearance.BorderSize = 0;
-            this.button_Theme.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.button_Theme.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LavenderBlush;
-            this.button_Theme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Theme.ForeColor = System.Drawing.Color.Salmon;
-            this.button_Theme.Image = global::Meds_App.Properties.Resources.Logo_Theme_Dark_small;
-            this.button_Theme.Location = new System.Drawing.Point(607, 0);
-            this.button_Theme.Name = "button_Theme";
-            this.button_Theme.Size = new System.Drawing.Size(42, 39);
-            this.button_Theme.TabIndex = 5;
-            this.button_Theme.UseVisualStyleBackColor = true;
-            this.button_Theme.Click += new System.EventHandler(this.button_Theme_Click);
-            // 
-            // label_Title
-            // 
-            this.label_Title.Font = new System.Drawing.Font("Script MT Bold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Title.Location = new System.Drawing.Point(0, -40);
-            this.label_Title.Name = "label_Title";
-            this.label_Title.Size = new System.Drawing.Size(578, 41);
-            this.label_Title.TabIndex = 4;
-            this.label_Title.Text = "Application for managing home medicines";
-            // 
             // button_Refresh
             // 
             this.button_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -190,7 +164,34 @@
             this.button_Refresh.Size = new System.Drawing.Size(42, 39);
             this.button_Refresh.TabIndex = 3;
             this.button_Refresh.UseVisualStyleBackColor = true;
-            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
+            this.button_Refresh.Click += new System.EventHandler(this.Button_Refresh_Click);
+            // 
+            // button_Theme
+            // 
+            this.button_Theme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_Theme.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Theme.FlatAppearance.BorderColor = System.Drawing.Color.Salmon;
+            this.button_Theme.FlatAppearance.BorderSize = 0;
+            this.button_Theme.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.button_Theme.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LavenderBlush;
+            this.button_Theme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Theme.ForeColor = System.Drawing.Color.Salmon;
+            this.button_Theme.Image = global::Meds_App.Properties.Resources.Logo_Theme_Dark_small;
+            this.button_Theme.Location = new System.Drawing.Point(607, 0);
+            this.button_Theme.Name = "button_Theme";
+            this.button_Theme.Size = new System.Drawing.Size(42, 39);
+            this.button_Theme.TabIndex = 5;
+            this.button_Theme.UseVisualStyleBackColor = true;
+            this.button_Theme.Click += new System.EventHandler(this.Button_Theme_Click);
+            // 
+            // label_Title
+            // 
+            this.label_Title.Font = new System.Drawing.Font("Script MT Bold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title.Location = new System.Drawing.Point(0, -40);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(578, 41);
+            this.label_Title.TabIndex = 4;
+            this.label_Title.Text = "Application for managing home medicines";
             // 
             // button_Language
             // 
@@ -208,7 +209,7 @@
             this.button_Language.Size = new System.Drawing.Size(46, 39);
             this.button_Language.TabIndex = 2;
             this.button_Language.UseVisualStyleBackColor = true;
-            this.button_Language.Click += new System.EventHandler(this.button_Language_Click);
+            this.button_Language.Click += new System.EventHandler(this.Button_Language_Click);
             // 
             // button_Exit
             // 
@@ -231,6 +232,7 @@
             // panel_Main
             // 
             this.panel_Main.BackColor = System.Drawing.Color.OldLace;
+            this.panel_Main.Controls.Add(this.panelReport_In_Main);
             this.panel_Main.Controls.Add(this.panelDetails_In_Main);
             this.panel_Main.Controls.Add(this.panelOutOfDate_In_Main);
             this.panel_Main.Controls.Add(this.panelHome_In_Main);
@@ -240,11 +242,19 @@
             this.panel_Main.Size = new System.Drawing.Size(758, 590);
             this.panel_Main.TabIndex = 2;
             // 
+            // panelReport_In_Main
+            // 
+            this.panelReport_In_Main.BackColor = System.Drawing.Color.OldLace;
+            this.panelReport_In_Main.Location = new System.Drawing.Point(1250, 0);
+            this.panelReport_In_Main.Name = "panelReport_In_Main";
+            this.panelReport_In_Main.Size = new System.Drawing.Size(758, 590);
+            this.panelReport_In_Main.TabIndex = 3;
+            // 
             // panelDetails_In_Main
             // 
             this.panelDetails_In_Main.Location = new System.Drawing.Point(1000, 0);
             this.panelDetails_In_Main.Name = "panelDetails_In_Main";
-            this.panelDetails_In_Main.Size = new System.Drawing.Size(758, 376);
+            this.panelDetails_In_Main.Size = new System.Drawing.Size(758, 290);
             this.panelDetails_In_Main.TabIndex = 2;
             // 
             // panelOutOfDate_In_Main
@@ -278,6 +288,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meds App";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            //this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.panel_Left.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).EndInit();
             this.panel_Top.ResumeLayout(false);
@@ -294,14 +305,15 @@
         private System.Windows.Forms.Button button_Language;
         private System.Windows.Forms.Button button_Refresh;
         private System.Windows.Forms.Label label_Title;
-        private System.Windows.Forms.Button button_Details;
+        private System.Windows.Forms.Button button_Report;
         private System.Windows.Forms.Button button_OutOfDate;
         private System.Windows.Forms.Button button_Home;
         private System.Windows.Forms.Panel panel_Main;
         private HomeGUI panelHome_In_Main;
         private UserControls.OutOfDate panelOutOfDate_In_Main;
-        private UserControls.Details panelDetails_In_Main;
+        private UserControls.Report panelDetails_In_Main;
         private System.Windows.Forms.Button button_Theme;
+        private UserControls.ReportBug panelReport_In_Main;
     }
 }
 

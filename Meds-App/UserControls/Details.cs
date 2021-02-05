@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Meds_App.UserControls
 {
-    public partial class Details : UserControl
+    public partial class Report : UserControl
     {
-        public Details()
+        public Report()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace Meds_App.UserControls
             System.Diagnostics.Process.Start("https://github.com/ColdCipri/Meds-Server");
         }
 
-        public void setLanguageRo()
+        public void Set_Language_Ro()
         {
             label_github_app.Text = Properties.Resources.SourceCodeApp_ro;
             label_github_server.Text = Properties.Resources.SourceCodeServer_ro;
@@ -38,7 +38,7 @@ namespace Meds_App.UserControls
             label_copyright_flag.Text = Properties.Resources.CopyrightFlag;
         }
 
-        public void setLanguageEng()
+        public void Set_Language_Eng()
         {
             label_github_app.Text = Properties.Resources.SourceCodeApp_eng;
             label_github_server.Text = Properties.Resources.SourceCodeServer_eng;
