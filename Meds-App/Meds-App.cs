@@ -9,7 +9,9 @@ namespace Meds_App
 {
     public partial class MainForm : Form
     {
-        bool languageEng, theme;    //booleans for language and theme.
+        bool languageEng, theme_white;    //booleans for language and theme.
+
+        Color flashColor;
 
         public MainForm()
         {
@@ -33,10 +35,10 @@ namespace Meds_App
 
 
             languageEng = Read_From_File_Language();
-            theme = Read_From_File_Theme();
+            theme_white = Read_From_File_Theme();
 
             Set_Language(languageEng);
-            Set_Theme(theme);
+            Set_Theme(theme_white);
         }
 
         //This method adds a shadow on bottom-right
@@ -52,7 +54,7 @@ namespace Meds_App
 
         }
 
-        //Generated method
+        /*//Generated method
         //
         //This method is called after the Load method from the panelHome_In_Main
         //If the app does not connect to server then this method will show an error
@@ -71,7 +73,7 @@ namespace Meds_App
             {
                 panelHome_In_Main.Show_OutOfDate_Medicines_Count();
             }
-        }
+        }*/
 
 
         //-------------------------------------------UTILS--------------------------------------------
@@ -103,7 +105,7 @@ namespace Meds_App
         //The input button is set as the current value and it's BackColor is changed.
         public void Change_Selected_Button(Button button)
         {
-            if (theme)
+            if (theme_white)
             {
                 button_Home.BackColor = Color.Moccasin;
                 button_OutOfDate.BackColor = Color.Moccasin;
@@ -169,7 +171,9 @@ namespace Meds_App
             else
             {
                 Transition emphasis = new Transition(new TransitionType_Flash(2, 300));
-                emphasis.add(panelHome_In_Main, "BackColor", Color.Pink);
+                emphasis.add(panelHome_In_Main.panel_Home_Left, "BackColor", flashColor);
+                emphasis.add(panelHome_In_Main.panel_Home_Right, "BackColor", flashColor);
+                emphasis.add(panelHome_In_Main.PanelMedicines_In_Home.panel_AddMeds, "BackColor", flashColor);
                 emphasis.run();
             }
 
@@ -210,12 +214,14 @@ namespace Meds_App
             else
             {
                 Transition emphasis = new Transition(new TransitionType_Flash(2, 300));
-                emphasis.add(panelOutOfDate_In_Main, "BackColor", Color.Pink);
+                emphasis.add(panelOutOfDate_In_Main.panel_OutOfDate, "BackColor", flashColor);
+                emphasis.add(panelOutOfDate_In_Main.panel_OutOfDate_Right, "BackColor", flashColor);
+                emphasis.add(panelOutOfDate_In_Main.PanelMedicines_In_OutOfDate.panel_AddMeds, "BackColor", flashColor);
                 emphasis.run();
             }
 
             Change_Selected_Button(button_OutOfDate);
-            panelOutOfDate_In_Main.Fill_Listbox(DateTime.Now);
+            panelOutOfDate_In_Main.Fill_Listbox();
         }
 
 
@@ -255,8 +261,8 @@ namespace Meds_App
             else
             {
                 Transition emphasis = new Transition(new TransitionType_Flash(2, 300));
-                //emphasis.add(panelDetails_In_Main, "BackColor", Color.Pink);
-                emphasis.add(panelReport_In_Main, "BackColor", Color.Pink);
+                //emphasis.add(panelDetails_In_Main, "BackColor", flashColor);
+                emphasis.add(panelReport_In_Main.panel_full, "BackColor", flashColor);
                 emphasis.run();
             }
 
@@ -279,7 +285,7 @@ namespace Meds_App
             if (Check_Active_Button(button_Home))
                 panelHome_In_Main.Fill_ListBox();
             else if (Check_Active_Button(button_OutOfDate))
-                panelOutOfDate_In_Main.Fill_Listbox(DateTime.Now);
+                panelOutOfDate_In_Main.Fill_Listbox();
         }
 
 
@@ -292,17 +298,17 @@ namespace Meds_App
         //It sets the theme value and it calls the Write_To_File_Theme method which writes to file the value for future app runs.
         private void Button_Theme_Click(object sender, EventArgs e)
         {
-            if (theme)
+            if (theme_white)
             {
                 Set_Theme_Dark();                   //Change theme to dark to current form
-                theme = false;                      //Change value to false (dark)
+                theme_white = false;                      //Change value to false (dark)
             }
             else
             {
                 Set_Theme_Light();                  //Change theme to light to current form
-                theme = true;                       //Change value to true (light)
+                theme_white = true;                       //Change value to true (light)
             }
-            Write_To_File_Theme(theme);
+            Write_To_File_Theme(theme_white);
         }
 
 
@@ -328,7 +334,7 @@ namespace Meds_App
         {
             try
             {
-                Process process = Process.GetProcessesByName("Meds-Server")[0];
+                Process process = Process.GetProcessesByName("Meds-Server-Backup")[0];
                 if (process != null)
                 {
                     //process.Kill(); //Uncomment when needed.
@@ -340,7 +346,7 @@ namespace Meds_App
             }
             finally
             {
-                this.Close();
+                Close();
             }
         }
 
@@ -355,9 +361,9 @@ namespace Meds_App
         //It changes the languageEng value and calls the methods from the panels to change their languages.
         //It changes the button_Language button to the flag acording to value.
         //Finnaly, it writes the new value to an output file.
-        private void Set_Language(bool value)
+        private void Set_Language(bool language_eng)
         {
-            if (value)
+            if (language_eng)
             {
                 Set_Language_Eng(this);
                 languageEng = true;
@@ -423,9 +429,9 @@ namespace Meds_App
         //
         //This method calls the Set_Theme(Dark/Light) method according to the input value(true/false).
         //Sets the active button as the button_Home and modifies the colors according the input value(true/false).
-        private void Set_Theme(bool theme)
+        private void Set_Theme(bool theme_white)
         {
-            if (theme) //theme true = white
+            if (theme_white) //theme true = white
             {
                 Set_Theme_Light();
                 button_Home.BackColor = Color.OldLace;  //Button color
@@ -437,7 +443,7 @@ namespace Meds_App
                 button_Home.BackColor = Color.Black;    //Button color
                 button_Home.ForeColor = Color.DarkGray; //Text color
             }
-            Write_To_File_Theme(theme);
+            Write_To_File_Theme(theme_white);
         }
 
         //Input: -
@@ -446,6 +452,7 @@ namespace Meds_App
         //This method changes the buttons and other objects from the main form to Dark mode.
         private void Set_Theme_Dark()
         {
+            flashColor = Color.DimGray;    //Changes the flashlight color to Pink
 
             panelHome_In_Main.Set_Theme_Dark();     //Change theme to dark to Home panel
             panelOutOfDate_In_Main.Set_Theme_Dark();//Change theme to dark to OutOfDate panel
@@ -518,6 +525,7 @@ namespace Meds_App
         //This method changes the buttons and other objects from the main form to Light mode.
         private void Set_Theme_Light()
         {
+            flashColor = Color.Pink;    //Changes the flashlight color to Pink
 
             panelHome_In_Main.Set_Theme_Light();        //Change theme to light to Home panel
             panelOutOfDate_In_Main.Set_Theme_Light();   //Change theme to light to OutOfDate panel

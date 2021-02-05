@@ -276,10 +276,10 @@
     <value>Descriere invalidă!</value>
   </data>
   <data name="SuccessfullyDeleted_ro" xml:space="preserve">
-    <value>Am șters cu succes</value>
+    <value>a fost șters cu succes!</value>
   </data>
   <data name="SuccessfullyUpdated_ro" xml:space="preserve">
-    <value>Am actualizat cu succes</value>
+    <value>actualizat cu succes!</value>
   </data>
   <data name="LOGO-Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -306,7 +306,7 @@
     <value>Succes</value>
   </data>
   <data name="SuccessfullyUpdated_eng" xml:space="preserve">
-    <value>Successfully updated</value>
+    <value>successfully updated!</value>
   </data>
   <data name="Delete_eng" xml:space="preserve">
     <value>Delete</value>
@@ -351,7 +351,7 @@
     <value>Details about medicine</value>
   </data>
   <data name="SuccessfullyDeleted_eng" xml:space="preserve">
-    <value>Successfully deleted</value>
+    <value>successfully deleted!</value>
   </data>
   <data name="LOGO_Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -639,5 +639,17 @@ Orice mesaj de eroare ați primit.</value>
   </data>
   <data name="LOGO_Help_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGO-Help_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FailedToDelete_eng" xml:space="preserve">
+    <value>failed to delete! Please try again!</value>
+  </data>
+  <data name="FailedToDelete_ro" xml:space="preserve">
+    <value>nu a fost șters! Vă rog să mai încercați!</value>
+  </data>
+  <data name="FailedToUpdate_eng" xml:space="preserve">
+    <value>failed to update! Please try again!</value>
+  </data>
+  <data name="FailedToUpdate_ro" xml:space="preserve">
+    <value>nu a fost actualizat! Vă rog să mai încercați!</value>
   </data>
 </root>

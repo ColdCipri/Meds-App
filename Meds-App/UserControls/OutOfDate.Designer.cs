@@ -142,12 +142,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel_OutOfDate;
+        public System.Windows.Forms.Panel panel_OutOfDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker_OutOfDate;
-        private System.Windows.Forms.Panel panel_OutOfDate_Right;
+        public System.Windows.Forms.Panel panel_OutOfDate_Right;
         private System.Windows.Forms.Button button_OutOfDate_Details;
         private System.Windows.Forms.ListBox listBox_OutOfDate;
         private System.Windows.Forms.Button button_OutOfDate_Back;
-        private Medicines PanelMedicines_In_OutOfDate;
+        public Medicines PanelMedicines_In_OutOfDate;
     }
 }

@@ -84,7 +84,7 @@
             this.button_Send.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.button_Send.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button_Send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Send.Location = new System.Drawing.Point(293, 455);
             this.button_Send.Name = "button_Send";
             this.button_Send.Size = new System.Drawing.Size(151, 81);
@@ -206,7 +206,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel_full;
+        public System.Windows.Forms.Panel panel_full;
         private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.TextBox textBox_Name;
         private System.Windows.Forms.Label label_Name;

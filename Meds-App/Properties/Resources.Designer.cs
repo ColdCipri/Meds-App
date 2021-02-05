@@ -538,6 +538,24 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to failed to delete! Please try again!.
+        /// </summary>
+        public static string FailedToDelete_eng {
+            get {
+                return ResourceManager.GetString("FailedToDelete_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nu a fost șters! Vă rog să mai încercați!.
+        /// </summary>
+        public static string FailedToDelete_ro {
+            get {
+                return ResourceManager.GetString("FailedToDelete_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bug was not reported! Please try again!.
         /// </summary>
         public static string FailedToSend_eng {
@@ -552,6 +570,24 @@ namespace Meds_App.Properties {
         public static string FailedToSend_ro {
             get {
                 return ResourceManager.GetString("FailedToSend_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to failed to update! Please try again!.
+        /// </summary>
+        public static string FailedToUpdate_eng {
+            get {
+                return ResourceManager.GetString("FailedToUpdate_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nu a fost actualizat! Vă rog să mai încercați!.
+        /// </summary>
+        public static string FailedToUpdate_ro {
+            get {
+                return ResourceManager.GetString("FailedToUpdate_ro", resourceCulture);
             }
         }
         
@@ -1195,7 +1231,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Successfully deleted.
+        ///   Looks up a localized string similar to successfully deleted!.
         /// </summary>
         public static string SuccessfullyDeleted_eng {
             get {
@@ -1204,7 +1240,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Am șters cu succes.
+        ///   Looks up a localized string similar to a fost șters cu succes!.
         /// </summary>
         public static string SuccessfullyDeleted_ro {
             get {
@@ -1231,7 +1267,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Successfully updated.
+        ///   Looks up a localized string similar to successfully updated!.
         /// </summary>
         public static string SuccessfullyUpdated_eng {
             get {
@@ -1240,7 +1276,7 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Am actualizat cu succes.
+        ///   Looks up a localized string similar to actualizat cu succes!.
         /// </summary>
         public static string SuccessfullyUpdated_ro {
             get {

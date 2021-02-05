@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Meds_App.Model;
 using static Meds_App.Utils.Utils;
 using Transitions;
+using System.Threading.Tasks;
 
 namespace Meds_App.UserControls
 {
@@ -23,8 +24,8 @@ namespace Meds_App.UserControls
         public OutOfDate()
         {
             InitializeComponent();
-            this.PanelMedicines_In_OutOfDate.Location = new Point(1000, 0);
-            this.button_OutOfDate_Back.Location = new Point(1000, 0);
+            PanelMedicines_In_OutOfDate.Location = new Point(1000, 0);
+            button_OutOfDate_Back.Location = new Point(1000, 0);
         }
 
 
@@ -40,7 +41,7 @@ namespace Meds_App.UserControls
         {
             listBox_OutOfDate.Items.Add("Loading...");
             button_OutOfDate_Details.Enabled = false;
-            Fill_Listbox(DateTime.Now);
+            Fill_Listbox();
         }
 
 
@@ -64,8 +65,8 @@ namespace Meds_App.UserControls
 
 
             Transition changePannel = new Transition(new TransitionType_EaseInEaseOut(700));
-            changePannel.add(this.PanelMedicines_In_OutOfDate, "Left", 0);  //It changes the Left atribute of PanelMedicines_In_OutOfDate to 0
-            changePannel.add(this.button_OutOfDate_Back, "Left", 3);        //It changes the Left atribute of back button to 3 because it needs to be a little to the right than the panel
+            changePannel.add(PanelMedicines_In_OutOfDate, "Left", 0);  //It changes the Left atribute of PanelMedicines_In_OutOfDate to 0
+            changePannel.add(button_OutOfDate_Back, "Left", 3);        //It changes the Left atribute of back button to 3 because it needs to be a little to the right than the panel
 
             if (themeDark) // if the theme is dark then it changes both buttons text and color to match the background
             {
@@ -97,8 +98,8 @@ namespace Meds_App.UserControls
         private void Button_OutOfDate_Back_Click(object sender, EventArgs e)
         {
             Transition changePannel = new Transition(new TransitionType_EaseInEaseOut(700));
-            changePannel.add(this.PanelMedicines_In_OutOfDate, "Left", 1000);
-            changePannel.add(this.button_OutOfDate_Back, "Left", 1000);
+            changePannel.add(PanelMedicines_In_OutOfDate, "Left", 1000);
+            changePannel.add(button_OutOfDate_Back, "Left", 1000);
 
             if (themeDark)
             {
@@ -115,7 +116,7 @@ namespace Meds_App.UserControls
 
             PanelMedicines_In_OutOfDate.clearUserInput();
 
-            Fill_Listbox(dateTimePicker_OutOfDate.Value);
+            Fill_Listbox();
         }
 
 
@@ -154,7 +155,7 @@ namespace Meds_App.UserControls
         private void DateTimePicker_OutOfDate_ValueChanged(object sender, EventArgs e)
         {
             listBox_OutOfDate.Items.Clear();
-            Fill_Listbox(dateTimePicker_OutOfDate.Value);
+            Fill_Listbox();
             button_OutOfDate_Details.Enabled = false;
         }
 
@@ -177,9 +178,10 @@ namespace Meds_App.UserControls
         //This method tries to fill the list. If the list still has no elements after the Get_Meds_Async method then it means 
         //that there are no medicines from the server that have the best before earlier than the date of the parameter
         //Otherwise it fills the list
-        public async void Fill_Listbox(DateTime date)
+        public void Fill_Listbox()
         {
-            medsList = await Http.Get_Meds_Async(true);
+            //medsList = await Http.Get_Meds_Async(true);
+            Task.Run(async () => medsList = await Http.Get_Meds_Async(true));
             listBox_OutOfDate.Items.Clear();
 
             List<Med> outofdateList = new List<Med>();
@@ -206,8 +208,8 @@ namespace Meds_App.UserControls
 
         public void Set_Language_OutOfDate_Ro()
         {
-            this.button_OutOfDate_Details.Text = Properties.Resources.Details_ro;
-            this.PanelMedicines_In_OutOfDate.Set_Language_Medicines_Ro();
+            button_OutOfDate_Details.Text = Properties.Resources.Details_ro;
+            PanelMedicines_In_OutOfDate.Set_Language_Medicines_Ro();
         }
 
 
@@ -216,8 +218,8 @@ namespace Meds_App.UserControls
 
         public void Set_Language_OutOfDate_Eng()
         {
-            this.button_OutOfDate_Details.Text = Properties.Resources.Details_eng;
-            this.PanelMedicines_In_OutOfDate.Set_Language_Medicines_Eng();
+            button_OutOfDate_Details.Text = Properties.Resources.Details_eng;
+            PanelMedicines_In_OutOfDate.Set_Language_Medicines_Eng();
         }
 
 

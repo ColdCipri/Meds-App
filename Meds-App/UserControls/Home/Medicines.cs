@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.IO;
 using Meds_App.Model;
 using static Meds_App.Utils.Utils;
+using System.Threading.Tasks;
 
 namespace Meds_App
 {
@@ -13,8 +14,8 @@ namespace Meds_App
         private string imgLocation = "", imgFile,   //Strings for texts. These ones were saved here because they can be modified by the language
             error, error_name, error_pieces, error_type, error_basesubst, error_basesubstq1,
             error_basesubstq2, error_description, 
-            successfully_added, med_added, failed_to_add, 
-            successfully_updated, successfully_deleted, success;
+            successfully_added, successfully_updated, successfully_deleted, success,
+            med_added, failed_to_add, failed_to_update, failed_to_delete;
 
         private List<string> typeList =         //It initialises a new list with the types of medicines
             new List<string> { "Pill", "Cream", "Tea", "Spray", "Syrup", 
@@ -95,12 +96,12 @@ namespace Meds_App
 
                     Med med = new Med(name, pieces, type, best_before, base_substance, base_substance_quantity, description, image);
 
-                    bool response = true; //needs to be modified 
-                    addMed(med);
-                    if (response)
+                    if (Task.Run(async () => await Http.PostMedAsync(med)).Result)
                     {
+                        Visible = false;    //By doing this, I can move the panel, without pressing back.
                         MessageBox.Show($"{med.Name} {successfully_added}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clearUserInput();
+                        Visible = true;
                     }
                     else
                     {
@@ -110,13 +111,13 @@ namespace Meds_App
                 else
                 {
                     Med med = new Med(name, pieces, type, best_before, base_substance, base_substance_quantity, description);
-
-                    bool response = true; //needs to be modified 
-                    addMed(med);
-                    if (response)
+                    
+                    if (Task.Run(async () => await Http.PostMedAsync(med)).Result)
                     {
+                        Visible = false;    //By doing this, I can move the panel, without pressing back.
                         MessageBox.Show($"{med.Name} {successfully_added}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clearUserInput();
+                        Visible = true;
                     }
                     else
                     {
@@ -194,8 +195,18 @@ namespace Meds_App
                     updatedMed.Picture = image;
 
                 }
-                Http.PutMedAsync(updatedMed, med.Id); // here needs to be added if-else with fail
-                MessageBox.Show($"{successfully_updated} {updatedMed.Name}!", success, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (Task.Run(async () => await Http.PutMedAsync(updatedMed, med.Id)).Result)
+                {
+                    Visible = false;    //By doing this, I can move the panel, without pressing back.
+                    MessageBox.Show($"{med.Name} {successfully_updated}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearUserInput();
+                    Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show($"{med.Name} {failed_to_update}", error, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -210,8 +221,17 @@ namespace Meds_App
         //If the request was received and the med was delete there will be an success message ---------and fail message otherwise
         private void button_Delete_Click(object sender, EventArgs e)
         {
-            Http.DeleteMedAsync(med.Id);
-            MessageBox.Show($"{successfully_deleted} {med.Name}!", success, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (Task.Run(async () => await Http.DeleteMedAsync(med.Id)).Result)
+            {
+                Visible = false;    //By doing this, I can move the panel, without pressing back.
+                MessageBox.Show($"{med.Name} {successfully_deleted}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearUserInput();
+                Visible = true;
+            }
+            else
+            {
+                MessageBox.Show($"{med.Name} {failed_to_delete}", error, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             clearUserInput();
         }
 
@@ -241,15 +261,6 @@ namespace Meds_App
 
         //-------------------------------------------UTILS--------------------------------------------
 
-
-        //Input: Med
-        //Output: -
-        //
-        //This method sends the Med instance to the server to be added
-        private async void addMed(Med med)
-        {
-            await Http.PostMedAsync(med);
-        }
 
         //Input: -
         //Output: -
@@ -412,6 +423,8 @@ namespace Meds_App
             imgFile = Properties.Resources.ImageFiles_ro;
             success = Properties.Resources.Success_ro;
 
+
+            successfully_added = Properties.Resources.SuccessfullyAdded_ro;
             successfully_updated = Properties.Resources.SuccessfullyUpdated_ro;
             successfully_deleted = Properties.Resources.SuccessfullyDeleted_ro;
 
@@ -429,10 +442,13 @@ namespace Meds_App
             error_basesubstq1 = Properties.Resources.ErrorBaseSubstQ1_ro;
             error_basesubstq2 = Properties.Resources.ErrorBaseSubstQ2_ro;
             error_description = Properties.Resources.ErrorDescription_ro;
+
             imgFile = Properties.Resources.ImageFiles_ro;
             med_added = Properties.Resources.MedAdded_ro;
-            successfully_added = Properties.Resources.SuccessfullyAdded_ro;
+
             failed_to_add = Properties.Resources.FailedToAdd_ro;
+            failed_to_update = Properties.Resources.FailedToUpdate_ro;
+            failed_to_delete = Properties.Resources.FailedToDelete_ro;
         }
 
         private void setTypeRo()
@@ -479,6 +495,8 @@ namespace Meds_App
             imgFile = Properties.Resources.ImageFiles_eng;
             success = Properties.Resources.Success_eng;
 
+
+            successfully_added = Properties.Resources.SuccessfullyAdded_eng;
             successfully_updated = Properties.Resources.SuccessfullyUpdated_eng;
             successfully_deleted = Properties.Resources.SuccessfullyDeleted_eng;
 
@@ -496,10 +514,13 @@ namespace Meds_App
             error_basesubstq1 = Properties.Resources.ErrorBaseSubstQ1_eng;
             error_basesubstq2 = Properties.Resources.ErrorBaseSubstQ2_eng;
             error_description = Properties.Resources.ErrorDescription_eng;
+
             imgFile = Properties.Resources.ImageFiles_eng;
             med_added = Properties.Resources.MedAdded_eng;
-            successfully_added = Properties.Resources.SuccessfullyAdded_eng;
+
             failed_to_add = Properties.Resources.FailedToAdd_eng;
+            failed_to_update = Properties.Resources.FailedToUpdate_eng;
+            failed_to_delete = Properties.Resources.FailedToDelete_eng;
         }
 
         private void setTypeEng()

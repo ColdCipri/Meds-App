@@ -379,7 +379,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel_AddMeds;
+        public System.Windows.Forms.Panel panel_AddMeds;
         private System.Windows.Forms.Label label_Title_Add;
         private System.Windows.Forms.NumericUpDown numericUpDown_Pieces;
         private System.Windows.Forms.Label label_Pieces;

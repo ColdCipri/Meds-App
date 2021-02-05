@@ -7,6 +7,7 @@ using System.Diagnostics;
 using Transitions;
 using Meds_App.Model;
 using static Meds_App.Utils.Utils;
+using System.Threading.Tasks;
 
 namespace Meds_App
 {
@@ -15,7 +16,7 @@ namespace Meds_App
         public string helpSearch, outofdatedetails,        //Strings for texts. These ones were saved here because they can be modified by the language
             warning, error_retrieve, error, outofdatemeds;
 
-        private bool themeDark, firstTime = false, ok = true;   //Bool values
+        private bool themeDark, firstTime = false;
 
         private DialogResult result;
         private ToolTip toolTipForSearch = new ToolTip();           //It initialises a new ToolTip which would be set later
@@ -59,9 +60,8 @@ namespace Meds_App
             }
             catch (Exception)
             {
-                //Process.Start(Properties.Resources.openServer);
-                //Process.Start(@"C:\Users\colde\source\repos\ColdCipri\Meds-Server\Meds-Server\openServer.bat");
-                Thread.Sleep(5000);
+                //Process.Start(@"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\openServer.bat");
+                //Thread.Sleep(5000);
                 button_Add.Enabled = false;
                 textBox_search.Enabled = false;
                 listBox_Meds.Items.Clear(); 
@@ -243,7 +243,8 @@ namespace Meds_App
         //Otherwise it fills the list
         public async void Fill_ListBox()
         {
-            medsList = await Http.Get_Meds_Async(true);
+            //Task.Run(async () => medsList = await Http.Get_Meds_Async(true));
+            medsList = await Http.Get_Meds_Async(true);                             //here is the problem
             if (autofillList.Count == 0)
             {
                 foreach (var item in medsList)
@@ -261,13 +262,11 @@ namespace Meds_App
             {
                 result = MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 Disable_Add_Search();
-                while (result == DialogResult.Retry && ok)
-                {
-                    medsList = await Http.Get_Meds_Async(true); 
+                /*while (result == DialogResult.Retry && ok)
+                {*/
+                    //Task.Run(async () => medsList = await Http.Get_Meds_Async(true));
                     if (medsList.Count != 0)
                     {
-                        ok = false; 
-                        
                         listBox_Meds.Items.Clear();
                         listBox_Meds.Enabled = true;
                         foreach (var med in medsList)
@@ -282,12 +281,13 @@ namespace Meds_App
                         Disable_Add_Search();
                         //Here is a bug. When pressing for the 2nd-3rd time the refresh icon, and then press retry from the message box, it does nothing
                     }
-                }
+                /*}*/
             }
             else
             {
                 listBox_Meds.Items.Clear();
                 listBox_Meds.Enabled = true;
+                Enable_Add_Search();
                 foreach (var med in medsList)
                 {
                     listBox_Meds.Items.Add($"{med.Name}");
@@ -337,14 +337,21 @@ namespace Meds_App
             listBox_Meds.Items.Clear();
         }
 
+        private void PanelMedicines_In_Home_VisibleChanged(object sender, EventArgs e)
+        {
+            Button_Back_Click(sender, e);
+        }
+
         //Input: -
         //Output: -
         //
         //This method tries to show the user an message with the number of out of dates medicines
         //If there are no medicines out of date or no medicines at all nothing will happen
-        public async void Show_OutOfDate_Medicines_Count()
+        public void Show_OutOfDate_Medicines_Count()
         {
-            List<Med> outOfDateMeds = await Http.Get_OutOfDate_Meds_Async(true);
+            List<Med> outOfDateMeds = new List<Med>();
+            Task.Run(async () => outOfDateMeds = await Http.Get_OutOfDate_Meds_Async(true));
+            //List<Med> outOfDateMeds = await Http.Get_OutOfDate_Meds_Async(true);
             if (medsList.Count != 0)
             {
                 if (outOfDateMeds.Count != 0)
