@@ -658,4 +658,10 @@ Orice mesaj de eroare ați primit.</value>
   <data name="OutOfDateCount1_ro" xml:space="preserve">
     <value>Un medicament a expirat! Doriți să vedeți care e acesta?</value>
   </data>
+  <data name="CheckboxText_eng" xml:space="preserve">
+    <value>Without base substance</value>
+  </data>
+  <data name="CheckboxText_ro" xml:space="preserve">
+    <value>Nu are substanță de bază</value>
+  </data>
 </root>

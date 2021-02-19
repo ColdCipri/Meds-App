@@ -90,6 +90,7 @@ namespace Meds_App
         {
             button_Back.Location = new Point(1000, 0);
             PanelMedicines_In_Home.Location = new Point(1000, 0);
+            PanelMedicines_In_Home.ActivateAddButton();
 
             Transition changePannel = new Transition(new TransitionType_EaseInEaseOut(700));
             changePannel.add(PanelMedicines_In_Home, "Left", 0);    //It changes the Left atribute of PanelAddMeds_In_Home to 0
@@ -117,8 +118,6 @@ namespace Meds_App
             listBox_Meds.Enabled = false;
 
             button_Back.BringToFront();
-
-            PanelMedicines_In_Home.SetSaveButtonOn(); //When the panel is opened, there will be only the save button down.
         }
 
 
@@ -131,11 +130,11 @@ namespace Meds_App
         //It calls the Button_Add_Home_Click method because it does the same things
         private void Button_Details_Click(object sender, EventArgs e)
         {
-            PanelMedicines_In_Home.Fill_Med(medDetails);
             Button_Add_Home_Click(sender, e);
             listBox_Meds.Enabled = true;
 
-            PanelMedicines_In_Home.SetSaveButtonOff(); //When the panel is opened, there will be the update and delete buttons down.
+            PanelMedicines_In_Home.ActivateDetailsButton();
+            PanelMedicines_In_Home.Fill_Med(medDetails);
         }
 
 
@@ -222,10 +221,10 @@ namespace Meds_App
             listBox_Meds.Items.Clear();
             List<Med> medsListSearch = new List<Med>();
             foreach (var med in medsList)
-            {
+            {//Here is a problem
                 if (med.Name.ToLower().Contains(textBox_search.Text.ToLower()) ||
                     med.Description.ToLower().Contains(textBox_search.Text.ToLower()) ||
-                    med.BaseSubstance.ToLower().Contains(textBox_search.Text.ToLower()))
+                    (med.BaseSubstance != null && med.BaseSubstance.ToLower().Contains(textBox_search.Text.ToLower())))
                 {
                     medsListSearch.Add(med);
                     listBox_Meds.Items.Add(med.Name);

@@ -84,7 +84,7 @@ namespace Meds_App.UserControls
 
             button_OutOfDate_Back.BringToFront();
 
-            PanelMedicines_In_OutOfDate.SetSaveButtonOff();
+            PanelMedicines_In_OutOfDate.ActivateDetailsButton();
         }
 
 

@@ -47,6 +47,25 @@ namespace Meds_App.Model
             Description = description;
         }
 
+        public Med(string name, int pieces, string type, DateTime bestBefore, string description)
+        {
+            Name = name;
+            Pieces = pieces;
+            Type = type;
+            BestBefore = bestBefore;
+            Description = description;
+        }
+
+        public Med(string name, int pieces, string type, DateTime bestBefore, string description, byte[] picture)
+        {
+            Name = name;
+            Pieces = pieces;
+            Type = type;
+            BestBefore = bestBefore;
+            Picture = picture;
+            Description = description;
+        }
+
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();

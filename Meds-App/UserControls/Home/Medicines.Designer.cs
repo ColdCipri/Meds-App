@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_AddMeds = new System.Windows.Forms.Panel();
+            this.checkBox_BaseSubst = new System.Windows.Forms.CheckBox();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Update = new System.Windows.Forms.Button();
             this.button_Save = new System.Windows.Forms.Button();
@@ -60,6 +61,7 @@
             // panel_AddMeds
             // 
             this.panel_AddMeds.BackColor = System.Drawing.Color.OldLace;
+            this.panel_AddMeds.Controls.Add(this.checkBox_BaseSubst);
             this.panel_AddMeds.Controls.Add(this.button_Delete);
             this.panel_AddMeds.Controls.Add(this.button_Update);
             this.panel_AddMeds.Controls.Add(this.button_Save);
@@ -88,6 +90,19 @@
             this.panel_AddMeds.Size = new System.Drawing.Size(408, 590);
             this.panel_AddMeds.TabIndex = 0;
             // 
+            // checkBox_BaseSubst
+            // 
+            this.checkBox_BaseSubst.AutoSize = true;
+            this.checkBox_BaseSubst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_BaseSubst.Location = new System.Drawing.Point(67, 249);
+            this.checkBox_BaseSubst.Name = "checkBox_BaseSubst";
+            this.checkBox_BaseSubst.Size = new System.Drawing.Size(244, 29);
+            this.checkBox_BaseSubst.TabIndex = 46;
+            this.checkBox_BaseSubst.Text = "Without base substance";
+            this.checkBox_BaseSubst.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox_BaseSubst.UseVisualStyleBackColor = true;
+            this.checkBox_BaseSubst.CheckedChanged += new System.EventHandler(this.checkBox_BaseSubst_CheckedChanged);
+            // 
             // button_Delete
             // 
             this.button_Delete.BackColor = System.Drawing.Color.Moccasin;
@@ -98,7 +113,7 @@
             this.button_Delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Delete.Location = new System.Drawing.Point(207, 528);
+            this.button_Delete.Location = new System.Drawing.Point(207, 540);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(134, 46);
             this.button_Delete.TabIndex = 44;
@@ -116,7 +131,7 @@
             this.button_Update.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Update.Location = new System.Drawing.Point(28, 528);
+            this.button_Update.Location = new System.Drawing.Point(28, 540);
             this.button_Update.Name = "button_Update";
             this.button_Update.Size = new System.Drawing.Size(134, 46);
             this.button_Update.TabIndex = 43;
@@ -134,7 +149,7 @@
             this.button_Save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Save.Location = new System.Drawing.Point(128, 528);
+            this.button_Save.Location = new System.Drawing.Point(128, 540);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(134, 46);
             this.button_Save.TabIndex = 21;
@@ -144,7 +159,7 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(34, 428);
+            this.pictureBox.Location = new System.Drawing.Point(34, 440);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(123, 87);
             this.pictureBox.TabIndex = 20;
@@ -160,7 +175,7 @@
             this.button_AddPicture.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button_AddPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_AddPicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_AddPicture.Location = new System.Drawing.Point(186, 452);
+            this.button_AddPicture.Location = new System.Drawing.Point(186, 464);
             this.button_AddPicture.Name = "button_AddPicture";
             this.button_AddPicture.Size = new System.Drawing.Size(134, 46);
             this.button_AddPicture.TabIndex = 19;
@@ -172,7 +187,7 @@
             // 
             this.textBox_Description.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Description.Location = new System.Drawing.Point(174, 378);
+            this.textBox_Description.Location = new System.Drawing.Point(174, 390);
             this.textBox_Description.Multiline = true;
             this.textBox_Description.Name = "textBox_Description";
             this.textBox_Description.Size = new System.Drawing.Size(183, 53);
@@ -182,7 +197,7 @@
             // 
             this.label_Description.AutoSize = true;
             this.label_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Description.Location = new System.Drawing.Point(42, 385);
+            this.label_Description.Location = new System.Drawing.Point(42, 397);
             this.label_Description.Name = "label_Description";
             this.label_Description.Size = new System.Drawing.Size(115, 25);
             this.label_Description.TabIndex = 16;
@@ -199,7 +214,7 @@
             "ml",
             "ug",
             "UI"});
-            this.comboBox_BaseSubstanceQuantity.Location = new System.Drawing.Point(240, 334);
+            this.comboBox_BaseSubstanceQuantity.Location = new System.Drawing.Point(240, 346);
             this.comboBox_BaseSubstanceQuantity.Name = "comboBox_BaseSubstanceQuantity";
             this.comboBox_BaseSubstanceQuantity.Size = new System.Drawing.Size(80, 30);
             this.comboBox_BaseSubstanceQuantity.TabIndex = 15;
@@ -208,7 +223,7 @@
             // 
             this.numericUpDown_BaseSubstanceQuantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numericUpDown_BaseSubstanceQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown_BaseSubstanceQuantity.Location = new System.Drawing.Point(174, 334);
+            this.numericUpDown_BaseSubstanceQuantity.Location = new System.Drawing.Point(174, 346);
             this.numericUpDown_BaseSubstanceQuantity.Name = "numericUpDown_BaseSubstanceQuantity";
             this.numericUpDown_BaseSubstanceQuantity.Size = new System.Drawing.Size(60, 24);
             this.numericUpDown_BaseSubstanceQuantity.TabIndex = 14;
@@ -221,7 +236,7 @@
             // label_BestBefore
             // 
             this.label_BestBefore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_BestBefore.Location = new System.Drawing.Point(59, 194);
+            this.label_BestBefore.Location = new System.Drawing.Point(61, 179);
             this.label_BestBefore.Name = "label_BestBefore";
             this.label_BestBefore.Size = new System.Drawing.Size(87, 55);
             this.label_BestBefore.TabIndex = 9;
@@ -231,7 +246,7 @@
             // label_BaseSubstanceQuantity
             // 
             this.label_BaseSubstanceQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_BaseSubstanceQuantity.Location = new System.Drawing.Point(21, 307);
+            this.label_BaseSubstanceQuantity.Location = new System.Drawing.Point(21, 319);
             this.label_BaseSubstanceQuantity.Name = "label_BaseSubstanceQuantity";
             this.label_BaseSubstanceQuantity.Size = new System.Drawing.Size(162, 78);
             this.label_BaseSubstanceQuantity.TabIndex = 13;
@@ -242,7 +257,7 @@
             // 
             this.textBox_BaseSubstance.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_BaseSubstance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_BaseSubstance.Location = new System.Drawing.Point(174, 272);
+            this.textBox_BaseSubstance.Location = new System.Drawing.Point(174, 284);
             this.textBox_BaseSubstance.Multiline = true;
             this.textBox_BaseSubstance.Name = "textBox_BaseSubstance";
             this.textBox_BaseSubstance.Size = new System.Drawing.Size(146, 25);
@@ -251,7 +266,7 @@
             // label_BaseSubstance
             // 
             this.label_BaseSubstance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_BaseSubstance.Location = new System.Drawing.Point(29, 252);
+            this.label_BaseSubstance.Location = new System.Drawing.Point(29, 264);
             this.label_BaseSubstance.Name = "label_BaseSubstance";
             this.label_BaseSubstance.Size = new System.Drawing.Size(139, 71);
             this.label_BaseSubstance.TabIndex = 11;
@@ -262,7 +277,7 @@
             // 
             this.dateTimePicker_BestBefore.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_BestBefore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_BestBefore.Location = new System.Drawing.Point(174, 211);
+            this.dateTimePicker_BestBefore.Location = new System.Drawing.Point(176, 196);
             this.dateTimePicker_BestBefore.Name = "dateTimePicker_BestBefore";
             this.dateTimePicker_BestBefore.Size = new System.Drawing.Size(146, 23);
             this.dateTimePicker_BestBefore.TabIndex = 10;
@@ -283,7 +298,7 @@
             "Drops",
             "Gel",
             "Effervescent"});
-            this.comboBox_Type.Location = new System.Drawing.Point(174, 150);
+            this.comboBox_Type.Location = new System.Drawing.Point(176, 135);
             this.comboBox_Type.Name = "comboBox_Type";
             this.comboBox_Type.Size = new System.Drawing.Size(146, 30);
             this.comboBox_Type.TabIndex = 8;
@@ -292,7 +307,7 @@
             // 
             this.label_Type.AutoSize = true;
             this.label_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Type.Location = new System.Drawing.Point(69, 151);
+            this.label_Type.Location = new System.Drawing.Point(71, 136);
             this.label_Type.Name = "label_Type";
             this.label_Type.Size = new System.Drawing.Size(63, 25);
             this.label_Type.TabIndex = 6;
@@ -302,7 +317,7 @@
             // 
             this.numericUpDown_Pieces.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numericUpDown_Pieces.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown_Pieces.Location = new System.Drawing.Point(174, 107);
+            this.numericUpDown_Pieces.Location = new System.Drawing.Point(176, 92);
             this.numericUpDown_Pieces.Name = "numericUpDown_Pieces";
             this.numericUpDown_Pieces.Size = new System.Drawing.Size(60, 24);
             this.numericUpDown_Pieces.TabIndex = 5;
@@ -316,7 +331,7 @@
             // 
             this.label_Pieces.AutoSize = true;
             this.label_Pieces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Pieces.Location = new System.Drawing.Point(69, 104);
+            this.label_Pieces.Location = new System.Drawing.Point(71, 89);
             this.label_Pieces.Name = "label_Pieces";
             this.label_Pieces.Size = new System.Drawing.Size(77, 25);
             this.label_Pieces.TabIndex = 3;
@@ -326,7 +341,7 @@
             // 
             this.textBox_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Name.Location = new System.Drawing.Point(174, 64);
+            this.textBox_Name.Location = new System.Drawing.Point(176, 49);
             this.textBox_Name.Multiline = true;
             this.textBox_Name.Name = "textBox_Name";
             this.textBox_Name.Size = new System.Drawing.Size(146, 25);
@@ -336,7 +351,7 @@
             // 
             this.label_Name.AutoSize = true;
             this.label_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Name.Location = new System.Drawing.Point(69, 64);
+            this.label_Name.Location = new System.Drawing.Point(71, 49);
             this.label_Name.Name = "label_Name";
             this.label_Name.Size = new System.Drawing.Size(70, 25);
             this.label_Name.TabIndex = 1;
@@ -402,5 +417,6 @@
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Button button_Update;
         private System.Windows.Forms.Label label_Title_Details;
+        private System.Windows.Forms.CheckBox checkBox_BaseSubst;
     }
 }
