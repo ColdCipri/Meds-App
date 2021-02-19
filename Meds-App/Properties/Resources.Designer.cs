@@ -178,6 +178,24 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Without base substance.
+        /// </summary>
+        public static string CheckboxText_eng {
+            get {
+                return ResourceManager.GetString("CheckboxText_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nu are substanță de bază.
+        /// </summary>
+        public static string CheckboxText_ro {
+            get {
+                return ResourceManager.GetString("CheckboxText_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copyright.
         /// </summary>
         public static string Copyright_eng {

@@ -6,6 +6,7 @@ using System.IO;
 using Meds_App.Model;
 using static Meds_App.Utils.Utils;
 using System.Threading.Tasks;
+using Transitions;
 
 namespace Meds_App
 {
@@ -17,12 +18,16 @@ namespace Meds_App
             successfully_added, successfully_updated, successfully_deleted, success,
             med_added, failed_to_add, failed_to_update, failed_to_delete;
 
+        private bool themeDark;
+
         private List<string> typeList =         //It initialises a new list with the types of medicines
             new List<string> { "Pill", "Cream", "Tea", "Spray", "Syrup", 
                 "Suppository", "Drops", "Gel", "Effervescent" };
 
 
         Med med = new Med();                    //It initialises a new med that will be updated if this page open as details page
+
+        
 
         //Constructor - Generated method
         //
@@ -32,6 +37,123 @@ namespace Meds_App
             InitializeComponent();
             comboBox_Type.SelectedIndex = 0;
             comboBox_BaseSubstanceQuantity.SelectedIndex = 0;
+        }
+
+
+        //Generated method
+        //
+        //This method runs when the check box is checked or unchecked
+        //If is checked then it will hide the base substance textboxes and labels
+        //If is unched then it will show again the textboxes and labels
+        //Of course, they are in an animation, so it will look beter 
+        private void checkBox_BaseSubst_CheckedChanged(object sender, EventArgs e)
+        {
+            Transition hideBaseSubst = new Transition(new TransitionType_EaseInEaseOut(500));
+            if (checkBox_BaseSubst.Checked == true)
+            {
+                if (themeDark) // if the theme is dark then it changes colors to black theme
+                {
+                    hideBaseSubst.add(label_BaseSubstance, "ForeColor", Color.Black);   //Color of label
+                    hideBaseSubst.add(textBox_BaseSubstance, "BackColor", Color.Black); //Color of 
+                    hideBaseSubst.add(textBox_BaseSubstance, "ForeColor", Color.Black); //Color of 
+                    hideBaseSubst.add(label_BaseSubstanceQuantity, "ForeColor", Color.Black);   //Color of label
+                    hideBaseSubst.add(numericUpDown_BaseSubstanceQuantity, "BackColor", Color.Black); //Color of 
+                    hideBaseSubst.add(numericUpDown_BaseSubstanceQuantity, "ForeColor", Color.Black); //Color of 
+                    hideBaseSubst.add(comboBox_BaseSubstanceQuantity, "BackColor", Color.Black); //Color of 
+                    hideBaseSubst.add(comboBox_BaseSubstanceQuantity, "ForeColor", Color.Black); //Color of 
+                    if (label_Title_Details.Visible)
+                    {
+                        hideBaseSubst.add(label_Description, "Top", 256);
+                        hideBaseSubst.add(textBox_Description, "Top", 256);
+                    }
+                    else
+                    {
+                        hideBaseSubst.add(label_Description, "Top", 290);
+                        hideBaseSubst.add(textBox_Description, "Top", 290);
+                    }
+                    numericUpDown_BaseSubstanceQuantity.BorderStyle = BorderStyle.None;
+                    textBox_BaseSubstance.BorderStyle = BorderStyle.None;
+                }
+                else if (!themeDark) // if theme is white same happens, but with the white theme color
+                {
+                    hideBaseSubst.add(label_BaseSubstance, "ForeColor", Color.OldLace);   //Color of label
+                    hideBaseSubst.add(textBox_BaseSubstance, "BackColor", Color.OldLace); //Color of textbox
+                    hideBaseSubst.add(label_BaseSubstanceQuantity, "ForeColor", Color.OldLace);   //Color of label
+                    hideBaseSubst.add(numericUpDown_BaseSubstanceQuantity, "BackColor", Color.OldLace); //Color of 
+                    hideBaseSubst.add(numericUpDown_BaseSubstanceQuantity, "ForeColor", Color.OldLace); //Color of 
+                    hideBaseSubst.add(comboBox_BaseSubstanceQuantity, "BackColor", Color.OldLace); //Color of 
+                    hideBaseSubst.add(comboBox_BaseSubstanceQuantity, "ForeColor", Color.OldLace); //Color of 
+                    if (label_Title_Details.Visible)
+                    {
+                        hideBaseSubst.add(label_Description, "Top", 256);
+                        hideBaseSubst.add(textBox_Description, "Top", 256);
+                    }
+                    else
+                    {
+                        hideBaseSubst.add(label_Description, "Top", 290);
+                        hideBaseSubst.add(textBox_Description, "Top", 290);
+                    }
+                }
+                hideBaseSubst.run();
+
+                textBox_BaseSubstance.Visible = false;
+                numericUpDown_BaseSubstanceQuantity.Visible = false;
+                comboBox_BaseSubstanceQuantity.Visible = false;
+            }
+            else
+            {
+
+                hideBaseSubst = new Transition(new TransitionType_EaseInEaseOut(500));
+
+                if (label_Title_Details.Visible)
+                {
+                    hideBaseSubst.add(label_BaseSubstance, "Top", 240);
+                    hideBaseSubst.add(textBox_BaseSubstance, "Top", 264);
+                    hideBaseSubst.add(label_BaseSubstanceQuantity, "Top", 295);
+                    hideBaseSubst.add(numericUpDown_BaseSubstanceQuantity, "Top", 319);
+                    hideBaseSubst.add(comboBox_BaseSubstanceQuantity, "Top", 319);
+                    hideBaseSubst.add(label_Description, "Top", 397);
+                    hideBaseSubst.add(textBox_Description, "Top", 397);
+                }
+                else
+                {
+                    hideBaseSubst.add(label_Description, "Top", 397);
+                    hideBaseSubst.add(textBox_Description, "Top", 397);
+                }
+                if (themeDark) // if the theme is dark then it changes both buttons text and color to match the background
+                {
+                    hideBaseSubst.add(label_BaseSubstance, "ForeColor", Color.White);   //Color of label
+                    hideBaseSubst.add(textBox_BaseSubstance, "BackColor", Color.Black); //Color of 
+                    hideBaseSubst.add(textBox_BaseSubstance, "ForeColor", Color.White); //Color of 
+                    hideBaseSubst.add(label_BaseSubstanceQuantity, "ForeColor", Color.White);   //Color of label
+                    hideBaseSubst.add(numericUpDown_BaseSubstanceQuantity, "BackColor", Color.Black); //Color of 
+                    hideBaseSubst.add(numericUpDown_BaseSubstanceQuantity, "ForeColor", Color.White); //Color of 
+                    hideBaseSubst.add(comboBox_BaseSubstanceQuantity, "BackColor", Color.Black); //Color of 
+                    hideBaseSubst.add(comboBox_BaseSubstanceQuantity, "ForeColor", Color.White); //Color of 
+                    numericUpDown_BaseSubstanceQuantity.BorderStyle = BorderStyle.FixedSingle;
+                    textBox_BaseSubstance.BorderStyle = BorderStyle.FixedSingle;
+
+                }
+                else if (!themeDark) // if theme is white same happens, but with the white theme color
+                {
+                    hideBaseSubst.add(label_BaseSubstance, "ForeColor", Color.Black);   //Color of label
+                    hideBaseSubst.add(textBox_BaseSubstance, "BackColor", Color.White); //Color of textbox
+                    hideBaseSubst.add(textBox_BaseSubstance, "ForeColor", Color.Black); //Color of textbox
+                    hideBaseSubst.add(label_BaseSubstanceQuantity, "ForeColor", Color.Black);   //Color of label
+                    hideBaseSubst.add(numericUpDown_BaseSubstanceQuantity, "BackColor", Color.White); //Color of 
+                    hideBaseSubst.add(numericUpDown_BaseSubstanceQuantity, "ForeColor", Color.Black); //Color of 
+                    hideBaseSubst.add(comboBox_BaseSubstanceQuantity, "BackColor", Color.White); //Color of 
+                    hideBaseSubst.add(comboBox_BaseSubstanceQuantity, "ForeColor", Color.Black); //Color of 
+                    hideBaseSubst.add(label_Description, "Top", 397);
+                    hideBaseSubst.add(textBox_Description, "Top", 397);
+                }
+                hideBaseSubst.run();
+
+
+                textBox_BaseSubstance.Visible = true;
+                numericUpDown_BaseSubstanceQuantity.Visible = true;
+                comboBox_BaseSubstanceQuantity.Visible = true;
+            }
         }
 
 
@@ -54,10 +176,6 @@ namespace Meds_App
             {
                 MessageBox.Show(error_name, error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (string.IsNullOrWhiteSpace(textBox_BaseSubstance.Text))
-            {
-                MessageBox.Show(error_basesubst, error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             else if (string.IsNullOrWhiteSpace(textBox_Description.Text))
             {
                 MessageBox.Show(error_description, error, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -80,51 +198,98 @@ namespace Meds_App
             }
             else
             {
-                var name = textBox_Name.Text.ToString();
-                int pieces = int.Parse(numericUpDown_Pieces.Value.ToString());
-                var type = typeList[comboBox_Type.SelectedIndex];
-                var best_before = dateTimePicker_BestBefore.Value;
-                var base_substance = textBox_BaseSubstance.Text.ToString();
-                var base_substance_quantity = $"{numericUpDown_BaseSubstanceQuantity.Value} {comboBox_BaseSubstanceQuantity.SelectedItem.ToString()}";
-                var description = textBox_Description.Text.ToString();
-                if (!imgLocation.Equals(""))
+                if (checkBox_BaseSubst.Checked) //If this is checked then there will not be any base substance and base substance quantity
                 {
-
-                    FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-                    BinaryReader binaryReader = new BinaryReader(stream);
-                    byte[] image = binaryReader.ReadBytes((int)(stream.Length));
-
-                    Med med = new Med(name, pieces, type, best_before, base_substance, base_substance_quantity, description, image);
-
-                    if (Task.Run(async () => await Http.PostMedAsync(med)).Result)
+                    var name = textBox_Name.Text.ToString();
+                    int pieces = int.Parse(numericUpDown_Pieces.Value.ToString());
+                    var type = typeList[comboBox_Type.SelectedIndex];
+                    var best_before = dateTimePicker_BestBefore.Value;
+                    var description = textBox_Description.Text.ToString();
+                    if (!imgLocation.Equals(""))
                     {
-                        Visible = false;    //By doing this, I can move the panel, without pressing back.
-                        MessageBox.Show($"{med.Name} {successfully_added}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        clearUserInput();
-                        Visible = true;
+
+                        FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader = new BinaryReader(stream);
+                        byte[] image = binaryReader.ReadBytes((int)(stream.Length));
+
+                        Med med = new Med(name, pieces, type, best_before, description, image);
+
+                        if (Task.Run(async () => await Http.PostMedAsync(med)).Result)
+                        {
+                            Visible = false;    //By doing this, I can move the panel, without pressing back.
+                            MessageBox.Show($"{med.Name} {successfully_added}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            clearUserInput();
+                            Visible = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"{med.Name} {failed_to_add}", error, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show($"{med.Name} {failed_to_add}", error, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        Med med = new Med(name, pieces, type, best_before, description);
+
+                        if (Task.Run(async () => await Http.PostMedAsync(med)).Result)
+                        {
+                            Visible = false;    //By doing this, I can move the panel, without pressing back.
+                            MessageBox.Show($"{med.Name} {successfully_added}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            clearUserInput();
+                            Visible = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"{med.Name} {failed_to_add}", error, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
                     }
                 }
                 else
                 {
-                    Med med = new Med(name, pieces, type, best_before, base_substance, base_substance_quantity, description);
-                    
-                    if (Task.Run(async () => await Http.PostMedAsync(med)).Result)
+                    var name = textBox_Name.Text.ToString();
+                    int pieces = int.Parse(numericUpDown_Pieces.Value.ToString());
+                    var type = typeList[comboBox_Type.SelectedIndex];
+                    var best_before = dateTimePicker_BestBefore.Value;
+                    var base_substance = textBox_BaseSubstance.Text.ToString();
+                    var base_substance_quantity = $"{numericUpDown_BaseSubstanceQuantity.Value} {comboBox_BaseSubstanceQuantity.SelectedItem.ToString()}";
+                    var description = textBox_Description.Text.ToString();
+                    if (!imgLocation.Equals(""))
                     {
-                        Visible = false;    //By doing this, I can move the panel, without pressing back.
-                        MessageBox.Show($"{med.Name} {successfully_added}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        clearUserInput();
-                        Visible = true;
+
+                        FileStream stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                        BinaryReader binaryReader = new BinaryReader(stream);
+                        byte[] image = binaryReader.ReadBytes((int)(stream.Length));
+
+                        Med med = new Med(name, pieces, type, best_before, base_substance, base_substance_quantity, description, image);
+
+                        if (Task.Run(async () => await Http.PostMedAsync(med)).Result)
+                        {
+                            Visible = false;    //By doing this, I can move the panel, without pressing back.
+                            MessageBox.Show($"{med.Name} {successfully_added}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            clearUserInput();
+                            Visible = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"{med.Name} {failed_to_add}", error, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show($"{med.Name} {failed_to_add}", error, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        Med med = new Med(name, pieces, type, best_before, base_substance, base_substance_quantity, description);
+                    
+                        if (Task.Run(async () => await Http.PostMedAsync(med)).Result)
+                        {
+                            Visible = false;    //By doing this, I can move the panel, without pressing back.
+                            MessageBox.Show($"{med.Name} {successfully_added}", med_added, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            clearUserInput();
+                            Visible = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"{med.Name} {failed_to_add}", error, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
                     }
                 }
-
             }
         }
 
@@ -146,10 +311,6 @@ namespace Meds_App
             {
                 MessageBox.Show(error_name, error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (string.IsNullOrWhiteSpace(textBox_BaseSubstance.Text))
-            {
-                MessageBox.Show(error_basesubst, error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             else if (string.IsNullOrWhiteSpace(textBox_Description.Text))
             {
                 MessageBox.Show(error_description, error, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -172,14 +333,24 @@ namespace Meds_App
             }
             else
             {
-
-                updatedMed.Name = textBox_Name.Text;
-                updatedMed.Pieces = int.Parse(numericUpDown_Pieces.Value.ToString());
-                updatedMed.Type = typeList[comboBox_Type.SelectedIndex];
-                updatedMed.BestBefore = dateTimePicker_BestBefore.Value;
-                updatedMed.BaseSubstance = textBox_BaseSubstance.Text;
-                updatedMed.BaseSubstanceQuantity = $"{numericUpDown_BaseSubstanceQuantity.Value} {comboBox_BaseSubstanceQuantity.SelectedItem}";
-                updatedMed.Description = textBox_Description.Text;
+                if (checkBox_BaseSubst.Checked)
+                {
+                    updatedMed.Name = textBox_Name.Text;
+                    updatedMed.Pieces = int.Parse(numericUpDown_Pieces.Value.ToString());
+                    updatedMed.Type = typeList[comboBox_Type.SelectedIndex];
+                    updatedMed.BestBefore = dateTimePicker_BestBefore.Value;
+                    updatedMed.Description = textBox_Description.Text;
+                }
+                else
+                {
+                    updatedMed.Name = textBox_Name.Text;
+                    updatedMed.Pieces = int.Parse(numericUpDown_Pieces.Value.ToString());
+                    updatedMed.Type = typeList[comboBox_Type.SelectedIndex];
+                    updatedMed.BestBefore = dateTimePicker_BestBefore.Value;
+                    updatedMed.BaseSubstance = textBox_BaseSubstance.Text;
+                    updatedMed.BaseSubstanceQuantity = $"{numericUpDown_BaseSubstanceQuantity.Value} {comboBox_BaseSubstanceQuantity.SelectedItem}";
+                    updatedMed.Description = textBox_Description.Text;
+                }
 
 
                 if (imgLocation.Equals(""))
@@ -275,6 +446,47 @@ namespace Meds_App
             pictureBox.Image = null;
         }
 
+
+        //Input: -
+        //Output: -
+        //
+        //Is called when the Add button is pressed in the home form.
+        //It will place the labels and textboxes where they belong, and activate the visibility of checkbox.
+        internal void ActivateAddButton()
+        {
+            checkBox_BaseSubst.Visible = true;
+            SetSaveButtonOn();
+
+            label_BaseSubstance.Top = 264;
+            textBox_BaseSubstance.Top = 285;
+            label_BaseSubstanceQuantity.Top = 315;
+            numericUpDown_BaseSubstanceQuantity.Top = 340;
+            comboBox_BaseSubstanceQuantity.Top = 340;
+            checkBox_BaseSubst.Checked = false;
+        }
+
+
+        //Input: -
+        //Output: -
+        //
+        //Is called when the Details button is pressed in the home/out of date form.
+        //It will place the labels and textboxes where they belong, and it will hide the checkbox.
+        internal void ActivateDetailsButton()
+        {
+            checkBox_BaseSubst.Visible = false;
+
+            SetSaveButtonOff();
+
+            label_BaseSubstance.Top = 236;
+            textBox_BaseSubstance.Top = 260;
+            label_BaseSubstanceQuantity.Top = 295;
+            numericUpDown_BaseSubstanceQuantity.Top = 319;
+            comboBox_BaseSubstanceQuantity.Top = 319;
+            label_Description.Top = 397;
+            textBox_Description.Top = 397;
+        }
+
+
         //Input: Med
         //Output: -
         //
@@ -324,26 +536,57 @@ namespace Meds_App
 
             dateTimePicker_BestBefore.Value = med.BestBefore;
 
-            textBox_BaseSubstance.Text = med.BaseSubstance;
+            checkBox_BaseSubst.Visible = false;
 
-            if (!med.BaseSubstanceQuantity.Equals("null"))
+            if (med.BaseSubstance == null)
             {
-                numericUpDown_BaseSubstanceQuantity.Value = int.Parse(med.BaseSubstanceQuantity.Substring(0, med.BaseSubstanceQuantity.IndexOf(' ')));
-                var value = med.BaseSubstanceQuantity.Substring(med.BaseSubstanceQuantity.IndexOf(" ") + 1);
-                switch (value)
+                checkBox_BaseSubst.Checked = true;
+                label_Description.Top = 256;
+                textBox_Description.Top = 256;
+
+                textBox_BaseSubstance.Visible = false;
+                numericUpDown_BaseSubstanceQuantity.Visible = false;
+                comboBox_BaseSubstanceQuantity.Visible = false;
+
+                label_Description.Top = 256;
+                textBox_Description.Top = 256;
+
+                if (themeDark) // if the theme is dark then it changes colors to black theme
                 {
-                    case "mg":
-                        comboBox_BaseSubstanceQuantity.SelectedItem = "mg";
-                        break;
-                    case "ml":
-                        comboBox_BaseSubstanceQuantity.SelectedItem = "ml";
-                        break;
-                    case "UI":
-                        comboBox_BaseSubstanceQuantity.SelectedItem = "UI";
-                        break;
-                    case "ug":
-                        comboBox_BaseSubstanceQuantity.SelectedItem = "ug";
-                        break;
+                    label_BaseSubstance.ForeColor = Color.Black;
+                    label_BaseSubstanceQuantity.ForeColor = Color.Black;
+
+                }
+                else if (!themeDark) // if theme is white same happens, but with the white theme color
+                {
+                    label_BaseSubstance.ForeColor = Color.OldLace;
+                    label_BaseSubstanceQuantity.ForeColor = Color.OldLace;
+                }
+            }
+            else
+            {
+                checkBox_BaseSubst.Checked = false;
+
+                textBox_BaseSubstance.Text = med.BaseSubstance;
+                if (!med.BaseSubstanceQuantity.Equals("null"))
+                {
+                    numericUpDown_BaseSubstanceQuantity.Value = int.Parse(med.BaseSubstanceQuantity.Substring(0, med.BaseSubstanceQuantity.IndexOf(' ')));
+                    var value = med.BaseSubstanceQuantity.Substring(med.BaseSubstanceQuantity.IndexOf(" ") + 1);
+                    switch (value)
+                    {
+                        case "mg":
+                            comboBox_BaseSubstanceQuantity.SelectedItem = "mg";
+                            break;
+                        case "ml":
+                            comboBox_BaseSubstanceQuantity.SelectedItem = "ml";
+                            break;
+                        case "UI":
+                            comboBox_BaseSubstanceQuantity.SelectedItem = "UI";
+                            break;
+                        case "ug":
+                            comboBox_BaseSubstanceQuantity.SelectedItem = "ug";
+                            break;
+                    }
                 }
             }
 
@@ -351,7 +594,7 @@ namespace Meds_App
 
             try
             {
-                pictureBox.Image = Image.FromStream(new MemoryStream((byte[])med.Picture));
+                pictureBox.Image = Image.FromStream(new MemoryStream(med.Picture));
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             catch
@@ -419,6 +662,8 @@ namespace Meds_App
             button_Delete.Text = Properties.Resources.Delete_ro;
             button_Update.Text = Properties.Resources.Update_ro;
 
+            checkBox_BaseSubst.Text = Properties.Resources.CheckboxText_ro;
+
 
             imgFile = Properties.Resources.ImageFiles_ro;
             success = Properties.Resources.Success_ro;
@@ -430,6 +675,7 @@ namespace Meds_App
 
             setErrorsRo();
             setTypeRo();
+
         }
 
         private void setErrorsRo()
@@ -491,6 +737,7 @@ namespace Meds_App
             button_Delete.Text = Properties.Resources.Delete_eng;
             button_Update.Text = Properties.Resources.Update_eng;
 
+            checkBox_BaseSubst.Text = Properties.Resources.CheckboxText_eng;
 
             imgFile = Properties.Resources.ImageFiles_eng;
             success = Properties.Resources.Success_eng;
@@ -548,6 +795,8 @@ namespace Meds_App
 
         internal void Set_Theme_Dark()
         {
+            themeDark = true;
+
             panel_AddMeds.BackColor = Color.Black;  //Set the background color of panel to black
 
             label_Title_Add.ForeColor =         //Set the text color of add Title to white
@@ -573,6 +822,7 @@ namespace Meds_App
                 button_Save.ForeColor =         //Set the text color of Save button to white
                 button_Update.ForeColor =       //Set the text color of Update button to white
                 button_Delete.ForeColor =       //Set the text color of Delete button to white
+                checkBox_BaseSubst.ForeColor =  //Set the text color of CheckBox to white
                 Color.White;
 
             textBox_Name.BorderStyle = numericUpDown_Pieces.BorderStyle = textBox_BaseSubstance.BorderStyle =
@@ -607,6 +857,25 @@ namespace Meds_App
             button_Update.BackColor = //Sets the background color of Update button to a RGB code ColorButtonCRUD
             button_Delete.BackColor = //Sets the background color of Delete button to a RGB code ColorButtonCRUD
                 ColorButtonCRUD;
+
+            Set_Theme_Dark_CheckBox();
+        }
+
+        internal void Set_Theme_Dark_CheckBox()
+        {
+            if (checkBox_BaseSubst.Checked)
+            {
+                label_BaseSubstance.ForeColor = Color.Black;
+                textBox_BaseSubstance.BackColor = Color.Black; //Color of 
+                textBox_BaseSubstance.ForeColor = Color.Black; //Color of 
+                label_BaseSubstanceQuantity.ForeColor = Color.Black;   //Color of label
+                numericUpDown_BaseSubstanceQuantity.BackColor = Color.Black; //Color of 
+                numericUpDown_BaseSubstanceQuantity.ForeColor = Color.Black; //Color of 
+                comboBox_BaseSubstanceQuantity.BackColor = Color.Black; //Color of 
+                comboBox_BaseSubstanceQuantity.ForeColor = Color.Black; //Color of 
+                numericUpDown_BaseSubstanceQuantity.BorderStyle = BorderStyle.None;
+                textBox_BaseSubstance.BorderStyle = BorderStyle.None;
+            }
         }
 
 
@@ -615,6 +884,8 @@ namespace Meds_App
 
         internal void Set_Theme_Light()
         {
+            themeDark = false;
+
             panel_AddMeds.BackColor = Color.OldLace;//Set the background color of panel to OldLace
 
             label_Title_Add.ForeColor =         //Set the text color of add Title to black
@@ -640,6 +911,7 @@ namespace Meds_App
                 button_Save.ForeColor =         //Set the text color of Save button to black
                 button_Update.ForeColor =       //Set the text color of Update button to black
                 button_Delete.ForeColor =       //Set the text color of Delete button to black
+                checkBox_BaseSubst.ForeColor =  //Set the text color of CheckBox to black
                 Color.Black;
 
             textBox_Name.BorderStyle = numericUpDown_Pieces.BorderStyle = textBox_BaseSubstance.BorderStyle =
@@ -675,6 +947,21 @@ namespace Meds_App
             button_Delete.BackColor = //Set the background color of Delete button to Moccasin
                 Color.Moccasin;
 
+            Set_Theme_Light_CheckBox();
+        }
+        internal void Set_Theme_Light_CheckBox()
+        {
+            if (checkBox_BaseSubst.Checked)
+            {
+                label_BaseSubstance.ForeColor = Color.OldLace;
+                textBox_BaseSubstance.BackColor = Color.OldLace; //Color of 
+                textBox_BaseSubstance.ForeColor = Color.OldLace; //Color of 
+                label_BaseSubstanceQuantity.ForeColor = Color.OldLace;   //Color of label
+                numericUpDown_BaseSubstanceQuantity.BackColor = Color.OldLace; //Color of 
+                numericUpDown_BaseSubstanceQuantity.ForeColor = Color.OldLace; //Color of 
+                comboBox_BaseSubstanceQuantity.BackColor = Color.OldLace; //Color of 
+                comboBox_BaseSubstanceQuantity.ForeColor = Color.OldLace; //Color of 
+            }
         }
     }
 }
