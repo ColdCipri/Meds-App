@@ -79,7 +79,7 @@
             this.button_Report.Name = "button_Report";
             this.button_Report.Size = new System.Drawing.Size(176, 93);
             this.button_Report.TabIndex = 4;
-            this.button_Report.Text = "Details";
+            this.button_Report.Text = "Report a bug";
             this.button_Report.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_Report.UseVisualStyleBackColor = false;
             this.button_Report.Click += new System.EventHandler(this.Button_Details_Click);
@@ -254,7 +254,7 @@
             // 
             this.panelDetails_In_Main.Location = new System.Drawing.Point(1000, 0);
             this.panelDetails_In_Main.Name = "panelDetails_In_Main";
-            this.panelDetails_In_Main.Size = new System.Drawing.Size(758, 290);
+            this.panelDetails_In_Main.Size = new System.Drawing.Size(758, 197);
             this.panelDetails_In_Main.TabIndex = 2;
             // 
             // panelOutOfDate_In_Main
@@ -272,6 +272,7 @@
             this.panelHome_In_Main.Name = "panelHome_In_Main";
             this.panelHome_In_Main.Size = new System.Drawing.Size(758, 590);
             this.panelHome_In_Main.TabIndex = 0;
+            this.panelHome_In_Main.SizeChanged += new System.EventHandler(this.panelHome_In_Main_SizeChanged);
             // 
             // MainForm
             // 
@@ -288,7 +289,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meds App";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            //this.Shown += new System.EventHandler(this.MainForm_Shown);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.panel_Left.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo)).EndInit();
             this.panel_Top.ResumeLayout(false);

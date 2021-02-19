@@ -21,6 +21,7 @@ namespace Meds_App
 
         //-------------------------------------------MAIN COMPONENTS--------------------------------------------
 
+
         //Generated method
         //
         //This method creates a transition when the app is runned
@@ -41,6 +42,7 @@ namespace Meds_App
             Set_Theme(theme_white);
         }
 
+
         //This method adds a shadow on bottom-right
         protected override CreateParams CreateParams
         {
@@ -54,7 +56,8 @@ namespace Meds_App
 
         }
 
-        /*//Generated method
+
+        //Generated method
         //
         //This method is called after the Load method from the panelHome_In_Main
         //If the app does not connect to server then this method will show an error
@@ -73,7 +76,17 @@ namespace Meds_App
             {
                 panelHome_In_Main.Show_OutOfDate_Medicines_Count();
             }
-        }*/
+        }
+
+        //Generated method
+        //
+        //This method is called when the yes button is pressed of the out of date medicines messsagebox. 
+        //It changes the form from Home to Out of date
+        private void panelHome_In_Main_SizeChanged(object sender, EventArgs e)
+        {
+            panelHome_In_Main.ChangeLocation(sender, e);
+            Button_OutOfDate_Click(sender, e);
+        }
 
 
         //-------------------------------------------UTILS--------------------------------------------
@@ -196,6 +209,9 @@ namespace Meds_App
         {
             if (Check_Active_Button(button_Home))
             {
+                panelHome_In_Main.ChangeLocation(sender, e);    //I use this method to close all the opened forms inside the home form 
+                                                                //when we switch to another form
+
                 panelOutOfDate_In_Main.Location = new Point(0, 700);
                 Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));
                 slidePanels.add(panelHome_In_Main, "Top", -700);
@@ -249,6 +265,9 @@ namespace Meds_App
             else if (Check_Active_Button(button_Home))
             {
                 //this.panelDetails_In_Main.Location = new Point(0, 1400);
+                panelHome_In_Main.ChangeLocation(sender, e);    //I use this method to close all the opened forms inside the home form 
+                                                                //when we switch to another form
+
                 panelReport_In_Main.Location = new Point(0, 1400);
                 panelOutOfDate_In_Main.Location = new Point(0, 700);
                 Transition slidePanels = new Transition(new TransitionType_EaseInEaseOut(1000));

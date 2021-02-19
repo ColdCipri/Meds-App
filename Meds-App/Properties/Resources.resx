@@ -652,4 +652,10 @@ Orice mesaj de eroare ați primit.</value>
   <data name="FailedToUpdate_ro" xml:space="preserve">
     <value>nu a fost actualizat! Vă rog să mai încercați!</value>
   </data>
+  <data name="OutOfDateCount1_eng" xml:space="preserve">
+    <value>A medicine is out of date! Do you want to see it?</value>
+  </data>
+  <data name="OutOfDateCount1_ro" xml:space="preserve">
+    <value>Un medicament a expirat! Doriți să vedeți care e acesta?</value>
+  </data>
 </root>

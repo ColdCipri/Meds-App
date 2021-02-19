@@ -14,7 +14,7 @@ namespace Meds_App
     public partial class HomeGUI : UserControl
     {
         public string helpSearch, outofdatedetails,        //Strings for texts. These ones were saved here because they can be modified by the language
-            warning, error_retrieve, error, outofdatemeds;
+            warning, error_retrieve, error, outofdatemeds, outofdatemedsone;
 
         private bool themeDark, firstTime = false;
 
@@ -60,8 +60,8 @@ namespace Meds_App
             }
             catch (Exception)
             {
-                //Process.Start(@"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\openServer.bat");
-                //Thread.Sleep(5000);
+                Process.Start(@"C:\Users\colde\source\repos\ColdCipri\Meds-App\Meds-App\Resources\openServerReport.bat");
+                Thread.Sleep(5000);
                 button_Add.Enabled = false;
                 textBox_search.Enabled = false;
                 listBox_Meds.Items.Clear(); 
@@ -114,6 +114,8 @@ namespace Meds_App
             button_Add.Enabled = false;
             button_Details.Enabled = false;
 
+            listBox_Meds.Enabled = false;
+
             button_Back.BringToFront();
 
             PanelMedicines_In_Home.SetSaveButtonOn(); //When the panel is opened, there will be only the save button down.
@@ -130,7 +132,8 @@ namespace Meds_App
         private void Button_Details_Click(object sender, EventArgs e)
         {
             PanelMedicines_In_Home.Fill_Med(medDetails);
-            Button_Add_Home_Click(sender, e); 
+            Button_Add_Home_Click(sender, e);
+            listBox_Meds.Enabled = true;
 
             PanelMedicines_In_Home.SetSaveButtonOff(); //When the panel is opened, there will be the update and delete buttons down.
         }
@@ -166,6 +169,9 @@ namespace Meds_App
             changePannel.run();
 
             button_Add.Enabled = true;
+            button_Details.Enabled = false;
+            listBox_Meds.Enabled = true;
+
             textBox_search.Text = "";
             PanelMedicines_In_Home.clearUserInput(); //Here we clear the user input because if we press the back button when we are in details page, the user input remains
 
@@ -190,7 +196,7 @@ namespace Meds_App
                 medDetails = medsList[selectedItem];
                 if (DateTime.Compare(medDetails.BestBefore, DateTime.Now) <= 0)
                 {
-                    MessageBox.Show($"{outofdatedetails} {medDetails.BestBefore}!", warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"{outofdatedetails} {medDetails.BestBefore:dd-MM-yyyy}!", warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 Refresh_Details(medDetails);
             }
@@ -236,6 +242,15 @@ namespace Meds_App
         //-------------------------------------------UTILS--------------------------------------------
 
 
+        //Generated method
+        //
+        //This method automatically closes the medicines page if the success message is shown after an operation(add/update/delete)
+        private void PanelMedicines_In_Home_VisibleChanged(object sender, EventArgs e)
+        {
+            Button_Back_Click(sender, e);
+        }
+
+
         //Input: -
         //Output: -
         //
@@ -252,15 +267,12 @@ namespace Meds_App
                     autofillList.AddRange(new string[] { item.Name, item.BaseSubstance, item.Description });
                 }
                 textBox_search.AutoCompleteCustomSource = autofillList; 
-                foreach (var item in textBox_search.AutoCompleteCustomSource)
-                {
-                    Console.WriteLine(item);
-                }
             }
 
             if (medsList.Count == 0 && firstTime)
             {
-                result = MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                //result = MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 Disable_Add_Search();
                 /*while (result == DialogResult.Retry && ok)
                 {*/
@@ -277,7 +289,8 @@ namespace Meds_App
                     }
                     else
                     {
-                        result = MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        //result = MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        MessageBox.Show(error_retrieve, error, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         Disable_Add_Search();
                         //Here is a bug. When pressing for the 2nd-3rd time the refresh icon, and then press retry from the message box, it does nothing
                     }
@@ -337,26 +350,31 @@ namespace Meds_App
             listBox_Meds.Items.Clear();
         }
 
-        private void PanelMedicines_In_Home_VisibleChanged(object sender, EventArgs e)
-        {
-            Button_Back_Click(sender, e);
-        }
-
         //Input: -
         //Output: -
         //
         //This method tries to show the user an message with the number of out of dates medicines
         //If there are no medicines out of date or no medicines at all nothing will happen
-        public void Show_OutOfDate_Medicines_Count()
+        public async void Show_OutOfDate_Medicines_Count()
         {
-            List<Med> outOfDateMeds = new List<Med>();
-            Task.Run(async () => outOfDateMeds = await Http.Get_OutOfDate_Meds_Async(true));
-            //List<Med> outOfDateMeds = await Http.Get_OutOfDate_Meds_Async(true);
+            //List<Med> outOfDateMeds = new List<Med>();
+            //Task.Run(async () => outOfDateMeds = await Http.Get_OutOfDate_Meds_Async(true));
+            List<Med> outOfDateMeds = await Http.Get_OutOfDate_Meds_Async(true);
             if (medsList.Count != 0)
             {
-                if (outOfDateMeds.Count != 0)
+                if (outOfDateMeds.Count == 1)
+                { 
+                    result = MessageBox.Show(outofdatemedsone, warning, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                else if (outOfDateMeds.Count != 0)
                 {
-                    MessageBox.Show(outOfDateMeds.Count + outofdatemeds, warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    result = MessageBox.Show(outOfDateMeds.Count + outofdatemeds, warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                if (result == DialogResult.Yes)
+                {
+                    Size = new Size(759, 590);
+                    Size = new Size(758, 590);
                 }
             }
         }
@@ -368,6 +386,17 @@ namespace Meds_App
         private void Refresh_Details(Med medDetails)
         {
             PanelMedicines_In_Home.Fill_Med(medDetails);
+        }
+
+        //Input: object, EventArgs
+        //Output: -
+        //
+        //This method closes the opened add/details forms from home and makes the list unable to use
+        internal void ChangeLocation(object sender, EventArgs e)
+        {
+            button_Details.Enabled = false;
+            listBox_Meds.Enabled = false;
+            Button_Back_Click(sender,e);
         }
 
 
@@ -387,6 +416,7 @@ namespace Meds_App
             toolTipForSearch.ToolTipTitle = Properties.Resources.HelpSearchTitle_ro;
             outofdatedetails = Properties.Resources.OutOfDateDetails_ro;
             outofdatemeds = Properties.Resources.OutOfDateCount_ro;
+            outofdatemedsone = Properties.Resources.OutOfDateCount1_ro;
             warning = "Atentie!";
             error = Properties.Resources.Error_ro;
             error_retrieve = Properties.Resources.ErrorRetrieve_ro;
@@ -407,6 +437,7 @@ namespace Meds_App
             toolTipForSearch.ToolTipTitle = Properties.Resources.HelpSearchTitle_eng;
             outofdatedetails = Properties.Resources.OutOfDateDetails_eng;
             outofdatemeds = Properties.Resources.OutOfDateCount_eng;
+            outofdatemedsone = Properties.Resources.OutOfDateCount1_eng;
             warning = "Warning!";
             error = Properties.Resources.Error_eng;
             error_retrieve = Properties.Resources.ErrorRetrieve_eng;

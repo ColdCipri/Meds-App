@@ -1033,6 +1033,24 @@ namespace Meds_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A medicine is out of date! Do you want to see it?.
+        /// </summary>
+        public static string OutOfDateCount1_eng {
+            get {
+                return ResourceManager.GetString("OutOfDateCount1_eng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Un medicament a expirat! Doriți să vedeți care e acesta?.
+        /// </summary>
+        public static string OutOfDateCount1_ro {
+            get {
+                return ResourceManager.GetString("OutOfDateCount1_ro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This medicine is out of date from .
         /// </summary>
         public static string OutOfDateDetails_eng {

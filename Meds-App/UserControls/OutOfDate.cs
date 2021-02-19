@@ -135,10 +135,10 @@ namespace Meds_App.UserControls
             {
                 button_OutOfDate_Details.Enabled = true;
                 medDetails = medsList[selectedItem]; 
-                if (DateTime.Compare(medDetails.BestBefore, DateTime.Now) <= 0)
+                /*if (DateTime.Compare(medDetails.BestBefore, DateTime.Now) <= 0)
                 {
-                    MessageBox.Show($"{outofdatedetails} {medDetails.BestBefore}!", warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    MessageBox.Show($"{outofdatedetails} {medDetails.BestBefore:dd-MM-yyyy}!", warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }*/
                 RefreshDetails(medDetails);
             }
         }
@@ -209,6 +209,7 @@ namespace Meds_App.UserControls
         public void Set_Language_OutOfDate_Ro()
         {
             button_OutOfDate_Details.Text = Properties.Resources.Details_ro;
+            outofdatedetails = Properties.Resources.OutOfDateDetails_ro;
             PanelMedicines_In_OutOfDate.Set_Language_Medicines_Ro();
         }
 
@@ -219,6 +220,7 @@ namespace Meds_App.UserControls
         public void Set_Language_OutOfDate_Eng()
         {
             button_OutOfDate_Details.Text = Properties.Resources.Details_eng;
+            outofdatedetails = Properties.Resources.OutOfDateDetails_eng;
             PanelMedicines_In_OutOfDate.Set_Language_Medicines_Eng();
         }
 

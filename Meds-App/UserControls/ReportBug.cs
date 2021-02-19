@@ -32,9 +32,6 @@ namespace Meds_App.UserControls
             toolTipForHelp.ShowAlways = true;
             toolTipForHelp.ToolTipIcon = ToolTipIcon.Info;
             toolTipForHelp.AutoPopDelay = 13000;
-
-
-            //throw new Exception(message);
         }
 
 
@@ -209,7 +206,6 @@ namespace Meds_App.UserControls
             successfully_sent = Properties.Resources.SuccessfullySend_eng;
 
             help = Properties.Resources.HelpReport_eng;
-            Console.WriteLine(help);
             toolTipForHelp.SetToolTip(pictureBox_help, help);
             toolTipForHelp.ToolTipTitle = Properties.Resources.HelpReportTitle_eng;
 

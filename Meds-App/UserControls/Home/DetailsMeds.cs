@@ -162,13 +162,13 @@ namespace Meds_App.UserControls.Home
 
                 }
                 MessageBox.Show($"{successfully_updated} {updatedMed.Name}!", success, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Http.PutMedAsync(updatedMed, med.Id);
+                //Http.PutMedAsync(updatedMed, med.Id);
             }
         }
 
         private void button_Details_Delete_Click(object sender, EventArgs e)
         {
-            Http.DeleteMedAsync(med.Id);
+            //Http.DeleteMedAsync(med.Id);
             MessageBox.Show($"{successfully_deleted} {med.Name}!", success, MessageBoxButtons.OK, MessageBoxIcon.Information);
             clearUserInput();
         }
