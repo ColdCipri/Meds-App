@@ -367,7 +367,7 @@ namespace Meds_App
                 }
                 else if (outOfDateMeds.Count != 0)
                 {
-                    result = MessageBox.Show(outOfDateMeds.Count + outofdatemeds, warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    result = MessageBox.Show(outOfDateMeds.Count + outofdatemeds, warning, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 }
 
                 if (result == DialogResult.Yes)

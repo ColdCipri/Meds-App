@@ -85,7 +85,7 @@ namespace Meds_App
         private void panelHome_In_Main_SizeChanged(object sender, EventArgs e)
         {
             panelHome_In_Main.ChangeLocation(sender, e);
-            Button_OutOfDate_Click(sender, e);
+            button_OutOfDate.PerformClick();
         }
 
 

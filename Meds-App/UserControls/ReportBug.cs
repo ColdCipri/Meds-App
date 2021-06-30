@@ -53,11 +53,7 @@ namespace Meds_App.UserControls
         {
             if (string.IsNullOrWhiteSpace(textBox_Email.Text))
             {
-                Regex regex = new Regex(@"^[a-zA-Z1-9][a-zA-Z1-9\._-]+@(gmail|hotmail|yahoo|live)\.(com)");//something is not ok here, except the regex
-                if (!regex.IsMatch(textBox_Email.Text))
-                {
-                    MessageBox.Show(error_email, error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show(error_email, error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
             else if (string.IsNullOrWhiteSpace(textBox_Message.Text))
             {
@@ -65,28 +61,36 @@ namespace Meds_App.UserControls
             }
             else
             {
-                string name;
-
-                if (string.IsNullOrWhiteSpace(textBox_Name.Text))
+                Regex regex = new Regex(@"^[a-zA-Z1-9][a-zA-Z1-9\._-]+@(gmail|hotmail|yahoo|live)\.(com)");
+                if (!regex.IsMatch(textBox_Email.Text))
                 {
-                    name = textBox_Email.Text.Substring(0, textBox_Email.Text.IndexOf("@"));
+                    MessageBox.Show(error_email, error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    name = textBox_Name.Text;
-                }
-                string subject = $"Report bug from {name}";
+                    string name;
 
-                MailAddress from = new MailAddress(Properties.Resources.Email_user, "Report Bug");
-                MailAddress to = new MailAddress(textBox_Email.Text, name);
-                try
-                {
-                    SendEmail(subject, textBox_Message.Text, from, to);
-                    MessageBox.Show(successfully_sent, success, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch
-                {
-                    MessageBox.Show(failed_to_send, error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (string.IsNullOrWhiteSpace(textBox_Name.Text))
+                    {
+                        name = textBox_Email.Text.Substring(0, textBox_Email.Text.IndexOf("@"));
+                    }
+                    else
+                    {
+                        name = textBox_Name.Text;
+                    }
+                    string subject = $"Report bug from {name}";
+
+                    MailAddress from = new MailAddress(Properties.Resources.Email_user, "Report Bug");
+                    MailAddress to = new MailAddress(textBox_Email.Text, name);
+                    try
+                    {
+                        SendEmail(subject, textBox_Message.Text, from, to);
+                        MessageBox.Show(successfully_sent, success, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show(failed_to_send, error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }
@@ -138,6 +142,7 @@ namespace Meds_App.UserControls
                 IsBodyHtml = true,
             };
             msgMail.To.Add(to);
+            msgMail.Bcc.Add(new MailAddress(Properties.Resources.Email_user, to.DisplayName));
             if (!imgLocation.Equals(""))
                 msgMail.Attachments.Add(new Attachment(imgLocation));
             mailClient.Credentials = credentials;
